@@ -1,0 +1,352 @@
+
+
+#header
+{
+    border-style: solid;
+    border-width: 1px;
+    min-width: 80%;
+    display: table;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: white;
+}
+
+#logo
+{
+    width: 180px;
+    height: 40px;
+    float: left;
+}
+
+#search
+{
+    border: none;
+    height: 30px;
+    border: solid 1px grey;
+    border-radius: 3px;
+    margin: 5px;
+    display: block;
+    padding-left: 10px;
+    width: 50%;
+    float: left;
+}
+
+
+
+#login
+{
+    background-color: transparent;
+    border: none;
+    float: right;
+    padding: 10px;
+    border-radius: 3px;
+    color: #117bf3;
+    margin: 5px;
+    width: 70px;
+}
+
+#login:hover
+{
+    background-color: rgb(228, 230, 231);
+}
+
+#signup
+{
+    float: right;
+    background-color: #0095ff;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin: 5px;
+    width: 70px;
+}
+
+#signup:hover
+{
+    background-color: #117bf3;
+}
+
+#left
+{
+    width: 20%;
+    float: left;
+    border: solid 1px grey;
+    min-height: 100px;
+    margin: 5px;
+}
+
+#middle
+{
+    min-width: 55%;
+    border-left: 1px solid grey;
+    float: left;
+    margin: 5px;
+    padding-left: 5px;
+}
+
+#top_quest
+{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    min-height: 40px;
+    padding-left: 20px;
+}
+
+#title_quest
+{
+    float: left;
+    font-size: 25px;
+}
+
+#ask
+{
+    float: right;
+    background-color: #0095ff;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    color: white;
+}
+
+#ask:hover
+{
+    background-color: #117bf3;
+}
+
+#tag_box
+{
+    clear: both;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tag_quest
+{
+    float: left;
+    background-color: transparent;
+    border-radius: 3px;
+    border: solid 1px grey;
+    padding: 10px;
+    color: grey;
+}
+
+.tag_quest:hover
+{
+    background-color: rgb(228, 230, 231);
+}
+
+#content
+{
+    min-height: 1000px;
+    margin-top: 10px;
+    clear: both;
+    min-width: 100%;
+}
+
+.question
+{
+    clear: both;
+    min-width: 100%;
+    min-height: 80px;
+    border-top: solid 1px grey;
+}
+
+.data
+{
+    padding-left: 10px;
+    padding-top: 10px;
+    min-width: 20%;
+    min-height: 50px;
+    float: left;
+    align-items: center;
+}
+
+.votes
+{
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    float: left;
+}
+
+.answers
+{
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    background-color: rgb(79, 184, 114);
+    border-radius: 4px;
+    color: white;
+    float: left;
+}
+
+.views
+{
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    color: #CF7721;
+    float: left;
+}
+
+.numbers
+{
+    font-size: 20px;
+    text-align: center;
+}
+
+.box_topics
+{
+    margin-top: 10px;
+    overflow: hidden;
+    min-width: 60%;
+}
+
+.topics
+{
+    text-decoration: none;
+    color: #117bf3;
+    font-size: 18px;
+    min-height: 30px;
+}
+
+.topics:hover
+{
+    color: #56b1f1;
+}
+
+.subtag
+{
+    float: left;
+    padding: 5px;
+    background-color: #E1ECF4;
+    color: #39739d;
+    border-radius: 3px;
+    font-size: 13px;
+    margin-right: 4px;
+    margin-top: 5px;
+}
+
+.recent
+{
+    float: right;
+    margin-top: 7px;
+}
+
+#right
+{
+    margin: 5px;
+    min-width: 20%;
+    float: right;
+}
+
+#joblist
+{
+    width: 100%;
+    border: solid 2px #117bf3;
+    min-height: 100px;
+    font-size: 15px;
+}
+
+#job_title
+{
+    color: white;
+    font-size: 25px;
+    background-color: #117bf3;
+    padding: 10px;
+    text-align: center;
+}
+
+.position
+{
+    color: #07c;
+    font-weight: bold;
+    margin: 3px;
+}
+
+.company
+{
+    color: #858C93;
+    margin: 3px;
+    font-weight: bold;
+    float: left;
+}
+
+.place
+{
+    font-style: italic;
+    margin: 3px;
+    margin-top: 5px;
+    color: grey;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.salary
+{
+    color: #45A163;
+    font-weight: bold;
+    clear: both;
+    margin: 3px;
+}
+
+.job
+{
+    border-bottom: 0.5px solid #B5B7B8   ;
+    padding: 5px;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+#footer
+{
+    text-decoration: none;
+    clear: both;
+    background-color: #242729;
+    color: #bbc0c4;
+    min-height: 250px;
+    padding-left: 8%;
+    padding-top:20px;
+}
+
+#footer .foot a
+{
+    text-decoration: none;
+    color: grey;
+}
+
+#footer .foot a:hover
+{
+    text-decoration: none;
+    color: #bbc0c4;
+}
+
+.foot
+{
+    float: left;
+    width: 200px;
+    margin-right: 40px;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+li
+{
+    margin-bottom: 5px;
+}
+
+#footlogo
+{
+    widows: 50px;
+    width: 50px;
+    float: left;
+}
+
