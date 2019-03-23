@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stack Overflow</title>
+</head>
+<body>
+    <a href="https://stackoverflow.com/"> Stack Overflow</a> <br/>
+     <input type="text" placeholder="search.."/>
+     <button  type="button" width="18" height="18"> <img alt="Search button"/></button> <br/>
+     <ol>
+     <li><input type="button"/> </li>
+    
+     <li><input type="button"/> </li>
+
+     <li><input type="button"/> </li>
+  
+     <li><input type="button"/> </li>
+  
+     <li><input type="button"/></li>
+    </ol>
+     <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f14345761%2fhow-to-check-if-json-return-is-empty-with-jquery">  Log in Sign up</a> <br/>
+
+     <a href="https://stackoverflow.com/"> Current Community </a>
+
+     <ul>
+         <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+         <li><a href="https://stackoverflow.com/help">help</a></li>
+         <li><a href="https://chat.stackoverflow.com/">chat </a></li>
+         <li><a href="https://meta.stackoverflow.com/"> Meta Stack Overflow</a></li>
+     </ul>
+      <div>
+           <h3>Your Community</h3>
+           <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f14345761%2fhow-to-check-if-json-return-is-empty-with-jquery">sign up or login</a><br/>
+           <a href="https://stackexchange.com/sites">More stack exchange community</a><br/>
+           <a href="https://stackoverflow.blog/"> Company blog </a><br/>
+           <ul>
+                <li><a href="https://stackoverflow.com/tour">Tour</a></li>
+                <li><a href="https://stackoverflow.com/help">help</a></li>
+                <li><a href="https://stackoverflow.com/company">About us</a></li>
+                <li><a href="https://meta.stackoverflow.com/">Meta stackoverflow</a></li>
+                <li><a href="https://www.stackoverflowbusiness.com/?ref=topbar_help">Bussiness and learn more about hiring</a></li>
+                <p>By using our site, you will acknowledge that you have read and understand our 
+                    <a href="https://stackoverflow.com/legal/cookie-policy">cookie policy</a>,
+                    <a href="https://stackoverflow.com/legal/privacy-policy">privacy policy</a>
+                    and our <a href="https://stackoverflow.com/legal/terms-of-service/public">term of service</a>
+                </p>
+           </ul>
+        </div>
+        <ol>
+            <li></li>
+            <li href="https://stackoverflow.com/">Home</li>
+            <li>
+                <ol>
+                    <li> <p>Public</p></li>
+                    <li><a href="https://stackoverflow.com/questions">Stackoverflow</a></li>
+                    <li><a href="https://stackoverflow.com/tags">Tag</a></li>
+                    <li><a href="https://stackoverflow.com/userss">Users</a></li>
+                    <li><a href="https://stackoverflow.com/jobs?med=site-ui&ref=jobs-tab">Jobs</a></li>
+
+                </ol>
+            </li>
+            <li><p>Team Q&A for work<a href="https://stackoverflow.com/teams"> learn more</a></p></li>
+        </ol>
+        <a href="https://stackoverflow.com/users/login?ssrc=anon_ask&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2fask"> ask questions</a>
+        <select autofocus>
+            <option>1.</option>
+            <option>1.</option>
+            <option>1.</option>
+            <option>1.</option>
+            <option>1.</option>
+            <option>1.</option>
+
+        </select>
+        <p>
+                Below code(jQuery.isEmptyObject(anyObject) function is already provided) works perfectly fine, no need to write one of your own.
+
+                // works for any Object Including JSON(key value pair) or Array.
+               //  var arr = [];
+               //  var jsonObj = {};
+                 if (jQuery.isEmptyObject(anyObjectIncludingJSON))
+                 {
+                    console.log("Empty Object");
+                 }
+             <nav>
+                    <a href="https://stackoverflow.com/questions/tagged/javascript">javascript </a>
+                    <a href="https://stackoverflow.com/questions/tagged/jquery">jquery</a>
+                    <a href="https://stackoverflow.com/questions/tagged/ajax">ajax</a>
+                    <a href="https://stackoverflow.com/questions/tagged/json">json</a> <br/>
+                    <a href="https://https://stackoverflow.com/q/14345761">share </a>|
+                    <a href="https://stackoverflow.com/posts/14345761/edit">improve this answer</a><br/>
+                    <a href="https://stackoverflow.com/posts/14345761/revisions">edited May 25 '17 at 5:33</a>
+             </nav>
+             answered Nov 28 '13 at 9:38
+             <img alt="user">
+             <p><a href="https://stackoverflow.com/users/2131816/arun-pratap-singh">Arun Pratap Singh</a> Arun Pratap Singh</p>
+                                              
+             
+             
+             2,2161816<br/>
+             add a comment | <br/>
+              
+             <select> </select>
+             
+             if (!json[0]) alert("JSON empty");<br/>
+             share|improve this answer<br/>
+             answered May 27 '14 at 17:02<br/>
+             
+             Justin LeveneJustin Levene<br/>
+             9511112<br/>
+             6<br/>
+             <div>
+            <p>
+             Hi Justin, it's better to provide some explanation along with your code, than the asker will understand why that particular code works. – edi9999 May 27 '14 at 17:53 <br/>
+             This is the only solution that worked for me. Can you please explain what is happening? Thanks! – eaglei22 Dec 7 '15 at 23:04<br/>
+             It's checking to see if the first object exists. If JSON has anything, there will be a first object. – Justin Levene Dec 9 '15 at 7:58<br/>
+             this will only work with array's but not with key value object's ex. var someJSON = {'name': 'Justin Levene'} – Arun Pratap Singh Dec 10 '15 at 5:43<br/>
+            </p>
+            </div>
+             add a comment | 
+              
+             -1
+             
+             You can use $.isEmptyObject(json)
+             
+             <link scr="https://api.jquery.com/jQuery.isEmptyObject" />
+             
+             <nav>
+                    <a href="https://https://stackoverflow.com/q/14345761">share </a>|
+                    <a href="https://stackoverflow.com/posts/14345761/edit">improve this answer</a><br/>
+             </nav>
+             answered Mar 12 '18 at 3:27
+             <img alt="user">
+             <p><a href="https://stackoverflow.com/users/8680317/hassan-almasri">Hassan ALmasri</a> Hassan ALmasri</p>
+           
+             71
+             <select> </select>
+             This is more or less just repeating this existing answer. – Pang Mar 12 '18 at 4:03<br/>
+             add a comment | <br/>
+              
+             -2 <br/>
+             
+             $.getJSON(url,function(json){<br/>
+             if ( json.length == 0 ) <br/>
+             {<br/>
+             console.log("NO !")<br/>
+             }<br/>
+             });
+             share|improve this answer<br/>
+             answered Aug 20 '15 at 10:51<br/>
+             
+             RanjithRanjith<br/>
+             192<br/>
+             4<br/>
+             Hi, welcome to Stack Overflow. Please check out how to write good answers. Also, this question has been answered a long time ago, we'll be glad if you devote your time to more recent questions. – Mifeet Aug 20 '15 at 12:24
+             add a comment | <br/>
+        </p>
+        <h1>
+            Your answer
+        </h1>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+        <input  size= 100/>
+
+        <p>
+                Thanks for contributing an answer to Stack Overflow!<br/>
+                <ul>
+                   <li> Please be sure to answer the question. Provide details and share your research!<br/>
+                        But avoid …</li>
+                
+                <li> Asking for help, clarification, or responding to other answers.</li>
+                <li> Making statements based on opinion; back them up with references or personal experience.</li>
+             </ul>
+                To learn more, see our <a href="https://stackoverflow.com/help/how-to-answer">tips on writing great answers.</a>
+        </p>
+
+        
+</body>
+</html>
