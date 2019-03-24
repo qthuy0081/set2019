@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Stackoverflow
+        </title>
+    </head>
+    <body>
+        <a href="stackoverflow.com">Stack Overflow</a>
+    </br>
+        <input placeholder="Search...">
+        <button><img src="data:image/png;base64,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" alt="search" width="15" height="15"/></button>
+        <ol>
+            <li><a href="f"><img height="30" width="30" src="data:image/png;base64,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"></a></li>
+            <li><a href="f"><img height="30" width="30" src="https://img.icons8.com/ios/2x/hdd.png"></a></li>
+            <li><a href="f"><img height="30" width="30" src="https://img.icons8.com/ios/2x/trophy.png"></a></li>
+            <li><a href="f"><img height="30" width="30" src="https://img.icons8.com/ios/2x/question-mark-filled.png"></a></li>
+            <li><a href="f"><img height="30" width="30" src="https://img.icons8.com/material/2x/filled-chat.png"></a></li>
+            <li><a href="f">Log In</a> <a href="f">Sign Up</a></li>
+            <li> <b> <a href="f">current community</a> </b> </li>
+            <ul>
+                <li><a href="">Stack Overflow help chat</a></li>
+                <li><a href="f">Meta Stack Overflow</a></li>
+            </ul>
+        </ol>
+        <b>your community</b>
+        <p><a href="f">Sign up </a>or <a href="f">log in</a> to customize your list.</p>
+        <a href="f"><b>more stack exchange communities</b></a>
+
+        <a href="f">company blog</a>
+        <ul>
+            <li><a href="f">Tour Start here for a quick overwiew of the site</a></li>
+            <li><a href="f">Help Center Detailed answers to any questions you might have </a></li>
+            <li><a href="f">Meta Discuss the working and policies of this site</a></li>
+            <li><a href="f">About Us Learn more about Stack Overflow the company</a></li>
+            <li><a href="f">Bussiness Learn more about hiring developers or posting ads with us</a></li>
+        </ul>
+
+        <a href="f">Home</a>
+        <ol>
+            <li>Public</li>
+            <li><a href="f">Stack Overflow</a></li>
+            <li><a href="f">Tags</a></li>
+            <li><a href="ff">Users</a></li>
+            <li><a href="f">Jobs</a></li>
+        </ol>
+        1.<b>Teams</b>Q&A for work <a href="f">Learn More</a>
+        <p><a href="f"><b>How to check if JSON return is empty with jquery</b></a></p>
+        <a href="ff"> Ask Question</a>
+        </br>
+        <button><img height="70" width="70" src="https://img.icons8.com/ios-glyphs/2x/sort-up.png"></button>
+        <p>29</p></br>
+        <button><img height="70" width="70" src="https://img.icons8.com/ios/2x/sort-down-filled.png"></button>
+        </br>
+        <code>$.getJSON(url, function(json) {
+            var output = '';
+            $.each(json, function(i,d) {
+          
+              if(d.DESCRIPTION == 'null'){ 
+                console.log("Its empty");
+              }
+              var description = d.DESCRIPTION;
+              output += '<tr><td>'+d.NAME+'</td><td>'+'<tr><td>'+d.DESCRIPTION+'</td><td>';
+            });
+          });</code>
+
+          <p>I tried adding the</p>
+          <p>if(d.DESCRIPTION == 'null'){ console.log("Its empty");</p>
+          <p>to check if the object returned is empty, but it doesn't work.</p>
+          <p>Can someone explain to me what's wrong with this?</p>
+          <p><a href="f">javascript jquery ajax json</a></p>
+          <p><a href="f">share|improve this question</a></p>
+          <p><a href="f">edited Jul 6 '16 at 9:38</a></p>
+          <p><a href="f">comiventor</a></p>
+          <a href="f"><img src="file:///C:/Users/Admin/Desktop/javascript%20-%20How%20to%20check%20if%20JSON%20return%20is%20empty%20with%20jquery%20-%20Stack%20Overflow_files/kx0SU.jpg"></a>
+          <p>1,4512342</p>
+          <p>asked Jan 15 '13 at 19:56</p>
+          <p>BaconJuiceBaconJuice
+                1,15683373</p>
+          <ul>
+              <li>
+                    If you upgrade to jQuery 1.9, it will properly go to the error callback if a json string is not returned. –<a href="f">Kevin B Jan 15 '13 at 19:57</a>
+              </li>
+              <li><p>if (d&&d.length)-<a href="f">adeneo Jan 15'13 at 19:57</a></p></li>
+              <li>2 If you instead want to check if an object of the array contains empty data, we would need to see exactly what is being returned in your json string as it may be different depending on server-side language and your method of generating json. –<a href="f">Kevin B Jan 15'13 at 19:58</a></li>
+            </ul>
+            <a href="f">show 4 more comments</a>
+
+            <p><b>5 Answers</b></p>
+            <a href="f"> active oldest votes</a></br>
+            <button><img height="70" width="70" src="https://img.icons8.com/ios-glyphs/2x/sort-up.png"></button>
+        <p>54</p>
+        <button><img height="70" width="70" src="https://img.icons8.com/ios/2x/sort-down-filled.png"></button>
+            <img src="f">
+
+            <p>Just test if the array is empty.</p>
+            <a href="f">share|improve this answer</a><br>
+            <a href="f">edited Jan 15'13 at 20:22</a><br>
+            answer Jan 15'13 at 20:11
+            <a href="Kevin B">Kevin B</a>
+            <p>86k11139161</p>
+            <ul>
+                <li>There is no "length" property JSON Object has so if you get response with not an Array instance you will end up having "NO DATA!" message all the time even if object is not acctualy empty. How this answer ended up approved and with got more reputation than a CORRECT answer below from Mr. Arun Pratap Singh is a mistery for me. – Soul_man Mar 20 '14 at 9:46</li>
+                <li>@Soul_man Right, but in this case it was clearly an array. "@KevinB sorry the response text in the console is actually [] just that." – Kevin B Mar 20 '14 at 14:07 </li>
+                <li>In my case length is undefined – Mohammad Ashfaq Mar 26 '14 at 7:29
+                        @Mo.Ashfaq Then you don't have an array. What do you have? – Kevin B Mar 26 '14 at 14:09</li>
+            </ul>
+            <a href="f">show 3 more comments</a><br>
+            <button><img height="70" width="70" src="https://img.icons8.com/ios-glyphs/2x/sort-up.png"></button>
+        <p>59</p>
+        <button><img height="70" width="70" src="https://img.icons8.com/ios/2x/sort-down-filled.png"></button>
+            <code>// works for any Object Including JSON(key value pair) or Array.
+                    //  var arr = [];
+                    //  var jsonObj = {};
+                      if (jQuery.isEmptyObject(anyObjectIncludingJSON))
+                      {
+                         console.log("Empty Object");
+                      }</code>
+            <a href="f">share|improve this answer
+                    edited May 25 '17 at 5:33</a>
+            <p>answered Nov 28 '13 at 9:38</p>
+            <img src="file:///C:/Users/Admin/Desktop/javascript%20-%20How%20to%20check%20if%20JSON%20return%20is%20empty%20with%20jquery%20-%20Stack%20Overflow_files/4uhz4.jpg">
+            <p>add a comment</p>
+            <p>7</p>
+            <code>if (!json[0]) alert("JSON empty");</code>
+            <a href="f">share|improve this answer</a>
+            <p>answered May 27'14 at 17:02</p>
+            <img src="file:///C:/Users/Admin/Desktop/javascript%20-%20How%20to%20check%20if%20JSON%20return%20is%20empty%20with%20jquery%20-%20Stack%20Overflow_files/2a7a91f92a7a8ad41c21fe23ebb7446c">
+            <p>Justin LeveneJustin Levene
+                    9511112</p>
+            <ul>
+                <li>6
+                        Hi Justin, it's better to provide some explanation along with your code, than the asker will understand why that particular code works. – edi9999 May 27 '14 at 17:53</li>
+                <li>This is the only solution that worked for me. Can you please explain what is happening? Thanks! – eaglei22 Dec 7 '15 at 23:04</li>        
+                <li>It's checking to see if the first object exists. If JSON has anything, there will be a first object. – Justin Levene Dec 9 '15 at 7:58</li>
+                <li>this will only work with array's but not with key value object's ex. var someJSON = {'name': 'Justin Levene'} – Arun Pratap Singh Dec 10 '15 at 5:43</li>
+            </ul>
+            <p>add a comment</p>
+            <br>
+            <img src="f">
+            <p>-1</p><br>
+            <img src="f">
+            <p>You can use $.is EmotyObject(json)</p>
+            <a href="f">https://api.jquery.com/jQuery.isEmptyObject</a>
+            <a href="f">share|improve this answer</a>
+            <p>answered Mar 12'18 at 3:27</p>
+
+            <p><b>Your Answer</b></p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <p>Thanks for contributing an answer to Stack Overflow!</p>
+            <ul>
+                <li>Please be sure to answer the question. Provide details and share your research!
+                        But avoid …</li>
+                <li>Asking for help, clarification, or responding to other answers.</li>
+                <li>Making statements based on opinion; back them up with references or personal experience.</li>
+            </ul>
+            <br>
+            <p>To learn more,see our <a href="f">tips on writing great answers</a></p>
+            
+            <img src="f">
+            <input>
+
+            <p><b>Sign up or <a href="f">log in</a></b></p><br>
+            <img src="f">Sign up using Google<br>
+            <img src="f">Sign up using Facebook<br>
+            <img src="f">Sign up using Email and Password<br>
+            <br>
+            <p><b>Post as a guest</b></p>
+            <br>
+            Name<br>
+            <input><br>
+            Email
+            <p>Required but never shown</p>
+            <input>
+            <button>Post your answer</button>
+            <button>Discard</button>
+            <p>By clicking "Post Your Answer", you agree to our terms of service, privacy policy and cookie policy</p>
+    
+            <p><b>Not the answer you're looking for? Browse other questions tagged javascript jquery ajax json or ask your own question.</b></p>
+
+            <p>asked <b>6 years,2 months ago</b><br></p>
+            <p>viewed <b>125,631 times</b><br></p>
+            active <a href="f">1 years ago</a>
+        </br>
+        </br>
+            <table>
+                <tr>
+                   LOOKING FOR A JOB ? 
+                </tr>
+                <hr>
+                <tr>
+                        Senior Software Engineer
+                        AdNovum
+                </tr>
+                <hr>
+                <tr>
+                        Software Engineer (UK based)
+                        OverloopNo office location
+                        £30K - £50KREMOTE
+                </tr>
+                <hr>
+                <tr>
+                        (Senior) Front End Developer
+                        Quoine CorporationHo Chi Minh City, Vietnam
+                        $20K - $50KRELOCATION
+                </tr>
+                <hr>
+                <tr>
+                        Back End Developer
+                        Quoine CorporationHo Chi Minh City, Vietnam
+                        $15K - $75KRELOCATION
+                </tr>
+            </table>
+            <p><a href="v">93 people chatting</a></p>
+            <p><a href="f">JavaScript</a></p>
+            <p><a href="f">93 people chatting</a></p></br>
+            <a href="f">Javascript</a></br>
+            3 hours ago - <a href="f">Caprica Six</a>
+            <img src="f"><img src="f"><img src="f"><img src="f"><img src="f">
+            <a href="f">[Rebol*]</a>
+            <p>3 mins ago - </p><a href="f">HostileFork</a>
+            <img src="f"><img src="f"><img src="f"><img src="f"><img src="f">
+
+            <b>Linked</b>
+            <br>
+            <b>Related</b>
+            <br>
+            <a href="f">7134</a>
+            <a href="f">How to check if an element is hidden in jQuery?</a>
+            <a href="f">6390</a>
+            <a href="f">Can comments be used in JSON?</a>
+            <a href="f">3817</a>
+            <a href="f">How to check whether a checkbox is checked in jQuery?</a>
+            <a href="f">How to check whether a string contains a substring in JavaScript?</a>
+            <br>
+            <a href="f"><b>Hot Network Questions</b></a>
+            <br>
+            <ul>
+                <li>
+                        <a href="f">Does Doodling or Improvising on the Piano Have Any Benefits?</a>
+                </li>
+                <li>
+                        Has any country ever had 2 former presidents in jail simultaneously?
+                </li>
+                <li>
+                        Non-trope happy ending?
+                </li>
+                <li>
+                        The IT department bottlenecks progress, how should I handle this?
+                </li>
+                <li>
+                        Why does the Sun have different day lengths, but not the gas giants?
+                </li>
+                <li>
+                        Has any country ever had 2 former presidents in jail simultaneously?
+                </li>
+                <li>
+                        Non-trope happy ending?
+                </li>
+                <li>
+                        The IT department bottlenecks progress, how should I handle this?
+                </li>
+                <li>
+                        Has any country ever had 2 former presidents in jail simultaneously?
+                </li>
+                <li>
+                        Non-trope happy ending?
+                </li>
+                <li>
+                        The IT department bottlenecks progress, how should I handle this?
+                </li>
+            </ul>
+            <img src="f"> <a href="f">question feed</a>
+            <br>
+            <img src="f">
+            <br>
+            <b><a href="f">Stackoverflow</a></b>
+            <ul>
+                <li>
+                    <a href="f">Questions</a>
+                </li>
+                <li>
+                        <a href="f">Developer Jobs Directory</a>
+                </li>
+                <li>
+                        <a href="f">Salary Calculator</a>
+                    </li>
+                    <li>
+                            <a href="f">Help</a>
+                    </li>
+                    <li>
+                            <a href="f">Questions</a>
+                        </li>
+                        <li>
+                                <a href="f">Questions</a>
+                        </li>
+            </ul>
+            <br>
+            <b><a href="f">Company</a></b>
+            <br>
+            <ul>
+                    <li>
+                        <a href="f">About</a>
+                    </li>
+                    <li>
+                            <a href="f">Press</a>
+                    </li>
+                    <li>
+                            <a href="f">Work Here</a>
+                        </li>
+                        <li>
+                                <a href="f">Legal</a>
+                        </li>
+                        <li>
+                                <a href="f">Privacy Policy</a>
+                            </li>
+                            <li>
+                                    <a href="f">Contact Us</a>
+                            </li>
+                </ul>
+            <br>
+            <b><a href="f">Stack Exchange</a></b>
+            <b><a href="f">Network</a></b>
+            <br>
+            <ul>
+                    <li>
+                        <a href="f">Questions</a>
+                    </li>
+                    <li>
+                        <a href="f">Developer Jobs Directory</a>
+                    </li>
+                    <li>
+                        <a href="f">Salary Calculator</a>
+                    </li>
+                    <li>
+                         <a href="f">Help</a>
+                    </li>
+                    <li>
+                         <a href="f">Questions</a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="f">Questions</a>
+                    </li>
+                    <li>
+                        <a href="f">Salary Calculator</a>
+                    </li>
+                    <li>
+                        <a href="f">Help</a>
+                    </li>
+                    <li>
+                        <a href="f">Questions</a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="f">Questions</a>
+                    </li>
+                    <li>
+                        <a href="f">Salary Calculator</a>
+                    </li>
+                    <li>
+                        <a href="f">Help</a>
+                    </li>
+                    <li>
+                        <a href="f">Questions</a>
+                    </li>
+                </ul>
+                <br>das
+        <p>site design / logo © 2019 Stack Exchange Inc; user contributions licensed under cc by-sa 3.0 with attribution required. rev 2019.3.22.33110</p>
+    </body>
+</html>
