@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>javascript - How to check if JSON return is empty with jquery - Stackoverflow</title>
+</head>
+<body>
+    <a href="stackoverflow.com">Stack Overflow</a> 
+    <input type="text" name="search" size="50" maxlength="100" placeholder="Search..."> 
+    <button><img src="/toolbar_find.png" alt="search"/></button>
+    <a href="https://stackoverflow.com/users/10436023/th%E1%BB%A5y-%C4%91inh-qu%E1%BB%91c"><img src="/User.jpg" title="User name" alt="Username"></a>
+    <a href="https://stackexchange.com/users/14447333/th%E1%BB%A5y-%C4%91inh-qu%E1%BB%91c?tab=inbox"><img src="/inbox.jpg" title="Recent Inbox Messages" alt="Inbox"></a>
+    <a href=""><img src="/Archievement.jpg" title="Recent Archievement" alt="Archievement"></a>
+    <a href=""><img src="/Help.jpg" title="Help center and another resource" alt="Help"></a>
+    <ol>
+        <li><a href="stackoverflow.com">Home</a></li>
+        <li>Public
+            <ul>
+                <li><a href="https://stackoverflow.com/tags">Tags</a></li>
+                <li><a href="https://stackoverflow.com/users">Users</a></li>
+                <li><a href="https://stackoverflow.com/jobs?med=site-ui&ref=jobs-tab">Jobs</a></li>
+            </ul>
+        </li>
+    </ol>
+    <b>Linked</b>
+    <ol>
+        <li><a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery?answertab=active#tab-top">How to check “isEmpty()” in Gson JsonObject? </a></li>
+        <li><a href="https://stackoverflow.com/questions/41856623/cant-check-an-empty-json-key-value-pair?noredirect=1&lq=1">Can't check an empty JSON key: value pair </a></li>
+        <li><a href="https://stackoverflow.com/questions/20673790/issue-on-identifying-getjson-response-value?noredirect=1&lq=1"> issue on identifying getjson response value</a></li>
+        <li><a href="https://stackoverflow.com/questions/178325/how-do-i-check-if-an-element-is-hidden-in-jquery?rq=1">How do I check if an element is hidden in jQuery? </a></li>
+        <li><a href="https://stackoverflow.com/questions/901712/how-to-check-whether-a-checkbox-is-checked-in-jquery?rq=1"> How to check whether a checkbox is checked in jQuery?</a></li>
+        <li><a href="https://stackoverflow.com/questions/2669690/why-does-google-prepend-while1-to-their-json-responses?rq=1">Why does Google prepend while(1); to their JSON responses? </a></li>
+        <li><a href="https://stackoverflow.com/questions/477816/what-is-the-correct-json-content-type?rq=1"> What is the correct JSON content type?</a></li>
+        
+    </ol>
+    <hr>
+    <h1><a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery?answertab=active#tab-top">How to check if JSON return is empty with jquery</a></h1>
+    <p>
+        $.getJSON(url, function(json) { <br>
+            var output = ''; <br>
+            $.each(json, function(i,d) { <br>
+            
+              if(d.DESCRIPTION == 'null'){ <br> 
+                console.log("Its empty"); <br>
+              }<br>
+              var description = d.DESCRIPTION;<br>
+             output += '<tr><td>'+d.NAME+'</td><td>'+'<tr><td>'+d.DESCRIPTION+'</td><td>'; <br>
+            }); <br>
+          });<br>
+    </p>
+    <p>I tried adding the </p>
+    <p>if(d.DESCRIPTION == 'null'){ console.log("Its empty"); </p>
+    <p>To check if the object returned is empty, but it doesn't work.<br>
+        Can someone explain to me what's wrong with this?
+    </p>
+    <hr>
+    <h1> Answer</h1>
+    <strong>Just test if the array is empty.<br></strong>
+    <p>    $.getJSON(url,function(json){ <br>
+            if ( json.length == 0 ) { <br>
+                console.log("NO DATA!")<br>
+            }<br>
+        });
+    </p>
+    <hr>
+    <strong>You can use $.isEmptyObject(json)<br></strong>
+    <a href="https://api.jquery.com/jQuery.isEmptyObject">https://api.jquery.com/jQuery.isEmptyObject</a> 
+    <hr>
+    <strong>Below code(jQuery.isEmptyObject(anyObject) function is already provided) works perfectly fine, no need to write one of your own</strong>
+    <p>if (jQuery.isEmptyObject(anyObjectIncludingJSON))<br>
+        { <br>
+           console.log("Empty Object");<br>
+        }</p>
+        <hr>
+    <h1>Your Answer</h1>
+    <textarea name="useranswer" id="" cols="30" rows="10"></textarea> <br>
+    <button>Post Your Answer</button> 
+    <hr>
+    <b>Hot network questions</b>
+    <ul>
+        <li>What are some good ways to treat frozen vegetables such that they behave like fresh vegetables when stir frying them?</li>
+        <li>Why does AES have exactly 10 rounds for a 128-bit key, 12 for 192 bits and 14 for a 256-bit key size?</li>
+        <li>Find all subarray with sum equal to number?</li>
+        <li>What is the English pronunciation of "pain au chocolat"?</li>
+        <li>Why does int i = 10; i / 0; compile, but 5 / 0 gives CS0020 - Division by constant zero?</li>
+        <li>What does "Scientists rise up against statistical significance" mean? (Comment in Nature)</li>
+    </ul>
+</body>
+</html>
