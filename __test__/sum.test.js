@@ -1,3 +1,4 @@
+// kiểm tra hàm tồng 2 số
 const sum = require('../sum.js')
 
 describe('Test sum function', () => {
