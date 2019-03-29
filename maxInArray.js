@@ -33,12 +33,12 @@ function maxInArray() {
     var length = arguments.length
     var currentArray
     if (length === 0) { 
-        return -1
+        return 0
     }
 
     for (var i = 0 ; i < lengthArguments;i++) {
         if (!Array.isArray(arguments[i])) {
-            return -1
+            return 0
         }
     }
 
