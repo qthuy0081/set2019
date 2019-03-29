@@ -13,4 +13,8 @@ describe('Test sum function', () => {
   test('if a = undefined, b = 20', () => {
     expect(sum(undefined, 20)).toBe(20)
   })
+
+  test('if a = undefined, b = undefined, result = 0', () => {
+    expect(sum(undefined, undefined)).toBe(0)
+  })
 })
