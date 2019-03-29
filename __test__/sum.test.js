@@ -10,6 +10,10 @@ describe('Test sum function', () => {
     expect(sum(10)).toBe(10)
   })
 
+  test('if a = 10, b = "xyz", result = 10', () => {
+    expect(sum(10, 'xyz')).toBe(10)
+  })
+
   test('if a = undefined, b = 20', () => {
     expect(sum(undefined, 20)).toBe(20)
   })
