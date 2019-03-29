@@ -16,4 +16,12 @@ describe('Test arraySum function', () => {
   test('Test defectedArray', () => {
     expect(arraySum(testArray1, defectedArray)).toBe(23)
   })
+
+  test('Test empty array', () => {
+    expect(arraySum(emptyArray)).toBe(0)
+  })
+
+  test('Test null array', () => {
+    expect(arraySum(nullArray)).toBe(0)
+  })
 })

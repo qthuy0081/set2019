@@ -1,7 +1,7 @@
 // tổng các element trong các array
 const elementsInArraySum = require('../elementsInArraySum.js')
 const testArray = [1, 2, 3, 4, 5, 6]
-const testArrayWithUndefinedElement = [1, 2, 3, 4, 5, undefined]
+const defectedArray = [1, 2, 3, 4, 5, undefined]
 const emptyArray = []
 const nullArray = [null, null, null]
 
@@ -19,6 +19,6 @@ describe('Test elementsInArraySum function', () => {
   })
 
   test('Array has undefined element', () => {
-    expect(elementsInArraySum(testArrayWithUndefinedElement)).toBe(15)
+    expect(elementsInArraySum(defectedArray)).toBe(15)
   })
 })

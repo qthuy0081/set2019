@@ -21,4 +21,8 @@ describe('Test arrayMax function', () => {
   test('Null array', () => {
     expect(nullArray).toBe(null)
   })
+
+  test('Compare normal array and nullArray', () => {
+    expect(arrayMax(testArray1, emptyArray, nullArray)).toEqual(testArray1)
+  })
 })
