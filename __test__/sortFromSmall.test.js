@@ -19,6 +19,6 @@ describe('Test sort from small', () => {
   })
 
   test('Defected array', () => {
-    expect(sortFromSmall(defectedArray)).toEqual([undefined, undefined, null, 2, 7, 6, 12])
+    expect(sortFromSmall(defectedArray)).toEqual([undefined, undefined, null, 2, 6, 7, 12])
   })
 })
