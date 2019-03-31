@@ -1,6 +1,378 @@
-#head.fixed {
-    display: inline;
-    position: fixed;
-    top : 0;
-    width: 500px;
+* {  
+    margin:0px;
+    padding:0px;
+    border:0px; 
 }
+
+.header{
+    width: 100%;
+    height: 45px;
+    position: sticky;
+    top: 0;
+    background-color: whitesmoke;
+    border-top:3.5px solid darkorange;
+}
+
+#logo{
+    width: 10%;
+    height: 100%;
+    float: left;
+    padding-left: 7%;
+}
+
+#search{
+    width: 55%;
+    height: 100%;
+    float: left;
+    padding-left: 7%;
+    padding-top: 8px;
+}
+
+#search input{
+    width:90%;
+    float:left;
+    padding-left:3%;
+    border-radius:6px;
+}
+#search button{
+    width:5%;
+    float:left;
+    font-size:8px;
+    border-radius:6px;
+    background-color:#33adff;
+}
+
+#icon{
+    width: 20%;
+    float: right;
+    padding-top: 5px;
+    
+}
+
+#icon img{
+    padding:3%;
+    float:left;
+    width:5%;
+    text-align: center;
+}
+
+#icon a{
+    padding:1%;
+    float:left;
+    width: 20%;
+    text-align: center;
+    padding:3%;
+}
+
+#login {
+    color: blue;
+}
+
+#sign-up{
+    color: white;
+    background-color:#248cf5;
+}
+
+.content{
+    width:100%;
+    height:3000px;
+}
+
+#LeftStickyColumn{
+    width:12%;
+    height:100%;
+    padding-left:7%;
+    padding-top:20px;
+    float:left;
+    position:fixed;
+    display:block;
+}
+
+#LeftStickyColumn ul{
+    list-style: none;
+    width: 100%;
+}
+
+#LeftStickyColumn ul li{
+    padding:5% 0% 5% 2%;
+    width:100%;
+    font-weight:500;
+    color:#61666b;
+    display:block;
+}
+
+#LeftStickyColumn ul li a{
+    color:#61666b;
+}
+
+#LeftStickyColumn ul li ul li{
+    padding-left:0%;
+}       
+
+#LeftStickyColumn ul li ul li:hover{
+    background-color:#f2f2f2;
+    font-weight:900;
+    border-right:2px solid darkorange;
+    color:black;
+}
+
+#home{
+    width:100%;
+    background-color:#f2f2f2;
+}
+
+#MainColumn{
+    width:60%;
+    height:100%;
+    float:left;
+    padding-top:1%;
+    padding-left:22%;
+    padding-right:2%;
+    border-left:1px solid #e7e7e4;
+}
+
+#question{
+    width:100%;
+    font-size:30px;
+    border-bottom:1px solid #e7e7e4;
+    padding-bottom: 1%;
+    padding-left: 3%;
+}
+#submit-question{
+    width:10%;
+    float:right;
+    font-size:18px;
+    text-align: center;
+    color:white;
+    background-color:#248cf5;
+    border-radius:3px;    
+}
+#submit-question:hover{
+    background-color:#0859aa;
+}
+
+.interact{
+    width:5%;
+    height:100%;   
+    padding-top:3%;
+    text-align:center;
+    float:left;
+}
+
+.authorcontent{
+    padding-top:3%;
+    padding-left:3%;
+    padding-bottom:1%;
+    width:90%;
+    float:left;
+    height:96%;
+}
+
+#comment{
+    padding-top: 1.2%;
+    padding-bottom: 1.2%;
+}
+
+#code{  
+    padding-top: 1.2%;
+    padding-bottom: 1.2%;
+    padding-left: 1.2%;
+    background-color: #f2f2f2;
+}
+
+#jjaj{
+    background-color:#cce6ff;
+    color:#004d99;
+    padding:1%;
+    margin:1%;
+    border-radius:2px;
+}
+
+#jjaj:hover{
+    background-color:#80bfff;
+}
+
+.register{
+    width:100%;
+    height:100px;
+    border-bottom:1px solid #e7e7e4;
+}
+
+.share-improve{
+    width:20%;
+    height:100%;
+    float:left;
+    color:#737373;
+    padding:1%;
+}
+
+.editorinfo{
+    width:20%;
+    height:75%;
+    float:left;
+    color:#66b3ff;
+    padding:1%;
+}
+
+.avatar{
+    padding:1%;
+    width:15%;
+    height:70%;
+    float:left;
+}
+
+.authorinfo{
+    width:20%;
+    height:75%;
+    float:left;
+    padding:1%;
+    background-color:#e6f2ff;
+}
+
+.info{
+    width:70%;
+    height:70%;
+    float:left;
+    padding:2%;
+    text-align:center;
+}
+
+.view{
+    width:25%;
+    height:100%;
+    float:left;
+    color:#666666;
+}
+
+.gold{
+    width:25%;
+    height:100%;
+    float:left;
+    color:yellow;
+}
+
+.silver{
+    width:25%;
+    height:100%;
+    float:left;
+    color:silver;
+}
+
+.copper{
+    width:25%;
+    height:100%;
+    float:left;
+    color:goldenrod;
+}
+
+.reply{
+    padding-left:8%;
+    width:80%;
+    height:100%;
+}
+
+.like{
+    width:5%;
+    height:100%;
+    float:left;
+    color:coral;
+}
+
+.reply-contain{
+    width:95%;
+    height:90%;
+    float:left;
+    background-color:white;
+    text-align:left;
+    border-bottom:1px solid #e7e7e4;
+    padding-bottom:3%;
+}
+
+.name{
+    color:#99ccff;
+}
+
+.day{
+    color:#999999;
+}
+
+
+.recruit{
+    width:15%;
+    height:100%;
+    float:right;
+}
+
+#status{
+    height:5%;
+    width:100%;
+    padding:15% 0%;
+    font-size:15px;
+}
+
+#status a{
+    color:#a6a6a6;
+}
+
+#title{
+    width:100%;
+    height:10%;
+    background-color:#248cf5;
+    text-align:center;
+    font-size:18px;
+    color:white;
+    padding-top:5%;
+}
+
+.position{
+    width:100%;
+    height:20%;
+    font-size:12px;
+    padding:3% 5%;
+    border-bottom:1px solid #bfbfbf;
+}
+
+.position button{
+    height:21px;
+    background-color:#c8e1ec;
+    padding:5px 10px;
+}
+
+#job{
+    width:100%;
+    text-align:center;
+    font-size:12px;
+    padding:4%;
+}
+
+#job a{
+    
+    text-decoration:none;
+    color:#005580;
+}
+
+#linked{
+    font-size:24px;
+    color:black;
+    width:100%;
+    height:10%;
+}
+
+.linked-button{
+    width:15%;
+    height:10%;
+    background-color:#00cc66;
+    border-radius:3px;
+    color:white;
+    margin-right:3%;
+}
+
+.linked-button:hover{
+    background-color:#00995c;
+}
+
+#linked a{
+    text-decoration:none;
+    color:#005ce6;
+    font-size:15px;
+}   

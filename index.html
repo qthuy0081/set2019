@@ -6,600 +6,271 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>javascript - How to check if JSON return is empty with jquery - Stack Overflow</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">a:link {text-decoration: none}</style>
 </head>
 <body>
-    <div id="head" class="fixed">
-        <a href="https://stackoverflow.com/">Stack Overflow</a>
-        <br/>
-        <input placeholder="Search..."/>
-        <button><img src="Search.png" width="15px" height="15px"></button>
-        <br/>
-        <ol>
-            <li><img src="Search.png" width="20px" height="20px"></li>
-            <li><img src="Recent inbox message.png" width="20px" height="20px"></li>
-            <li><img src="Achievement.png" width="20px" height="20px"></li>
-            <li><img src="Help.png" width="20px" height="20px"></li>
-            <li><img src="List.png" width="20px" height="20px"></li>
-            <li>
-                <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f14345761%2fhow-to-check-if-json-return-is-empty-with-jquery">Log In</a> 
-                <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent">Sign Up</a>
-            </li>
+    <div class="header">
+        <div id="logo">
+            <a href="https://stackoverflow.com/"><img src="Logo.png" width="150px" height="45px"></a>
+        </div>
+        <div id="search">
+            <input placeholder="Search..." size="80" style="height: 30px"/>
+            <button><img src="Search.png" width="20px" height="30px"></button>
+        </div>
+        <div id="icon">
+            <img src="Recent inbox message.png" width="20px" height="20px">
+            <img src="Achievement.png" width="20px" height="20px">
+            <img src="Help.png" width="20px" height="20px">
+            <img src="List.png" width="20px" height="20px">
+            <a id="login" href="https://stackoverflow.com/users/login?ssrc=head">Log In</a> 
+            <a id="sign-up" href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent">Sign Up</a>
+        </div>
     </div>
-            <li>
-                <b><h3><a href="https://stackoverflow.com/">current community</a></h3></b>
-            </li>
-            <p>
-                <ul>
-                        <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
-                        <a href="https://chat.stackoverflow.com/">help</a> 
-                        <a href="https://chat.stackoverflow.com/">chat</a>
-                        <li><a href="https://meta.stackoverflow.com/">Meta Stack Overflow</a></li>
-                </ul>
-            </p>
-            <p><h3>your communities</h3></p>
-            <p>
-                <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent">Sign up</a>
-                or
-                <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f14345761%2fhow-to-check-if-json-return-is-empty-with-jquery">log in</a> 
-                to customize your list
-            </p>
-            <p>
-                <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a></h3>
-            </p>
-            <p>
-                <a href="https://stackoverflow.blog/">company blog</a>
-                <ul>
-                    <li><a href="https://stackoverflow.com/tour">Tour Start here for a quick overview of the site</a></li>
-                    <li><a href="https://stackoverflow.com/help">Help Center Detailed answers to any questions you might have</a></li>
-                    <li><a href="https://meta.stackoverflow.com/">Meta Discuss the workings and policies of this site</a></li>
-                    <li><a href="https://stackoverflow.com/company/about">About Us Learn more about Stack Overflow the company</a></li>
-                    <li><a href="https://www.stackoverflowbusiness.com/?ref=topbar_help">Business Learn more about hiring developers or posting ads with us</a></li>
-                </ul>
-            </p>
-        </ol>
-    <p>By using our site, you acknowledge that you have read and understand our <a href="https://stackoverflow.com/legal/cookie-policy">Cookie Policy</a>, <a href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a>, and our <a href="https://stackoverflow.com/legal/terms-of-service/public">Terms of Service.</a></p>
-    <p><img src="close.png" width="20px" height="20px"></p>
-    <ol>
-        <li></li>
-        <li><a href="https://stackoverflow.com/">Home</a></li>
-        <li>
-            <ol>
-                <li>Public</li>
-                <li><img src="Earth.png" width="15px" height="15px"> <a href="https://stackoverflow.com/questions">Stack Overflow</a></li>
-                <li><a href="https://stackoverflow.com/tags">Tags</a></li>
-                <li><a href="https://stackoverflow.com/users">Users</a></li>
-                <li><a href="https://stackoverflow.com/jobs?med=site-ui&ref=jobs-tab">Jobs</a></li>
-            </ol>
-        </li>
-        <li>
-            <ol>
-                <li>Teams</li>
+    <div id="content">
+        <div id="LeftStickyColumn">         
+            <ul>
+                <li id="home"><a href="https://stackoverflow.com/">Home</a></li>
                 <li>
-                    <img src="Plus.jpg" width="15px" height="15px"><a href="https://stackoverflow.com/teams"> Create Team</a>
-                    <br/>
-                    <img src="Close.png" width="15px" height="15px">    
-                    <br/><br/>
-                    Q&A for work. A dedicated place to share your team's knowledge.              
+                    <ul>
+                        PUBLIC    
+                        <li><img src="Earth.png" width="15px" height="15px"> <a href="https://stackoverflow.com/questions">Stack Overflow</a></li>
+                        <li><a href="https://stackoverflow.com/tags">&nbsp &nbsp &nbsp Tags</a></li>
+                        <li><a href="https://stackoverflow.com/users">&nbsp &nbsp &nbsp Users</a></li>
+                        <li><a href="https://stackoverflow.com/jobs?med=site-ui&ref=jobs-tab">&nbsp &nbsp &nbsp Jobs</a></li>
+                    </ul>
                 </li>
-            </ol>
-        </li>
-    </ol>    
-    <img src="1.png">
-    <br/>
-    <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery"><h1>How to check if JSON return is empty with jquery</h1></a>
-    <a href="https://stackoverflow.com/questions/ask">Ask Question</a>  
-    <br/>
-    <button><img src="Up.png" width="40px" height="40px"></button>   
-    <br/>  
-    <button><img src="Down.png" width="40px" height="40px"></button>     
-    <br/>
-    <button><img src="Star.png" width="20px" height="40px"></button>
-    <p>$.getJSON(url, function(json) {<br/>
-        &nbsp &nbsp var output = '';<br/>
-        &nbsp &nbsp $.each(json, function(i,d) {<br/>
-        &nbsp &nbsp &nbsp &nbsp if(d.DESCRIPTION == 'null'){<br/>
-        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp console.log("Its empty");<br/>
-        &nbsp &nbsp &nbsp &nbsp }<br/>
-        &nbsp &nbsp &nbsp &nbsp var description = d.DESCRIPTION;<br/>
-        &nbsp &nbsp &nbsp &nbsp output += '<tr><td>'+d.NAME+'</td><td>'+'<tr><td>'+d.DESCRIPTION+'</td><td>';<br/>
-        &nbsp &nbsp });<br/>
-        });<br/>
-        I tried adding the<br/>
-        if(d.DESCRIPTION == 'null'){ console.log("Its empty");<br/>
-        to check if the object returned is empty, but it doesn't work.<br/>
-        Can someone explain to me what's wrong with this?
-    </p>
-    <a href="https://stackoverflow.com/questions/tagged/javascript">javascript</a>
-    <a href="https://stackoverflow.com/questions/tagged/jquery">jquery</a>
-    <a href="https://stackoverflow.com/questions/tagged/ajax">ajax</a>
-    <a href="https://stackoverflow.com/questions/tagged/json">json</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/14345761">share|</a>
-    <a href="https://stackoverflow.com/posts/14345761/edit">improve this question</a>
-    <br/>
-    <a href="https://stackoverflow.com/posts/14345761/edit">edited Jul 6 '16 at 9:38</a>
-    <br/>
-    <a href="https://stackoverflow.com/users/1323517/comiventor"><img src="Comiventor.jpg"/></a>
-    <br/>
-    <a href="https://stackoverflow.com/users/1323517/comiventor">comiventor</a>
-    <br/>
-    1,4512342
-    <br/>
-    asked Jan 15 '13 at 19:56
-    <br/>
-    <a href="https://stackoverflow.com/users/522768/baconjuice"><img src="BaconJuice.png"/></a>
-    <br/>
-    <a href="https://stackoverflow.com/users/522768/baconjuice">BaconJuice</a>BaconJuice
-    <br/>   
-    1,15683373
-    <br/>
-    <ul>
-        <li>
-            If you upgrade to jQuery 1.9, it will properly go to the error callback if a json string is not returned. –
-            <a href="https://stackoverflow.com/users/400654/kevin-b">Kevin B </a>
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment19942101_14345761">Jan 15'13 at 19:57</a>
-        </li>
-        <li>
-            if (d && d.length) – 
-            <a href="https://stackoverflow.com/users/965051/adeneo">adeneo </a>
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment19942135_14345761">Jan 15 '13 at 19:57</a>
-            <img src="Edit.png" width="15px" height="15px">
-        </li>
-        <li>
-            2
-            <br/>
-            If you instead want to check if an object of the array contains empty data, we would need to see exactly what is being returned in your json string as it may be different depending on server-side language and your method of 
-            <br/>
-            generating json. – 
-            <a href="https://stackoverflow.com/users/400654/kevin-b">Kevin B </a>
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment19942150_14345761">Jan 15'13 at 19:58</a>
-        </li>
-        <li>
-            @KevinB all I get back is a text "null" on console – 
-            <a href="https://stackoverflow.com/users/522768/baconjuice">BaconJuice
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment19942214_14345761">Jan 15'13 at 20:00</a>
-        </li>
-        <li>
-            @adeneo tried it. Doesn't work =/ – 
-            <a href="https://stackoverflow.com/users/522768/baconjuice">BaconJuice
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment19942271_14345761">Jan 15'13 at 20:02</a>
-        </li>
-    </ul>
-    | &nbsp<a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#">show <b>4</b> more comments</a>
-    <p><h1>5 Answers</h1></p>
-    <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery?answertab=active#tab-top">active</a>
-    <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery?answertab=oldest#tab-top">oldest</a>
-    <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery?answertab=votes#tab-top">votes</a>
-    <br/>
-    <button><img src="Up.png" width="40px" height="40px"></button>   
-    <br/>  
-    <button><img src="Down.png" width="40px" height="40px"></button>     
-    <br/>
-    <button><img src="Check.png" width="20px" height="30px"></button>
-    <p>
-        Just test if the array is empty
-        <br/> <br/>
-        $.getJSON(url, function(json) {
-        <br/>
-        &nbsp &nbsp &nbsp &nbsp if( json.lenght == 0){
-        <br/>
-        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp console.log("Its empty");
-        <br/>
-        &nbsp &nbsp &nbsp &nbsp }
-        <br/>
-        });
-    </p>
-    <a href="https://stackoverflow.com/a/14346020">share|</a>
-    <a href="https://stackoverflow.com/posts/14346020/edit">improve this answer</a>
-    <br/>
-    <a href="https://stackoverflow.com/posts/14346020/revisions">edited Jan 15 '13 at 20:22</a>
-    <br/>
-    <span>answered Jan 15 '13 at 20:11</span> 
-    <br/>
-    <a href="https://stackoverflow.com/users/400654/kevin-b"><img src="KevinB.png"/></a>
-    <br/>
-    <a href="https://stackoverflow.com/users/400654/kevin-b">Kevin B</a><span>Kevin B</span>
-    <br/>
-    <span>86k11139161</span>
-        <ul>
-            <li>
-                8
+                <li>Teams
+                    <ul>
+                        <li>
+                            <a href="https://stackoverflow.com/teams">+ Create Team</a>           
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="MainColumn">
+            <div id="question">
+                    How to check if JSON is empty with jquery
+                    <button type="submit" id="submit-question">Ask Question</button>
+            </div>
+            <div class="interact">
+                <img src="Up.png" width="40px" height="40px">
+                <br/>  
+                <img src="Down.png" width="40px" height="40px">   
                 <br/>
-                There is no "length" property JSON Object has so if you get response with not an Array instance you will end up having "NO DATA!" message all the time even if object is not acctualy empty. How this answer ended up <br/>
-                approved and with got more reputation than a CORRECT answer below from Mr.Arun Pratap Singh is a mistery for me. – 
-                <a href="https://stackoverflow.com/users/1224030/soul-man">Soul_man</a>
-                <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment34282463_14346020">Mar 20 '14 at 9:46</a>
-            </li>
-            <li>
-                @Soul_man Right, but in this case it was clearly an array. "@KevinB sorry the response text in the console is actually [] just that." – 
-                <a href="https://stackoverflow.com/users/400654/kevin-b">Kevin B</a>
-                <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment34294054_14346020">Mar 20 '14 at 14:07</a>
-                <img src="Edit.png" width="15px" height="15px"/>
-            </li>
-            <li>
-                1
-                <br/>
-                In my case length is undefined – 
-                <a href="https://stackoverflow.com/users/2456732/mohammad-ashfaq">Mohammad Ashfaq</a>
-                <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment34505448_14346020">Mar 26 '14 at 7:29</a>
-            </li>
-            <li>
-                @Mo.Ashfaq Then you don't have an array. What do you have? – 
-                <a href="https://stackoverflow.com/users/400654/kevin-b">Kevin B</a>
-                <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment34521715_14346020">Mar 20 '14 at 14:09</a>
-                <img src="Edit.png" width="15px" height="15px"/>
-            </li>
-            <li>
-                3
-                <br/>
-                @amit_kumar yes it does. – 
-                <a href="https://stackoverflow.com/users/400654/kevin-b">Kevin B</a>
-                <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment78388633_14346020">Aug 16 '17 at 13:44</a>
-            </li>
-        </ul>
-    <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#">| show <b>3</b> more comments</a>
-    <br/> <br/>
-    <img src="2.png"/>
-    <br/> <br/>
-    <button><img src="Up.png" width="40px" height="40px"></button>   
-    <br/>  
-    <button><img src="Down.png" width="40px" height="40px"></button>     
-    <br/>
-    <button><img src="Check.png" width="20px" height="30px"></button>
-    <p>
-            Below code(<b>jQuery.isEmptyObject(anyObject)</b> function is already provided) works perfectly fine, no need to write one of your own.
-            <br/>
-            // works for any Object Including JSON(key value pair) or Array.
-            <br/>
-            // var arr = [];
-            <br/>
-            // var jsonObj = {};
-            <br/>
-            &nbsp &nbsp &nbsp if (jQuery.isEmptyObject(anyObjectIncludingJSON))
-            <br/>
-            &nbsp &nbsp &nbsp {
-            <br/>
-            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp console.log("Empty Object");
-            <br/>
-            &nbsp &nbsp &nbsp }
-    </p>
-    <a href="https://stackoverflow.com/a/20262434">share|</a>
-    <a href="https://stackoverflow.com/posts/20262434/edit">improve this answer</a>
-    <br/>
-    <a href="https://stackoverflow.com/posts/20262434/revisions">edited May 25 '17 at 5:33</a>
-    <br/>
-    <span>answered Nov 28 '13 at 9:38</span>
-    <br/>
-    <a href="https://stackoverflow.com/users/2131816/arun-pratap-singh"><img src="Arun.jpg"/></a>
-    <br/>
-    <a href="https://stackoverflow.com/users/2131816/arun-pratap-singh">Arun Pratap Singh</a>Arun Pratap Singh
-    <br/>
-    <span>2,2161816</span>
-    <br/> <br/>
-    <span>add a comment |</span> 
-    <br/>
-    <button><img src="Up.png" width="40px" height="40px"></button>   
-    <br/>  
-    <button><img src="Down.png" width="40px" height="40px"></button>     
-    <br/>
-    <button><img src="Check.png" width="20px" height="30px"></button>
-    <p>
-        if (!json[0]) alert("JSON empty");
-    </p>
-    <a href="https://stackoverflow.com/a/23895055">share|</a>
-    <a href="https://stackoverflow.com/posts/23895055/edit">improve this answer</a>
-    <br/>
-    <span>answered May 27 '14 at 17:02</span>
-    <br/>
-    <a href="https://stackoverflow.com/users/1938802/justin-levene"><img src="Justin.png"/></a>
-    <br/>
-    <a href="https://stackoverflow.com/users/1938802/justin-levene">Justin Levene</a>Justin Levene
-    <br/>
-    <span>9511112</span>
-    <br/>
-    <ul>
-        <li>
-            6
-            <br/>
-            Hi Justin, it's better to provide some explanation along with your code, than the asker will understand why that particular code works. – 
-            <a href="https://stackoverflow.com/users/1993501/edi9999">edi9999 </a>
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment36791392_23895055">May 27 '14 at 17:53</a>
-        </li>
-        <li>
-            This is the only solution that worked for me. Can you please explain what is happening? Thanks! – 
-            <a href="https://stackoverflow.com/users/1794106/eaglei22">eaglei22</a>
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment56037991_23895055">Dec 7 '15 at 23:04</a>
-        </li>
-        <li>
-            It's checking to see if the first object exists. If JSON has anything, there will be a first object. – 
-            <a href="https://stackoverflow.com/users/1938802/justin-levene">Justin Levene</a>
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment56093746_23895055">Dec 9 '15 at 7:58</a>
-        </li>
-        <li>
-            this will only work with array's but not with key value object's ex. var someJSON = {'name': 'Justin Levene'} – 
-            <a href="https://stackoverflow.com/users/2131816/arun-pratap-singh">Arun Pratap Singh</a>
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment56134941_23895055">Dec 10 '15 at 5:43</a>
-        </li>
-    </ul>
-    <span>add a comment |</span>
-    <br/>
-    <button><img src="Up.png" width="40px" height="40px"></button>   
-    <br/>  
-    <button><img src="Down.png" width="40px" height="40px"></button>     
-    <br/>
-    <button><img src="Check.png" width="20px" height="30px"></button>
-    <p>
-        You can use $.isEmptyObject(json)
-    </p>
-    <p>
-        <a href="https://api.jquery.com/jQuery.isEmptyObject">https://api.jquery.com/jQuery.isEmptyObject</a>
-    </p>
-    <a href="https://stackoverflow.com/a/49227763">share|</a>
-    <a href="https://stackoverflow.com/posts/49227763/edit">improve this answer</a>
-    <br/>
-    <span>answered Mar 12 '18 at 3:27</span>
-    <br/>
-    <a href="https://stackoverflow.com/users/8680317/hassan-almasri"><img src="Hassan.png" width="35px" height="35px"/></a>
-    <br/>
-    <a href="https://stackoverflow.com/users/8680317/hassan-almasri">Hassan ALmasri</a>Hassan ALmasri
-    <br/>
-    <span>71</span>
-    <br/>
-    <ul>
-        <li>
-            1
-            <br/>
-            This is more or less just repeating 
-            <a href="https://stackoverflow.com/a/20262434">this existing answer. – </a>
-            <a href="https://stackoverflow.com/users/1402846/pang">Pang</a>
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment85459473_49227763">Mar 12 '18 at 4:03</a>
-        </li>
-    </ul>
-    <span>add a comment |</span>
-    <br/>
-    <button><img src="Up.png" width="40px" height="40px"></button>   
-    <br/>  
-    <button><img src="Down.png" width="40px" height="40px"></button>     
-    <br/>
-    <button><img src="Check.png" width="20px" height="30px"></button>
-    <p>
-        $.getJSON(url,function(json){
-        <br/>
-        if ( json.length == 0 ) 
-        <br/>
-        {
-        <br/>
-        console.log("NO !")
-        <br/>
-        }
-        <br/>
-        });
-    </p>
-    <a href="https://stackoverflow.com/a/32116286">share|</a>
-    <a href="https://stackoverflow.com/posts/32116286/edit">improve this answer</a>
-    <br/>
-    <span>answered Aug 20 '15 at 10:51</span>
-    <br/>
-    <a href="https://stackoverflow.com/users/5247088/ranjith"><img src="Ranjith.jpg"/></a>
-    <br/>
-    <a href="https://stackoverflow.com/users/5247088/ranjith">Ranjith</a>Ranjith
-    <br/>
-    <span>192</span>
-    <br/>
-    <ul>
-        <li>
-            4
-            <br/>
-            Hi, welcome to Stack Overflow. Please check out 
-            <a href="http://meta.stackexchange.com/q/7656">how to write good answers.</a>
-            Also, this question has been answered a long time ago, we'll be glad if you devote your time to more 
-            <a href="http://stackoverflow.com/questions">recent questions.</a>
-            –
-            <a href="https://stackoverflow.com/users/2032064/mifeet">Miffet</a>
-            <a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#comment52128684_32116286">Aug 20 '15 at 12:24</a>
-        </li>
-    </ul>
-    <span>add a comment |</span>
-    <br/> <br/>
-    <h1>Your Answer</h1>
-    <input type="text" name="text" style="width: 600px; height:200px;padding-top:0px;" />
-    <br/>
-    Thanks for contributing an answer to Stack Overflow!
-    <ul>
-        <li>Please be sure to answer the question. Provide details and share your research!</li>
-    </ul> 
-    But avoid …
-    <ul>
-        <li>Asking for help, clarification, or responding to other answers.</li>
-        <li>Making statements based on opinion; back them up with references or personal experience.</li>
-    </ul> 
-    To learn more, see our <a href="https://stackoverflow.com/help/how-to-answer">tips on writing great answers.</a>
-    <h3><b>Sign up or <a href="https://stackoverflow.com/users/login?ssrc=question_page&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f14345761%2fhow-to-check-if-json-return-is-empty-with-jquery%23new-answer">log in</a></b></h3>
-    <button type="button" style="text-align:center;width:300px;height:30px;margin:5px;" ><img src="Google.jpg" width="15px" height="15px"/>Sign up using Google</button>
-    <br/>
-    <button type="button" style="text-align:center;width:300px;height:30px;margin:5px"><img src="Facebook.png" width="15px" height="15px"/> Sign up using Facebook</button>
-    <br/>
-    <button type="button" style="text-align:center;width:300px;height:30px;margin:5px;" ><img src="Stack.png" width="15px" height="15px"/> Sign up using Email and Password</button>
-    <h3><b>Post as a guest</b></h3>
-    Name
-    <br/>
-    <input type="text"/>
-    <br/>
-    Email
-    <br/> <br/>
-    Required, but never shown
-    <br/> <br/>
-    <input type="email"/>
-    <br/>
-    <button type="button" style="text-align:center;width:150px;height:30px;margin:5px;">Post Your Answer</button>
-    <button type="button" style="text-align:center;width:150px;height:30px;margin:5px;">Discard</button>
-    <br/>
-    <i>By clicking "Post Your Answer", you agree to our 
-    <a href="https://stackoverflow.com/legal/terms-of-service/public">terms of service</a>,
-    <a href="https://stackoverflow.com/legal/privacy-policy"> privacy policy</a> and 
-    <a href="https://stackoverflow.com/legal/cookie-policy">cookie policy</a></i>
-    <br/>
-    <h2>
-        Not the answer you're looking for? Browse other questions tagged 
-        <a href="https://stackoverflow.com/questions/tagged/javascript">javascript</a> 
-        <a href="https://stackoverflow.com/questions/tagged/jquery">jquery</a> 
-        <a href="https://stackoverflow.com/questions/tagged/ajax">ajax</a> 
-        <a href="https://stackoverflow.com/questions/tagged/json">json</a> or \
-        <a href="https://stackoverflow.com/questions/ask">ask your own question</a>
-        .
-    </h2>
-    <br/>
-    asked &nbsp &nbsp &nbsp &nbsp<b>6 years, 2 months ago</b>
-    <br/> <br/>
-    viewed  &nbsp &nbsp &nbsp<b>125,719 times</b>
-    <br/> <br/>
-    active  &nbsp &nbsp &nbsp<a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery?lastactivity"><b>1 year ago</b></a>   
+                <img src="Star.png" width="40px" height="40px">
+            </div>
+            <div id="content">
+                <div class="authorcontent">
+                    <div id="code">
+                        $.getJSON(url, function(json) {<br/>
+                        &nbsp &nbsp var output = '';<br/>
+                        &nbsp &nbsp $.each(json, function(i,d) {<br/>
+                        &nbsp &nbsp &nbsp &nbsp if(d.DESCRIPTION == 'null'){<br/>
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp console.log("Its empty");<br/>
+                        &nbsp &nbsp &nbsp &nbsp }<br/>
+                        &nbsp &nbsp &nbsp &nbsp var description = d.DESCRIPTION;<br/>
+                        &nbsp &nbsp &nbsp &nbsp output += '<tr><td>'+d.NAME+'</td><td>'+'<tr><td>'+d.DESCRIPTION+'</td><td>';<br/>
+                        &nbsp &nbsp });<br/>
+                        });<br/>
+                    </div>
+                    <div id="comment">
+                        I tried adding the<br/>
+                    </div>
+                    <div id="code">
+                        if(d.DESCRIPTION == 'null'){ console.log("Its empty");
+                    </div>
+                    <div id="comment">
+                        to check if the object returned is empty, but it doesn't work.<br/>
+                        Can someone explain to me what's wrong with this?
+                    </div>
 
-    <div style="width:600px;height:700px;" >
-        <div style="width:100%px;height:50px;background-color:#ff4800;text-align:center;color:white;" ><h3>Jobs near you</h3></div>
-            <div style="width:100%px;height:150px;" >
-                <font color="#b3d9ff"><h5>Back End Developer</h5></font>
-                <h5>Quoine Corporation &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></h5>
-                <h5><font color="green">$15K - $75K</font>&nbsp<font color="#e6f2ff">RELOCATION</font></h5>
-                <button type="button" style="background-color:#ff4800;text-align:center;height:30px;margin:5px;font-color:white;"><font color="blue">java</font></button>
-                <button type="button" style="background-color:#ff4800;text-align:center;height:30px;margin:5px;font-color:white;"><font color="blue">ruby-on-rails</font></button>
+                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/javascript">javascript</a>
+                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/jquery">jquery</a>
+                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/ajax">ajax</a>
+                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/json">json</a>    
+
+                    <div class="register">
+                        <div class="share-improve">share|improve this answer</div>
+                        <div class="editorinfo">edited Jan 15 '13 at 20:22<br/>
+                            <div class="avatar"> <a href="https://stackoverflow.com/users/1323517/comiventor"><img src="Comiventor.jpg" style="width:100%;height:80%;"/></a></div>
+                            <div class="info"> <a href="https://stackoverflow.com/users/1323517/comiventor">comiventor</a><br/>
+                                <div class="view"><b>1466</b></div>
+                                <div class="silver">&nbsp 24</div>
+                                <div class="copper">&nbsp 43</div>
+                            </div>
+                        </div>
+                        <div class="authorinfo">answered Jan 15 '13 at 20:11<br/>
+                            <div class="avatar"><a href="https://stackoverflow.com/users/522768/baconjuice"><img src="BaconJuice.png" style="width:100%;height:80%;"/></a></div>
+                            <div class="info"><a href="https://stackoverflow.com/users/522768/baconjuice">BaconJuice</a><br/>
+                                <div class="view"><b>1156</b></div>
+                                <div class="gold">&nbsp 8</div>
+                                <div class="silver">&nbsp 33</div>
+                                <div class="copper">&nbsp 73</div>                                
+                            </div>
+                        </div>                        
+                    </div>
+                </div>      
+                
+            </div>  
+            <div class="reply">
+                <div class="like">1</div>
+                <div class="reply-contain">
+                    There is no "length" property JSON Object has so if you get response with not an Array instance you
+                    will end up having "NO DATA!" message all the time even if object is not acctualy empty. How this
+                    answer ended up approved and with got more reputation than a CORRECT answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
+                    <br/>
+                </div>
             </div>
-            <div style="width:100%px;height:150px;" >
-                <font color="#b3d9ff"><h5>Senior Software Engineer</h5></font>
-                <h5>AdNovum &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></h5>
-                <button type="button" style="background-color:#ff4800;text-align:center;height:30px;margin:5px;font-color:white;"><font color="blue">java</font></button>
-                <button type="button" style="background-color:#ff4800;text-align:center;height:30px;margin:5px;font-color:white;"><font color="blue">spring</font></button>
+            <div class="reply">
+                <div class="like">2</div>
+                <div class="reply-contain">
+                    @There is no "length" property JSON Object has so if you get response with not an Array instance you
+                    answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
+                    <br/>
+                </div>
             </div>
-            <div style="width:100%px;height:150px;" >
-                <font color="#b3d9ff"><h5>DevOps Engineer</h5></font>
-                <h5>Quoine Corporation &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></h5>
-                <h5><font color="green">$35K - $66K</font>&nbsp<font color="#e6f2ff">RELOCATION</font></h5>
-                <button type="button" style="background-color:#ff4800;text-align:center;height:30px;margin:5px;font-color:white;"><font color="blue">heroku</font></button>
-                <button type="button" style="background-color:#ff4800;text-align:center;height:30px;margin:5px;font-color:white;"><font color="blue">amazon-ec2</font></button>
-            </div>
-            <div style="width:100%px;height:150px;" >
-                <font color="#b3d9ff"><h5>(Senior) Front End Developer</h5></font>
-                <h5>Quoine Corporation &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></h5>
-                <h5><font color="green">$20K - $50K</font>&nbsp<font color="#e6f2ff">RELOCATION</font></h5>
-                <button type="button" style="background-color:#ff4800;text-align:center;height:30px;margin:5px;font-color:white;"><font color="blue">reactjs</font></button>
-                <button type="button" style="background-color:#ff4800;text-align:center;height:30px;margin:5px;font-color:white;"><font color="blue">cotinuous-integration</font></button>
+            <div class="reply">
+                <div class="like">9</div>
+                <div class="reply-contain">
+                    @There is no "length" property JSON Object has so if you get response with not an Array instance you
+                    answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
+                    <br/>
+                </div>
             </div>
         </div>
-    </div>     
-    <br/> <br/> <br/>
-    <b>Linked</b>
-    <br/> <br/>
-    <a href="https://stackoverflow.com/q/34215424?lq=1&lq=1">9</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/34215424/how-to-check-isempty-in-gson-jsonobject?noredirect=1&lq=1&lq=1">How to check “isEmpty()” in Gson JsonObject?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/41856623?lq=1&lq=1">1</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/41856623/cant-check-an-empty-json-key-value-pair?noredirect=1&lq=1&lq=1">https://stackoverflow.com/questions/41856623/cant-check-an-empty-json-key-value-pair?noredirect=1&lq=1&lq=1</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/20673790?lq=1&lq=1">0</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/20673790/issue-on-identifying-getjson-response-value?noredirect=1&lq=1&lq=1">issue on identifying getjson response value</a>
-    <br/> <br/>
-    <b>Related</b>
-    <br/> <br/>
-    <a href="https://stackoverflow.com/q/178325?rq=1&rq=1">7136</a>        
-    <br/>
-    <a href="https://stackoverflow.com/questions/178325/how-do-i-check-if-an-element-is-hidden-in-jquery?rq=1&rq=1">How do I check if an element is hidden in jQuery?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/244777?rq=1&rq=1">6394</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/244777/can-comments-be-used-in-json?rq=1&rq=1">Can comments be used in JSON?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/426258?rq=1&rq=1">3819</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/426258/setting-checked-for-a-checkbox-with-jquery?rq=1&rq=1">Setting “checked” for a checkbox with jQuery?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/426258?rq=1&rq=1">9583</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/477816/what-is-the-correct-json-content-type?rq=1&rq=1">What is the correct JSON content type?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/426258?rq=1&rq=1">7732</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/503093/how-do-i-redirect-to-another-webpage?rq=1&rq=1">How do I redirect to another webpage?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/426258?rq=1&rq=1">4172</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/901712/how-to-check-whether-a-checkbox-is-checked-in-jquery?rq=1&rq=1">How to check whether a checkbox is checked in jQuery?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/426258?rq=1&rq=1">7434</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/2669690/why-does-google-prepend-while1-to-their-json-responses?rq=1&rq=1">How to check whether a string contains a substring in JavaScript?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/426258?rq=1&rq=1">3786</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/2669690/why-does-google-prepend-while1-to-their-json-responses?rq=1&rq=1">Why does Google prepend while(1); to their JSON responses?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/426258?rq=1&rq=1">4799</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call?rq=1&rq=1">How do I return the response from an asynchronous call?</a>
-    <br/>
-    <a href="https://stackoverflow.com/q/426258?rq=1&rq=1">4522</a>
-    <br/>
-    <a href="https://stackoverflow.com/questions/14994391/thinking-in-angularjs-if-i-have-a-jquery-background?rq=1&rq=1">“Thinking in AngularJS” if I have a jQuery background?</a>
-    <br/> <br/>
-    <b><a href="https://stackexchange.com/questions?tab=hot">Hot Network Questions</a></b>
-    <ul>
-        <li><a href="https://networkengineering.stackexchange.com/questions/57903/are-the-ipv6-address-space-and-ipv4-address-space-completely-disjoint">Are the IPv6 address space and IPv4 address space completely disjoint?</a></li>
-        <li><a href="https://math.stackexchange.com/questions/3160109/can-i-use-seifert-van-kampen-theorem-infinite-times">Can I use Seifert-van Kampen theorem infinite times</a></li>
-        <li><a href="https://economics.stackexchange.com/questions/27434/need-a-math-help-for-the-cagans-model-in-macroeconomics">Need a math help for the Cagan's model in macroeconomics</a></li>
-        <li><a href="https://academia.stackexchange.com/questions/126930/a-social-experiment-what-is-the-worst-that-can-happen">A social experiment. What is the worst that can happen?</a></li>
-        <li><a href="https://scifi.stackexchange.com/questions/207720/creepy-dinosaur-pc-game-identification">Creepy dinosaur pc game identification</a></li>
-        <li><a href="https://academia.stackexchange.com/questions/126963/reply-no-position-while-the-job-posting-is-still-there">Reply 'no position' while the job posting is still there</a></li>
-        <li><a href="https://puzzling.stackexchange.com/questions/80939/lowest-total-scrabble-score">Lowest total scrabble score</a></li>
-        <li><a href="https://ell.stackexchange.com/questions/202065/what-is-different-between-do-you-interest-vs-interested-in-something">what is different between Do you interest vs interested in something?</a></li>
-        <li><a href="https://cs.stackexchange.com/questions/105969/longest-common-substring-in-linear-time">Longest common substring in linear time</a></li>
-    </ul>
-    <br/>
-    <h4><a href="https://stackoverflow.com/feeds/question/14345761">question feed</a></h4>
-    <br/>
-    <h4><a href="https://stackoverflow.com/">Stack Overflow</a></h4>
-    <ul>
-        <li><a href="https://stackoverflow.com/questions">Questions</a></li>
-        <li><a href="https://stackoverflow.com/jobs">Jobs</a></li>
-        <li><a href="https://stackoverflow.com/jobs/directory/developer-jobs">Developer Jobs Directory</a></li>
-        <li><a href="https://stackoverflow.com/jobs/salary">Salary Calculator</a></li>
-        <li><a href="https://stackoverflow.com/help">Help</a></li>
-    </ul>
-    <br/>
-    <b><a href="https://www.stackoverflowbusiness.com/">Products</a></b>
-    <ul>
-        <li><a href="https://stackoverflow.com/teams">Teams</a></li>
-        <li><a href="https://www.stackoverflowbusiness.com/talent">Talent</a></li>
-        <li><a href="https://www.stackoverflowbusiness.com/advertising">Advertising</a></li>
-        <li><a href="https://stackoverflow.com/enterprise">Enterprise</a></li>
-    </ul>
-    <br/>
-    <br/>
-    <b><a href="https://stackoverflow.com/company/about">Company</a></b>
-    <ul>
-        <li><a href="https://stackoverflow.com/teams">About</a></li>
-        <li><a href="https://stackoverflow.com/company/press">Press</a></li>
-        <li><a href="https://stackoverflow.com/company/work-here">Work Here</a></li>
-        <li><a href="https://stackoverflow.com/legal">Legal</a></li>
-        <li><a href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a></li>
-        <li><a href="https://stackoverflow.com/company/contact">Contact Us</a></li>
-    </ul>
-    <br/>
-    <b><a href="https://stackexchange.com/">Stack Exchange Network</a></b>
-    <ul>
-        <li><a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#">Technology</a></li>
-        <li><a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#">Life / Arts</a></li>
-        <li><a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery#">Culture / Recreation</a></li>
-        <br/>
-        <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
-        <li><a href="https://serverfault.com/">Server Fault</a></li>
-        <li><a href="https://superuser.com/">Super User</a></li>
-        <br/>
-        <li><a href="https://tex.stackexchange.com/">TeX - LaTeX</a></li>
-        <li><a href="https://softwareengineering.stackexchange.com/">Software Engineering</a></li>
-        <li><a href="https://unix.stackexchange.com/">Unix & Linux</a></li>
-    </ul>
-    site design / logo © 2019 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">cc by-sa 3.0</a> with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/">attribution required.</a> rev 2019.3.22.33110
+        <div class="recruit">
+            <div id="status">
+                <a>asked</a>&nbsp &nbsp &nbsp 6 years, 4 months ago<br/><br/>
+                <a>viewed</a>&nbsp &nbsp 123,600 times<br/><br/>
+                <a>active</a>&nbsp &nbsp &nbsp 1 year ago<br/><br/>
+            </div>
+            <div class="commerce">
+                <div id="title" ><h3>Jobs near you</h3></div>
+                <div class="position" >
+                    <p><font color="#b3d9ff">Back End Developer</font></p>
+                    <p>Quoine Corporation &nbsp<img src="ad86f2539c.svg" width="10px" height="10px"/><font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
+                    <p><font color="green">$15K - $75K</font>&nbsp<font color="#e6f2ff"><img src="truck_1-512.png" width="10px" height="10px"/>RELOCATION</font></p><br/>
+                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">java</font></button>
+                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">ruby-on-rails</font></button>
+                    </div>
+                <div class="position">
+                    <p><font color="#b3d9ff">Senior Software Engineer</font></p>
+                    <p>AdNovum &nbsp<img src="ad86f2539c.svg" width="10px" height="10px"/><font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p><br/>
+                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">java</font></button>
+                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">spring</font></button>
+                    </div>
+                    <div class="position" >
+                    <p><font color="#b3d9ff">DevOps Engineer</font></p>
+                    <p>Quoine Corporation &nbsp<img src="ad86f2539c.svg" width="10px" height="10px"/><font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
+                    <p><font color="green">$35K - $66K</font>&nbsp<font color="#e6f2ff"><img src="truck_1-512.png" width="10px" height="10px"/>RELOCATION</font></p><br/>
+                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">heroku</font></button>
+                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">amazon-ec2</font></button>
+                </div>
+                <div class="position">
+                    <p><font color="#b3d9ff">(Senior) Front End Developer</font></p>
+                    <p>Quoine Corporation &nbsp<img src="ad86f2539c.svg" width="10px" height="10px"/><font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
+                    <p><font color="green">$20K - $50K</font>&nbsp<font color="#e6f2ff"><img src="truck_1-512.png" width="10px" height="10px"/>RELOCATION</font></p><br/>
+                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">reactjs</font></button>
+                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">cotinuous-integration</font></button>
+                </div>
+                <div id="job"><a href="a">More jobs near Ho Chi Minh City...</a>
+                </div>
+            </div>
+            <br/><br/><br/>
+            <div id="linked">Linked<br/><br/>
+                <button type="submit" class="linked-button">1</button><a href="b">How to check "isEmpty()"</a><br/><br/>
+                <button type="submit" class="linked-button">2</button><a href="b">How to check "isEmpty()"</a><br/><br/>
+                <button type="submit" class="linked-button">3</button><a href="b">How to check "isEmpty()"</a><br/>    
+            </div>
+        </div>
+        <div id="MainColumn">
+            <div class="interact">
+                <img src="Up.png" width="40px" height="40px">
+                <br/>  
+                <img src="Down.png" width="40px" height="40px">   
+                <br/>
+                <img src="Star.png" width="40px" height="40px">
+            </div>
+            <div id="content">
+                <div class="authorcontent">
+                    <div id="code">
+                        $.getJSON(url, function(json) {<br/>
+                        &nbsp &nbsp var output = '';<br/>
+                        &nbsp &nbsp $.each(json, function(i,d) {<br/>
+                        &nbsp &nbsp &nbsp &nbsp if(d.DESCRIPTION == 'null'){<br/>
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp console.log("Its empty");<br/>
+                        &nbsp &nbsp &nbsp &nbsp }<br/>
+                        &nbsp &nbsp &nbsp &nbsp var description = d.DESCRIPTION;<br/>
+                        &nbsp &nbsp &nbsp &nbsp output += '<tr><td>'+d.NAME+'</td><td>'+'<tr><td>'+d.DESCRIPTION+'</td><td>';<br/>
+                        &nbsp &nbsp });<br/>
+                        });<br/>
+                    </div>
+                    <div id="comment">
+                        I tried adding the<br/>
+                    </div>
+                    <div id="code">
+                        if(d.DESCRIPTION == 'null'){ console.log("Its empty");
+                    </div>
+                    <div id="comment">
+                        to check if the object returned is empty, but it doesn't work.<br/>
+                        Can someone explain to me what's wrong with this?
+                    </div>
+
+                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/javascript">javascript</a>
+                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/jquery">jquery</a>
+                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/ajax">ajax</a>
+                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/json">json</a>    
+
+                    <div class="register">
+                        <div class="share-improve">share|improve this answer</div>
+                        <div class="editorinfo">edited Jan 15 '13 at 20:22<br/>
+                            <div class="avatar"> <a href="https://stackoverflow.com/users/1323517/comiventor"><img src="Comiventor.jpg" style="width:100%;height:80%;"/></a></div>
+                            <div class="info"> <a href="https://stackoverflow.com/users/1323517/comiventor">comiventor</a><br/>
+                                <div class="view"><b>1466</b></div>
+                                <div class="silver">&nbsp 24</div>
+                                <div class="copper">&nbsp 43</div>
+                            </div>
+                        </div>
+                        <div class="authorinfo">answered Jan 15 '13 at 20:11<br/>
+                            <div class="avatar"><a href="https://stackoverflow.com/users/522768/baconjuice"><img src="BaconJuice.png" style="width:100%;height:80%;"/></a></div>
+                            <div class="info"><a href="https://stackoverflow.com/users/522768/baconjuice">BaconJuice</a><br/>
+                                <div class="view"><b>1156</b></div>
+                                <div class="gold">&nbsp 8</div>
+                                <div class="silver">&nbsp 33</div>
+                                <div class="copper">&nbsp 73</div>                                
+                            </div>
+                        </div>                        
+                    </div>
+                </div>      
+                
+            </div>  
+            <div class="reply">
+                <div class="like">1</div>
+                <div class="reply-contain">
+                    There is no "length" property JSON Object has so if you get response with not an Array instance you
+                    will end up having "NO DATA!" message all the time even if object is not acctualy empty. How this
+                    answer ended up approved and with got more reputation than a CORRECT answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
+                    <br/>
+                </div>
+            </div>
+            <div class="reply">
+                <div class="like">2</div>
+                <div class="reply-contain">
+                    @There is no "length" property JSON Object has so if you get response with not an Array instance you
+                    answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
+                    <br/>
+                </div>
+            </div>
+            <div class="reply">
+                <div class="like">9</div>
+                <div class="reply-contain">
+                    @There is no "length" property JSON Object has so if you get response with not an Array instance you
+                    answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
