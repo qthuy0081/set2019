@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+    <link href="stackoverflow.css" rel="stylesheet" type="text/css"/>
+    
+</head>
+<body>
+
+    <div id="all">
+
+        <div id="header">
+            <div id="inside_header">
+                <a href="https://stackoverflow.com/" target="_blank">
+                    <img id="logo" src="download.png" alt="stackoverflow"/>
+                </a>
+
+                <input id="search" placeholder="Search..." type="text"/>
+
+                <div id="access">                
+                    <button id="login">
+                        Log In
+                    </button>
+                    <button id="signup">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="middle">
+
+            <div id="inside_mid">
+                <div id="menu">
+
+                </div> 
+
+                <div id="content">
+                    <div id="content_top">
+                        <div id="ask">
+                            Ask Question
+                        </div>
+                        <div id="title">
+                            How to check if JSON return is empty with jquery
+                        </div>
+                        
+                    </div>
+
+                    <div id="content_main">
+                        <div id="main">
+                            <div id="prob">
+                                <div class="prob_left">
+                                    prob_left
+                                </div>
+                                <div class="prob_right">
+                                    <div class="box">
+                                        <div class="box_code">
+                                            $.getJSON(url, function(json) { </br>
+                                                var output = '';</br>
+                                                $.each(json, function(i,d) {</br>
+                                              </br>
+                                                  if(d.DESCRIPTION == 'null'){ </br>
+                                                    console.log("Its empty");</br>
+                                                  }</br>
+                                                  var description = d.DESCRIPTION;</br>
+                                                  output += '&lttr>&lttd>'+d.NAME+'&lt/td>&lttd>'+'&lttr>&lttd>'+d.DESCRIPTION+'&lt/td>&lttd>';</br>
+                                                });</br>
+                                              });</br>
+                                        </div>
+                                        <p>
+                                            I tried adding the
+                                        </p>
+                                        <div class="box_code">
+                                            if(d.DESCRIPTION == 'null'){ console.log("Its empty"); 
+                                        </div>
+                                        <p>
+                                            to check if the object returned is empty, but it doesn't work.
+                                        </p>
+                                        <p>
+                                            Can someone explain to me what's wrong with this?
+                                        </p>
+
+                                    </div>
+                                    <div class="box">
+
+                                    </div>
+                                    <div class="box">
+                                        <div class="reply">
+                                            <span>
+                                                If you upgrade to jQuery 1.9, it will properly go to the error callback if a json string is not returned. – 
+                                            </span>
+                                            <a href="#" class="links"> Kevin B </a>
+                                            <span> Jan 15 '13 at 19:57 </span>
+                                        </div>
+
+                                        <div class="reply">
+                                            <span>
+                                                If you instead want to check if an object of the array contains empty data, we would need to see exactly what is being returned in your json string as it may be different depending on server-side language and your method of generating json. –
+                                            </span>
+                                            <a href="#" class="links"> Kevin B </a>
+                                            <span> Jan 15 '13 at 19:57 </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="solution">
+
+                                <div class="sol">
+                                    <div class="prob_left">
+                                        prob_left
+                                    </div>
+                                    <div class="prob_right">
+                                        <div class="box">
+                                            <p>
+                                                Just test if the array is empty.
+                                            </p>
+                                            <div class="box_code">
+                                                $.getJSON(url,function(json){ </br>
+                                                    if ( json.length == 0 ) { </br>
+                                                        console.log("NO DATA!") </br>
+                                                    } </br>
+                                                }); </br>
+                                            </div>
+    
+                                        </div>
+                                        <div class="box">
+    
+                                        </div>
+                                        <div class="box">
+    
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sol">
+                                    <div class="prob_left">
+                                        prob_left
+                                    </div>
+                                    <div class="prob_right">
+                                        <div class="box">
+                                            <p>
+                                                Below code(jQuery.isEmptyObject(anyObject) function is already provided) works perfectly fine, no need to write one of your own.
+                                            </p>
+                                            <div class="box_code">
+                                                // works for any Object Including JSON(key value pair) or Array. </br>
+                                                //  var arr = []; </br>
+                                                //  var jsonObj = {}; </br>
+                                                  if (jQuery.isEmptyObject(anyObjectIncludingJSON)) </br>
+                                                  { </br>
+                                                     console.log("Empty Object"); </br>
+                                                  } </br>
+                                            </div>
+                                        </div>
+                                        <div class="box">
+    
+                                        </div>
+                                        <div class="box">
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="content_right">
+                            <a href="https://stackoverflow.com/jobs/remote-developer-jobs" target="_blank">
+                                <img src="remote.png"/>
+                            </a>
+            
+                            <div id="joblist">
+            
+                                <div id="job_title">
+                                    Jobs near you
+                                </div>
+            
+                                <a href="https://stackoverflow.com/jobs/192593/devops-engineer-quoine-corporation?med=clc" target="_blank">
+            
+                                    <div class="job">
+            
+                                        <p class="position"> DevOps Engineer </p>
+            
+                                        <p class="company"> Quoine Coroperation </p>
+            
+                                        <p class="place">  Ho Chi Minh City, Vietnam </p>
+            
+                                        <p class="salary"> $35K - $66K </p>
+                                        
+                                        <div class="tags">
+            
+                                        </div>
+                                        
+                                    </div>
+            
+                                </a>
+            
+                                <a href="https://stackoverflow.com/jobs/192104/back-end-developer-quoine-corporation?med=clc" target="_blank">
+            
+                                    <div class="job">
+            
+                                        <p class="position"> Back End Developer </p>
+            
+                                        <p class="company"> Quoine Coroperation </p>
+            
+                                        <p class="place"> Ho Chi Minh City, Vietnam </p>
+            
+                                        <p class="salary"> $15K - $75K </p>
+                                        
+                                        <div class="tags">
+            
+                                        </div>
+                                        
+                                    </div>
+            
+                                </a>
+            
+                                <a href="https://stackoverflow.com/jobs/192580/senior-front-end-developer-quoine-corporation?med=clc" target="_blank">
+            
+                                    <div class="job">
+            
+                                        <p class="position"> Senior Front End Engineer </p>
+            
+                                        <p class="company"> Quoine Coroperation </p>
+            
+                                        <p class="place"> Ho Chi Minh City, Vietnam </p>
+            
+                                        <p class="salary"> $20K - $50K </p>
+                                        
+                                        <div class="tags">
+            
+                                        </div>
+                                        
+                                    </div>
+            
+                                </a>
+            
+                                <a href="https://stackoverflow.com/jobs/208378/senior-software-engineer-adnovum?med=clc" target="_blank">
+            
+                                    <div class="job">
+            
+                                        <p class="position"> Senior Software Engineer </p>
+            
+                                        <p class="company"> AdNovum </p>
+            
+                                        <p class="place"> Ho Chi Minh City, Vietnam </p>
+            
+                                        <p class="salary"> $72K - $96K </p>
+                                        
+                                        <div class="tags">
+            
+                                        </div>
+                                        
+                                    </div>
+            
+                                </a>
+                
+                            </div>    
+
+                        </div>
+                    </div>                    
+                </div>  
+            </div>
+        </div>
+        
+        <div id="footer">
+
+            <div id="logo_contain">
+                <img id="footlogo" src="stackoverflow-favicon.svg"/>
+            </div>
+
+            <div id="foot_contain">
+
+                <div class="foot">
+
+                    <ul> 
+                        <li>
+                            STACK OVERFLOW 
+                        </li>
+                    </ul>          
+                    <ul class="list">
+                        <li> <a href="https://stackoverflow.com/questions"> Questions </a> </li>
+                        <li> <a href="https://stackoverflow.com/jobs"> Jobs </a> </li>
+                        <li> <a href="https://stackoverflow.com/jobs/directory/developer-jobs"> Developer Jobs Directory </a> </li>
+                        <li> <a href="https://stackoverflow.com/jobs/salary"> Salary Calculator </a> </li>
+                        <li> <a href="https://stackoverflow.com/help"> Help </a> </li>
+                        <li> <a href="https://stackoverflow.com/help"> Mobile </a> </li>
+                        <li> <a href="#"> Disable Responsiveness </a> </li>
+                    </ul>
+                </div>
+
+                <div class="foot">
+                        <ul> 
+                            <li>
+                                PRODUCTS
+                            </li>
+                        </ul>          
+                    <ul class="list">
+                        <li> <a href="https://stackoverflow.com/teams"> Teams </a> </li>
+                        <li> <a href="https://www.stackoverflowbusiness.com/talent"> Talent </a> </li>
+                        <li> <a href="https://www.stackoverflowbusiness.com/advertising"> Advertising </a> </li>
+                        <li> <a href="https://stackoverflow.com/enterprise"> Enterpirse </a> </li>
+                    </ul>
+                </div>
+
+                <div class="foot">
+                        <ul> 
+                            <li>
+                                COMPANY
+                            </li>
+                        </ul>         
+                    <ul class="list">
+                        <li> <a href="https://stackoverflow.com/company"> About </a> </li>
+                        <li> <a href="https://stackoverflow.com/company/press"> Press </a> </li>
+                        <li> <a href="https://stackoverflow.com/company/work-here"> Work here </a> </li>
+                        <li> <a href="https://stackoverflow.com/legal/terms-of-service"> Legal </a> </li>
+                        <li> <a href="https://stackoverflow.com/legal/privacy-policy"> Privacy Policy </a> </li>
+                        <li> <a href="https://stackoverflow.com/company/contact"> Contact Us </a> </li>
+                    </ul>
+                </div>
+
+
+                <div class="foot">
+                        <ul> 
+                            <li>
+                                STACK EXCHANGE NETWORK
+                            </li>
+                        </ul>         
+                    <ul class="list">
+                        <li> <a href="#"> Technology </a> </li>
+                        <li> <a href="#"> Life / Arts </a> </li>
+                        <li> <a href="#"> Culture / Recreation </a> </li>
+                        <li> <a href="#"> Legal </a> </li>
+                        <li> <a href="#"> Science </a> </li>
+                        <li> <a href="#"> Contact Us </a> </li>
+                    </ul>
+                </div>
+
+                <div class="clear">
+
+                </div>
+            </div>
+
+        </div>
+
+   </div>
+    
+    
+</body>
+</html>

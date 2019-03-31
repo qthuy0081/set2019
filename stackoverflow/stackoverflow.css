@@ -1,0 +1,371 @@
+
+
+#header
+{
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    padding: 5px;
+    background-color: white;
+    top: 0;
+    text-align: center;
+}
+
+#inside_header
+{
+    width: 80%;
+    min-width: 600px;
+    margin: 5px;
+    display: inline-block;
+}
+
+#logo
+{
+    width: 170px;
+    height: 40px;
+    float: left;
+}
+
+#search
+{
+    border: none;
+    height: 30px;
+    border: solid 1px grey;
+    border-radius: 3px;
+    margin: 5px;
+    float: left;
+    padding-left: 10px;
+    width: 35%;
+}
+
+
+#login
+{
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    color: #117bf3;
+    margin: 5px;
+    width: 70px;
+}
+
+#login:hover
+{
+    background-color: rgb(228, 230, 231);
+}
+
+#access
+{
+    float: right;
+}
+
+#signup
+{
+    background-color: #0095ff;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin: 5px;
+    width: 70px;
+}
+
+#signup:hover
+{
+    background-color: #117bf3;
+}
+
+#footer
+{
+    clear: both;
+    background-color: #242729;
+    color: #bbc0c4;
+    min-height: 250px;
+    min-width: 1000px;
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#footer .foot a
+{
+    color: grey;
+    text-decoration: none;
+}
+
+#footer .foot a:hover
+{
+    color: #bbc0c4;
+}
+
+.foot
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+li
+{
+    margin-bottom: 5px;
+}
+
+#footlogo
+{
+    width: 50px;
+}
+
+#logo_contain
+{
+    width: 5%;
+    float: left;
+}
+
+
+
+#middle
+{
+    min-height: 1000px;
+    border: 1px solid black;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    min-width: 600px;
+}
+
+#inside_mid
+{
+    border: 1px solid black;
+    max-width: 1250px;
+    min-height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#menu
+{
+    min-height: 200px;
+    border: 1px solid black;
+    margin: 5px;
+    width: 150px;
+    float: left;
+}
+
+#content
+{
+    min-height: 100px;
+    border: 1px solid black;
+    margin: 5px;
+    width: auto;
+    overflow: hidden;
+    min-width: 550px;
+}
+
+#content_top
+{
+    border: 1px solid black;
+    margin: 5px;
+}
+
+#ask
+{
+    float: right;
+    background-color: #0095ff;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin: 5px;
+}
+
+#ask:hover
+{
+    background-color: #117bf3;
+}
+
+#title
+{
+    margin: 5px;
+    font: 30px Arial;
+}
+
+#content_main
+{
+    border: 1px solid black;
+    min-height: 500px;
+    margin: 5px;
+}
+
+
+#main
+{
+    border: 1px solid black;
+    margin: 5px;
+    min-height: 500px;
+    display: inline-block;
+    width: calc(100% - 300px - 30px);
+    min-width: 550px;
+}
+
+#content_right
+{
+    border: 1px solid black;
+    margin: 5px;
+    min-height: 500px;
+    width: 300px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#prob
+{
+    border: 1px solid black;
+    margin: 5px;
+    min-height: 200px;
+    margin-bottom: 50px;
+}
+
+#solution
+{
+    border: 1px solid black;
+    margin: 5px;
+    min-height: 200px;
+}
+
+.sol
+{
+    border: 1px solid black;
+    margin: 5px;
+    min-height: 200px;
+}
+
+.prob_left
+{
+    border: 1px solid black;
+    margin: 5px;
+    float: left;
+}
+
+.prob_right
+{
+    border: 1px solid black;
+    margin: 5px;
+    width: auto;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.box
+{
+    border: 1px solid black;
+    margin: 5px;
+    min-height: 100px;
+}
+
+.box_code
+{
+    background-color: #eff0f1;
+    padding: 5px;
+}
+
+.reply
+{
+    margin: 5px;
+    margin-left: 20px;
+}
+
+
+.links
+{
+    text-decoration: none;
+    color: #117bf3;
+    min-height: 30px;
+}
+
+.links:hover
+{
+    color: #56b1f1;
+}
+
+.clear
+{
+    clear: both;
+}
+
+#joblist
+{
+    min-width: 98%;
+    border: solid 1.5px #117bf3;
+    min-height: 100px;
+    font-size: 15px;
+}
+
+#job_title
+{
+    color: white;
+    font-size: 25px;
+    background-color: #117bf3;
+    padding: 10px;
+    text-align: center;
+}
+
+.position
+{
+    color: #07c;
+    font-weight: bold;
+    margin: 3px;
+}
+
+.company
+{
+    color: #858C93;
+    margin: 3px;
+    font-weight: bold;
+    float: left;
+}
+
+.place
+{
+    font-style: italic;
+    margin: 3px;
+    margin-top: 5px;
+    color: grey;
+    font-size: 12.5px;
+    display: inline-block;
+}
+
+.salary
+{
+    color: #45A163;
+    font-weight: bold;
+    clear: both;
+    margin: 3px;
+}
+
+.job
+{
+    border-bottom: 0.5px solid #B5B7B8   ;
+    padding-left: 4px;
+    padding-right: 2px;
+    padding-top:4px;
+    padding-bottom: 4px;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+
+
+
+
+
