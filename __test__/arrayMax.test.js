@@ -19,7 +19,7 @@ describe('Test arrayMax function', () => {
   })
 
   test('Null array', () => {
-    expect(nullArray).toBe(null)
+    expect(arrayMax(nullArray)).toBe(null)
   })
 
   test('Compare normal array and nullArray', () => {
