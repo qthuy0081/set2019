@@ -2,26 +2,29 @@
     margin:0px;
     padding:0px;
     border:0px; 
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .header{
     width: 100%;
-    height: 45px;
-    position: sticky;
+    height: 60px;
+    position: fixed;
     top: 0;
     background-color: whitesmoke;
     border-top:3.5px solid darkorange;
 }
 
 #logo{
-    width: 10%;
+    width: 20%;
     height: 100%;
     float: left;
     padding-left: 7%;
 }
 
 #search{
-    width: 55%;
+    width: 60%;
     height: 100%;
     float: left;
     padding-left: 7%;
@@ -39,14 +42,15 @@
     float:left;
     font-size:8px;
     border-radius:6px;
-    background-color:#33adff;
+
 }
 
 #icon{
+    height:100%;
     width: 20%;
-    float: right;
+    float: left;
     padding-top: 5px;
-    
+    padding-left:2%;
 }
 
 #icon img{
@@ -73,16 +77,19 @@
     background-color:#248cf5;
 }
 
-.content{
+#content{
     width:100%;
-    height:3000px;
+    height:2000px;
 }
-
+#content-question{
+    width:100%;
+    height:30%;
+}
 #LeftStickyColumn{
     width:12%;
     height:100%;
     padding-left:7%;
-    padding-top:20px;
+    padding-top:80px;
     float:left;
     position:fixed;
     display:block;
@@ -122,10 +129,10 @@
 }
 
 #MainColumn{
-    width:60%;
+    width:80%;
     height:100%;
     float:left;
-    padding-top:1%;
+    padding-top:80px;
     padding-left:22%;
     padding-right:2%;
     border-left:1px solid #e7e7e4;
@@ -137,7 +144,9 @@
     border-bottom:1px solid #e7e7e4;
     padding-bottom: 1%;
     padding-left: 3%;
+    height:5%;
 }
+
 #submit-question{
     width:10%;
     float:right;
@@ -147,13 +156,14 @@
     background-color:#248cf5;
     border-radius:3px;    
 }
+
 #submit-question:hover{
     background-color:#0859aa;
 }
 
 .interact{
     width:5%;
-    height:100%;   
+    height:5%;   
     padding-top:3%;
     text-align:center;
     float:left;
@@ -199,7 +209,7 @@
 }
 
 .share-improve{
-    width:20%;
+    width:25%;
     height:100%;
     float:left;
     color:#737373;
@@ -207,7 +217,7 @@
 }
 
 .editorinfo{
-    width:20%;
+    width:25%;
     height:75%;
     float:left;
     color:#66b3ff;
@@ -222,7 +232,7 @@
 }
 
 .authorinfo{
-    width:20%;
+    width:25%;
     height:75%;
     float:left;
     padding:1%;
@@ -268,7 +278,7 @@
 .reply{
     padding-left:8%;
     width:80%;
-    height:100%;
+    height:8%;
 }
 
 .like{
@@ -298,13 +308,14 @@
 
 
 .recruit{
-    width:15%;
+    padding-top:150px;
+    width:20%;
     height:100%;
     float:right;
 }
 
 #status{
-    height:5%;
+    height:10%;
     width:100%;
     padding:15% 0%;
     font-size:15px;
@@ -313,7 +324,11 @@
 #status a{
     color:#a6a6a6;
 }
-
+.commerce{
+    width:100%;
+    height:30%;
+    margin-top:5%;
+}
 #title{
     width:100%;
     height:10%;
@@ -376,3 +391,44 @@
     color:#005ce6;
     font-size:15px;
 }   
+
+#footer{
+    width:100%;
+    height:300px;
+    background-color:#262626;
+    
+}
+#logo-second{
+    padding-top:3%;
+    width:15%;
+    height:100%;
+    padding-left:7%;
+    float:left;
+}
+.col{
+    padding-top:3%;
+    width:13%;
+    height:100%;
+    float:left;
+    padding-left:2%;
+    font-size:15px;
+    color:#f2f2f2;
+    font-weight:bold;
+}
+.col ul{
+    margin-top:5%;
+    width:100%;
+    height:80%;
+    list-style: none;
+}
+.col ul li{
+    font-weight:lighter;
+    display:block;
+    font-size:12px;
+    width:100%;
+    height:20%;
+}
+.col ul li a{
+    text-decoration:none;
+    color:#b3b3b3;
+}

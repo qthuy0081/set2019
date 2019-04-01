@@ -60,7 +60,7 @@
                 <br/>
                 <img src="Star.png" width="40px" height="40px">
             </div>
-            <div id="content">
+            <div id="content-question">
                 <div class="authorcontent">
                     <div id="code">
                         $.getJSON(url, function(json) {<br/>
@@ -149,28 +149,28 @@
                 <div id="title" ><h3>Jobs near you</h3></div>
                 <div class="position" >
                     <p><font color="#b3d9ff">Back End Developer</font></p>
-                    <p>Quoine Corporation &nbsp<img src="ad86f2539c.svg" width="10px" height="10px"/><font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
-                    <p><font color="green">$15K - $75K</font>&nbsp<font color="#e6f2ff"><img src="truck_1-512.png" width="10px" height="10px"/>RELOCATION</font></p><br/>
+                    <p>Quoine Corporation &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
+                    <p><font color="green">$15K - $75K</font>&nbsp<font color="#e6f2ff">RELOCATION</font></p><br/>
                     <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">java</font></button>
                     <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">ruby-on-rails</font></button>
                     </div>
                 <div class="position">
                     <p><font color="#b3d9ff">Senior Software Engineer</font></p>
-                    <p>AdNovum &nbsp<img src="ad86f2539c.svg" width="10px" height="10px"/><font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p><br/>
+                    <p>AdNovum &nbsp<<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p><br/>
                     <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">java</font></button>
                     <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">spring</font></button>
                     </div>
                     <div class="position" >
                     <p><font color="#b3d9ff">DevOps Engineer</font></p>
-                    <p>Quoine Corporation &nbsp<img src="ad86f2539c.svg" width="10px" height="10px"/><font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
-                    <p><font color="green">$35K - $66K</font>&nbsp<font color="#e6f2ff"><img src="truck_1-512.png" width="10px" height="10px"/>RELOCATION</font></p><br/>
+                    <p>Quoine Corporation &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
+                    <p><font color="green">$35K - $66K</font>&nbsp<font color="#e6f2ff">RELOCATION</font></p><br/>
                     <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">heroku</font></button>
                     <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">amazon-ec2</font></button>
                 </div>
                 <div class="position">
                     <p><font color="#b3d9ff">(Senior) Front End Developer</font></p>
-                    <p>Quoine Corporation &nbsp<img src="ad86f2539c.svg" width="10px" height="10px"/><font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
-                    <p><font color="green">$20K - $50K</font>&nbsp<font color="#e6f2ff"><img src="truck_1-512.png" width="10px" height="10px"/>RELOCATION</font></p><br/>
+                    <p>Quoine Corporation &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
+                    <p><font color="green">$20K - $50K</font>&nbsp<font color="#e6f2ff">RELOCATION</font></p><br/>
                     <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">reactjs</font></button>
                     <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">cotinuous-integration</font></button>
                 </div>
@@ -184,92 +184,49 @@
                 <button type="submit" class="linked-button">3</button><a href="b">How to check "isEmpty()"</a><br/>    
             </div>
         </div>
-        <div id="MainColumn">
-            <div class="interact">
-                <img src="Up.png" width="40px" height="40px">
-                <br/>  
-                <img src="Down.png" width="40px" height="40px">   
-                <br/>
-                <img src="Star.png" width="40px" height="40px">
-            </div>
-            <div id="content">
-                <div class="authorcontent">
-                    <div id="code">
-                        $.getJSON(url, function(json) {<br/>
-                        &nbsp &nbsp var output = '';<br/>
-                        &nbsp &nbsp $.each(json, function(i,d) {<br/>
-                        &nbsp &nbsp &nbsp &nbsp if(d.DESCRIPTION == 'null'){<br/>
-                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp console.log("Its empty");<br/>
-                        &nbsp &nbsp &nbsp &nbsp }<br/>
-                        &nbsp &nbsp &nbsp &nbsp var description = d.DESCRIPTION;<br/>
-                        &nbsp &nbsp &nbsp &nbsp output += '<tr><td>'+d.NAME+'</td><td>'+'<tr><td>'+d.DESCRIPTION+'</td><td>';<br/>
-                        &nbsp &nbsp });<br/>
-                        });<br/>
-                    </div>
-                    <div id="comment">
-                        I tried adding the<br/>
-                    </div>
-                    <div id="code">
-                        if(d.DESCRIPTION == 'null'){ console.log("Its empty");
-                    </div>
-                    <div id="comment">
-                        to check if the object returned is empty, but it doesn't work.<br/>
-                        Can someone explain to me what's wrong with this?
-                    </div>
-
-                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/javascript">javascript</a>
-                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/jquery">jquery</a>
-                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/ajax">ajax</a>
-                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/json">json</a>    
-
-                    <div class="register">
-                        <div class="share-improve">share|improve this answer</div>
-                        <div class="editorinfo">edited Jan 15 '13 at 20:22<br/>
-                            <div class="avatar"> <a href="https://stackoverflow.com/users/1323517/comiventor"><img src="Comiventor.jpg" style="width:100%;height:80%;"/></a></div>
-                            <div class="info"> <a href="https://stackoverflow.com/users/1323517/comiventor">comiventor</a><br/>
-                                <div class="view"><b>1466</b></div>
-                                <div class="silver">&nbsp 24</div>
-                                <div class="copper">&nbsp 43</div>
-                            </div>
-                        </div>
-                        <div class="authorinfo">answered Jan 15 '13 at 20:11<br/>
-                            <div class="avatar"><a href="https://stackoverflow.com/users/522768/baconjuice"><img src="BaconJuice.png" style="width:100%;height:80%;"/></a></div>
-                            <div class="info"><a href="https://stackoverflow.com/users/522768/baconjuice">BaconJuice</a><br/>
-                                <div class="view"><b>1156</b></div>
-                                <div class="gold">&nbsp 8</div>
-                                <div class="silver">&nbsp 33</div>
-                                <div class="copper">&nbsp 73</div>                                
-                            </div>
-                        </div>                        
-                    </div>
-                </div>      
-                
-            </div>  
-            <div class="reply">
-                <div class="like">1</div>
-                <div class="reply-contain">
-                    There is no "length" property JSON Object has so if you get response with not an Array instance you
-                    will end up having "NO DATA!" message all the time even if object is not acctualy empty. How this
-                    answer ended up approved and with got more reputation than a CORRECT answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
-                    <br/>
-                </div>
-            </div>
-            <div class="reply">
-                <div class="like">2</div>
-                <div class="reply-contain">
-                    @There is no "length" property JSON Object has so if you get response with not an Array instance you
-                    answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
-                    <br/>
-                </div>
-            </div>
-            <div class="reply">
-                <div class="like">9</div>
-                <div class="reply-contain">
-                    @There is no "length" property JSON Object has so if you get response with not an Array instance you
-                    answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
-                    <br/>
-                </div>
-            </div>
+        
+    </div>
+    <div id="footer">
+        <div id="logo-second"><img src="so-icon.png" style="width:50%;height:30%;"></div>
+        <div class="col" id="stack">
+                STACK OVERFLOW<br/>
+                <ul>
+                        <li><a href="a">Questions</a></li>
+                        <li><a href="a">Email</a></li>
+                        <li><a href="a">Hotline</a></li>
+                        <li><a href="a">Number</a></li>
+                        <li><a href="a">Questions</a></li>
+                </ul>
+        </div>
+        <div class="col">
+            PRODUCTS<br/>
+            <ul>
+                    <li><a href="a">Questions</a></li>
+                    <li><a href="a">Email</a></li>
+                    <li><a href="a">Hotline</a></li>
+                    <li><a href="a">Number</a></li>
+                    <li><a href="a">Questions</a></li>
+            </ul>
+        </div>
+        <div class="col">
+                COMPANY<br/>
+                <ul>
+                        <li><a href="a">Questions</a></li>
+                        <li><a href="a">Email</a></li>
+                        <li><a href="a">Hotline</a></li>
+                        <li><a href="a">Number</a></li>
+                        <li><a href="a">Questions</a></li>
+                </ul>
+        </div>
+        <div class="col">
+                STACK EXCHANGE<br/>
+                <ul>
+                        <li><a href="a">Questions</a></li>
+                        <li><a href="a">Email</a></li>
+                        <li><a href="a">Hotline</a></li>
+                        <li><a href="a">Number</a></li>
+                        <li><a href="a">Questions</a></li>
+                </ul>
         </div>
     </div>
 </body>
