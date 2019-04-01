@@ -118,3 +118,20 @@
       width: 250px;
       height: 100%;
   }
+  .ask-Ques{
+      background-color: blue;
+      color: white;
+      text-align: center;
+      border: none;
+      
+      
+  }
+  .post-Ans{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    border: none;
+  }
+.code{
+    background-color: gray;
+}
