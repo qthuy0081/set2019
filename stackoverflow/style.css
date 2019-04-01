@@ -133,5 +133,13 @@
     border: none;
   }
 .code{
-    background-color: gray;
+    background-color: whitesmoke;
+}
+.Answer-1
+{
+    border: 2px solid gray;
+}
+.Answer-2
+{
+    border: 2px solid gray;
 }

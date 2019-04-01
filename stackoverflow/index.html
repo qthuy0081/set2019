@@ -78,6 +78,7 @@
     </p>
     
     <h1> Answer</h1>
+    <div class="Answer-1">
     <strong>Just test if the array is empty.<br></strong>
     <p class="code">   
          $.getJSON(url,function(json){ <br>
@@ -86,7 +87,8 @@
             }<br>
         });
     </p>
-    
+    </div>
+    <div class="Answer-2">
     <strong>You can use $.isEmptyObject(json)<br></strong>
     <a href="https://api.jquery.com/jQuery.isEmptyObject">https://api.jquery.com/jQuery.isEmptyObject</a> 
     <strong>Below code(jQuery.isEmptyObject(anyObject) function is already provided) works perfectly fine, no need to write one of your own</strong>
@@ -94,7 +96,9 @@
         if (jQuery.isEmptyObject(anyObjectIncludingJSON))<br>
         { <br>
            console.log("Empty Object");<br>
-        }</p>
+        }
+    </p>
+    </div>
     <h1>Your Answer</h1>
     <textarea name="useranswer" id="" cols="30" rows="10"></textarea> <br>
     <button class="post-Ans">Post Your Answer</button> 
