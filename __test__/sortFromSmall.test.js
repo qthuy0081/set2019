@@ -3,7 +3,7 @@ const sortFromSmall = require('../sortFromSmall.js')
 const normalArray = [9, -4, 2, 1, 12, 7, 0]
 const emptyArray = []
 const nullArray = [null, null, null]
-const defectedArray = [null, 2, undefined, 7, 12, 6, null]
+const defectedArray = [null, 2, undefined, 7, 12, 6, undefined]
 
 describe('Test sort from small', () => {
   test('Normal case', () => {
