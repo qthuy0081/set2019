@@ -4,229 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>javascript - How to check if JSON return is empty with jquery - Stack Overflow</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <style type="text/css">a:link {text-decoration: none}</style>
+    <title>javascript - How to check if JSON return is empty with jquery</title>
 </head>
 <body>
     <div class="header">
-        <div id="logo">
-            <a href="https://stackoverflow.com/"><img src="Logo.png" width="150px" height="45px"></a>
+        <div id="headerLogo">
+            <a href="https://stackoverflow.com/"><img src="headerLogo.png"></a>
+
         </div>
-        <div id="search">
-            <input placeholder="Search..." size="80" style="height: 30px"/>
-            <button><img src="Search.png" width="20px" height="30px"></button>
+        <div id="searchBar">
+            <input placeholder="Search..."/>
+            <button><img src="searchIcon.png"/></button>
         </div>
         <div id="icon">
-            <img src="Recent inbox message.png" width="20px" height="20px">
-            <img src="Achievement.png" width="20px" height="20px">
-            <img src="Help.png" width="20px" height="20px">
-            <img src="List.png" width="20px" height="20px">
+            <img src="recentInbox.png">
+            <img src="recentAchievement.png">
+            <img src="help.png">
+            <img src="list.png">
             <a id="login" href="https://stackoverflow.com/users/login?ssrc=head">Log In</a> 
-            <a id="sign-up" href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent">Sign Up</a>
+            <a id="signUp" href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent">Sign Up</a>
         </div>
     </div>
-    <div id="content">
-        <div id="LeftStickyColumn">         
-            <ul>
-                <li id="home"><a href="https://stackoverflow.com/">Home</a></li>
-                <li>
-                    <ul>
-                        PUBLIC    
-                        <li><img src="Earth.png" width="15px" height="15px"> <a href="https://stackoverflow.com/questions">Stack Overflow</a></li>
-                        <li><a href="https://stackoverflow.com/tags">&nbsp &nbsp &nbsp Tags</a></li>
-                        <li><a href="https://stackoverflow.com/users">&nbsp &nbsp &nbsp Users</a></li>
-                        <li><a href="https://stackoverflow.com/jobs?med=site-ui&ref=jobs-tab">&nbsp &nbsp &nbsp Jobs</a></li>
-                    </ul>
-                </li>
-                <li>Teams
-                    <ul>
-                        <li>
-                            <a href="https://stackoverflow.com/teams">+ Create Team</a>           
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+    <div class="mainContainer">
+        <div class="menu">
+            <span>Home</span>
+            <span>Public</span>
+            <span>
+                <img src="globe.png"> Stack Overflow
+            </span>
+            <span>
+                <li>Tags</li>
+                <li>Users</li>
+                <li>Jobs</li>
+            </span>
         </div>
-        <div id="MainColumn">
+        <div class="mainContent">
+            <div id="title">
+
+            </div>
             <div id="question">
-                    How to check if JSON is empty with jquery
-                    <button type="submit" id="submit-question">Ask Question</button>
-            </div>
-            <div class="interact">
-                <img src="Up.png" width="40px" height="40px">
-                <br/>  
-                <img src="Down.png" width="40px" height="40px">   
-                <br/>
-                <img src="Star.png" width="40px" height="40px">
-            </div>
-            <div id="content-question">
-                <div class="authorcontent">
-                    <div id="code">
-                        $.getJSON(url, function(json) {<br/>
-                        &nbsp &nbsp var output = '';<br/>
-                        &nbsp &nbsp $.each(json, function(i,d) {<br/>
-                        &nbsp &nbsp &nbsp &nbsp if(d.DESCRIPTION == 'null'){<br/>
-                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp console.log("Its empty");<br/>
-                        &nbsp &nbsp &nbsp &nbsp }<br/>
-                        &nbsp &nbsp &nbsp &nbsp var description = d.DESCRIPTION;<br/>
-                        &nbsp &nbsp &nbsp &nbsp output += '<tr><td>'+d.NAME+'</td><td>'+'<tr><td>'+d.DESCRIPTION+'</td><td>';<br/>
-                        &nbsp &nbsp });<br/>
-                        });<br/>
-                    </div>
-                    <div id="comment">
-                        I tried adding the<br/>
-                    </div>
-                    <div id="code">
-                        if(d.DESCRIPTION == 'null'){ console.log("Its empty");
-                    </div>
-                    <div id="comment">
-                        to check if the object returned is empty, but it doesn't work.<br/>
-                        Can someone explain to me what's wrong with this?
-                    </div>
 
-                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/javascript">javascript</a>
-                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/jquery">jquery</a>
-                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/ajax">ajax</a>
-                    <a id="jjaj" href="https://stackoverflow.com/questions/tagged/json">json</a>    
+            </div>
+            <div id="answer">
 
-                    <div class="register">
-                        <div class="share-improve">share|improve this answer</div>
-                        <div class="editorinfo">edited Jan 15 '13 at 20:22<br/>
-                            <div class="avatar"> <a href="https://stackoverflow.com/users/1323517/comiventor"><img src="Comiventor.jpg" style="width:100%;height:80%;"/></a></div>
-                            <div class="info"> <a href="https://stackoverflow.com/users/1323517/comiventor">comiventor</a><br/>
-                                <div class="view"><b>1466</b></div>
-                                <div class="silver">&nbsp 24</div>
-                                <div class="copper">&nbsp 43</div>
-                            </div>
-                        </div>
-                        <div class="authorinfo">answered Jan 15 '13 at 20:11<br/>
-                            <div class="avatar"><a href="https://stackoverflow.com/users/522768/baconjuice"><img src="BaconJuice.png" style="width:100%;height:80%;"/></a></div>
-                            <div class="info"><a href="https://stackoverflow.com/users/522768/baconjuice">BaconJuice</a><br/>
-                                <div class="view"><b>1156</b></div>
-                                <div class="gold">&nbsp 8</div>
-                                <div class="silver">&nbsp 33</div>
-                                <div class="copper">&nbsp 73</div>                                
-                            </div>
-                        </div>                        
-                    </div>
-                </div>      
-                
-            </div>  
-            <div class="reply">
-                <div class="like">1</div>
-                <div class="reply-contain">
-                    There is no "length" property JSON Object has so if you get response with not an Array instance you
-                    will end up having "NO DATA!" message all the time even if object is not acctualy empty. How this
-                    answer ended up approved and with got more reputation than a CORRECT answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
-                    <br/>
-                </div>
             </div>
-            <div class="reply">
-                <div class="like">2</div>
-                <div class="reply-contain">
-                    @There is no "length" property JSON Object has so if you get response with not an Array instance you
-                    answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
-                    <br/>
-                </div>
+            <div id="answerSubmit">
+
             </div>
-            <div class="reply">
-                <div class="like">9</div>
-                <div class="reply-contain">
-                    @There is no "length" property JSON Object has so if you get response with not an Array instance you
-                    answer below from Mr.Arun Pratap Singh is a mistery for me. - <a class="name">Name</a>&nbsp<a class="day">Mar 20 '14 at 9:46</a>
-                    <br/>
-                </div>
+            <div id="otherColumn">
+
             </div>
         </div>
-        <div class="recruit">
-            <div id="status">
-                <a>asked</a>&nbsp &nbsp &nbsp 6 years, 4 months ago<br/><br/>
-                <a>viewed</a>&nbsp &nbsp 123,600 times<br/><br/>
-                <a>active</a>&nbsp &nbsp &nbsp 1 year ago<br/><br/>
-            </div>
-            <div class="commerce">
-                <div id="title" ><h3>Jobs near you</h3></div>
-                <div class="position" >
-                    <p><font color="#b3d9ff">Back End Developer</font></p>
-                    <p>Quoine Corporation &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
-                    <p><font color="green">$15K - $75K</font>&nbsp<font color="#e6f2ff">RELOCATION</font></p><br/>
-                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">java</font></button>
-                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">ruby-on-rails</font></button>
-                    </div>
-                <div class="position">
-                    <p><font color="#b3d9ff">Senior Software Engineer</font></p>
-                    <p>AdNovum &nbsp<<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p><br/>
-                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">java</font></button>
-                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">spring</font></button>
-                    </div>
-                    <div class="position" >
-                    <p><font color="#b3d9ff">DevOps Engineer</font></p>
-                    <p>Quoine Corporation &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
-                    <p><font color="green">$35K - $66K</font>&nbsp<font color="#e6f2ff">RELOCATION</font></p><br/>
-                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">heroku</font></button>
-                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">amazon-ec2</font></button>
-                </div>
-                <div class="position">
-                    <p><font color="#b3d9ff">(Senior) Front End Developer</font></p>
-                    <p>Quoine Corporation &nbsp<font color="grey"><i>Ho Chi Minh City, Vietnam</i></font></p>
-                    <p><font color="green">$20K - $50K</font>&nbsp<font color="#e6f2ff">RELOCATION</font></p><br/>
-                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">reactjs</font></button>
-                    <button type="button" style="text-align:center;margin:1px;color:white;"><font color="#005580">cotinuous-integration</font></button>
-                </div>
-                <div id="job"><a href="a">More jobs near Ho Chi Minh City...</a>
-                </div>
-            </div>
-            <br/><br/><br/>
-            <div id="linked">Linked<br/><br/>
-                <button type="submit" class="linked-button">1</button><a href="b">How to check "isEmpty()"</a><br/><br/>
-                <button type="submit" class="linked-button">2</button><a href="b">How to check "isEmpty()"</a><br/><br/>
-                <button type="submit" class="linked-button">3</button><a href="b">How to check "isEmpty()"</a><br/>    
-            </div>
-        </div>
-        
     </div>
-    <div id="footer">
-        <div id="logo-second"><img src="so-icon.png" style="width:50%;height:30%;"></div>
-        <div class="col" id="stack">
-                STACK OVERFLOW<br/>
-                <ul>
-                        <li><a href="a">Questions</a></li>
-                        <li><a href="a">Email</a></li>
-                        <li><a href="a">Hotline</a></li>
-                        <li><a href="a">Number</a></li>
-                        <li><a href="a">Questions</a></li>
-                </ul>
+    <div class="footer">
+        <div id="footerLogo">
+
         </div>
-        <div class="col">
-            PRODUCTS<br/>
-            <ul>
-                    <li><a href="a">Questions</a></li>
-                    <li><a href="a">Email</a></li>
-                    <li><a href="a">Hotline</a></li>
-                    <li><a href="a">Number</a></li>
-                    <li><a href="a">Questions</a></li>
-            </ul>
+
+        <div id="footerContent">
+
         </div>
-        <div class="col">
-                COMPANY<br/>
-                <ul>
-                        <li><a href="a">Questions</a></li>
-                        <li><a href="a">Email</a></li>
-                        <li><a href="a">Hotline</a></li>
-                        <li><a href="a">Number</a></li>
-                        <li><a href="a">Questions</a></li>
-                </ul>
+        <div id="footerContent">
+            
         </div>
-        <div class="col">
-                STACK EXCHANGE<br/>
-                <ul>
-                        <li><a href="a">Questions</a></li>
-                        <li><a href="a">Email</a></li>
-                        <li><a href="a">Hotline</a></li>
-                        <li><a href="a">Number</a></li>
-                        <li><a href="a">Questions</a></li>
-                </ul>
+        <div id="footerContent">
+            
+        </div>
+        <div id="footerContent">
+            
+        </div>
+        <div id="footerContent">
+            
+        </div>
+        <div id="contact">
+            
         </div>
     </div>
 </body>
