@@ -1,0 +1,42 @@
+footer {
+    display: block;
+    border: 1px solid black;
+    padding: 5%;
+    height: 60px;
+    
+}
+footer ul {
+   list-style-type: none;
+   overflow: hidden;
+   
+}
+footer li {   
+    display: inline;
+}
+.lang {
+    height: 30px;
+    border-bottom: 0.5mm solid rgb(182, 180, 180);
+}
+
+footer li a {
+    color: rgb(67, 157, 218);
+    text-decoration: none;
+}
+.option li {
+    margin-left: 17px;
+    margin-bottom: 3px;
+}
+.lang li{
+    margin-left: 12px;
+    
+}
+footer p{
+    color: gray;
+}
+
+.footer-text {
+    margin-top:-50px;
+    margin-left:-70px;
+    width: 110%;
+}
+
