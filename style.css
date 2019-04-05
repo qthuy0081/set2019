@@ -1,3 +1,81 @@
-.header{
-    
+.header {
+    height: 5%;
+    width: 100%;    
+    padding-left: 5%;   
+    position: fixed;
+}
+
+.header-logo {
+    height: 100%;
+    width: 15%;
+    display: inline-block;
+    position: relative;
+}
+
+.header-logo img {
+    height: 100%;
+    width: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.search-bar {  
+    height: 100%;    
+    width: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+.search-bar input{
+    height: 80%;
+    width: 90%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.search-bar button{
+    height: 98%;
+    width: 5%;  
+    position: absolute;
+    right: 0;
+}
+
+.search-bar img{
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+    height: 100%;
+    width: 18%;
+    display: inline-block;
+    padding-left: 2%;
+}
+
+.icon img {
+    height: 80%;
+    width: 10%;
+    padding-left: 3%;
+    top: 0;
+    bottom: 0;
+}
+
+.icon a {
+    width: 10%;
+    padding-left: 3%;
+}
+
+.main-container{
+    display: inline-block;
+    width: 100%;
+    height: 80%;
 }
