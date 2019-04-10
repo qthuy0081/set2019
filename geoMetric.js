@@ -1,4 +1,4 @@
-class geoMetric {
+class Geometric {
     constructor(width, height, length) {
         this.width = width;
         this.height = height;
@@ -6,14 +6,16 @@ class geoMetric {
     }
 
     getPerimeter() {
-        return (this.width+this.height+this.length)*4;
+        return ((this.width+this.height+this.length)*4)
     }
 
-    getSquare() {
-        return (this.width*this.height+this.width*this.length+this.height*this.length)*2;
+    getArea() {
+        return (this.width*this.height+this.width*this.length+this.height*this.length)*2
     }
 
     getVolume() {
-        return (this.width*this.height*this.length);
+        return (this.width*this.height*this.length)
     }
 }
+
+module.exports = Geometric
