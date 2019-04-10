@@ -8,9 +8,9 @@ class Geometric {
   getP()
   {
     let result = 0
-    if(height*width*height>0)
+    if((this.height*this.width*this.height)>0)
     {
-    result = length*4+width*4+height*4
+    result = this.length*4+this.width*4+this.height*4
     }
     return result
 
@@ -18,8 +18,8 @@ class Geometric {
   getA()
   {
     let result = 0 
-    if(height*width*height>0){
-      result=(2*height*(width+height)+2(width*height))
+    if((this.height*this.width*this.height)>0){
+      result=(2*this.height*(this.width+this.height)+2(this.width*this.height))
     }
     return result
 
