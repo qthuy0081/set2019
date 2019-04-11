@@ -1,119 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="./style.css" rel="stylesheet"/>
 <title>javascript - How to check if JSON return is empty with jquery - Stackoverflow</title>
+<link rel="shortcut icon" type="image/x-icon"href="./Image/stack-overflow.png">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<!----<script src="./index.js"> </script>-->
 </head>
+
 <body>
-     
-     <div class="topnav">
-            <img src="./Image/stack-overflow.png" width="100" height="50" alt="stack-overflow"/>
-                <a href="#">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                 </a>
-                 <a href="#">
-                        <i class="fa fa-trophy" aria-hidden="true"></i>
-                </a>
-                <a href="#">
-                        <i class="fa fa-inbox" aria-hidden="true"></i>
-                </a>
-                <a href="#">
-                        <i class="fa fa-question-circle" aria-hidden="true"></i>
-                </a>
-           
-                <div class="search-container">
-               
-                  <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search" size="60">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                  </form>
-                </div>
-              
-     </div>
-     <hr>    
-    <ul class="navList">
-        <li><a href="stackoverflow.com">Home</a></li>
-        <li>Public
-            <ul>
-                <li><a href="https://stackoverflow.com/tags">Tags</a></li>
-                <li><a href="https://stackoverflow.com/users">Users</a></li>
-                <li><a href="https://stackoverflow.com/jobs?med=site-ui&ref=jobs-tab">Jobs</a></li>
-            </ul>
-        </li>
-    </ul>
-    <div class="Linked">
-    <b>Linked</b>
-    <ol>
-        <li><a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery?answertab=active#tab-top">How to check “isEmpty()” in Gson JsonObject? </a></li>
-        <li><a href="https://stackoverflow.com/questions/41856623/cant-check-an-empty-json-key-value-pair?noredirect=1&lq=1">Can't check an empty JSON key: value pair </a></li>
-        <li><a href="https://stackoverflow.com/questions/20673790/issue-on-identifying-getjson-response-value?noredirect=1&lq=1"> issue on identifying getjson response value</a></li>
-        <li><a href="https://stackoverflow.com/questions/178325/how-do-i-check-if-an-element-is-hidden-in-jquery?rq=1">How do I check if an element is hidden in jQuery? </a></li>
-        <li><a href="https://stackoverflow.com/questions/901712/how-to-check-whether-a-checkbox-is-checked-in-jquery?rq=1"> How to check whether a checkbox is checked in jQuery?</a></li>
-        <li><a href="https://stackoverflow.com/questions/2669690/why-does-google-prepend-while1-to-their-json-responses?rq=1">Why does Google prepend while(1); to their JSON responses? </a></li>
-        <li><a href="https://stackoverflow.com/questions/477816/what-is-the-correct-json-content-type?rq=1"> What is the correct JSON content type?</a></li>
-        
-    </ol>
-    </div>
-    <div class="content"> 
-    <h1><a href="https://stackoverflow.com/questions/14345761/how-to-check-if-json-return-is-empty-with-jquery?answertab=active#tab-top">How to check if JSON return is empty with jquery <button  class="ask-Ques">Ask Questions</button></a></h1>
-    <p class="code">
-        $.getJSON(url, function(json) { <br>
-            var output = ''; <br>
-            $.each(json, function(i,d) { <br>
+   <header>
+       <div class="top-nav">
+            <img src="data:image/png;base64,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">
             
-              if(d.DESCRIPTION == 'null'){ <br> 
-                console.log("Its empty"); <br>
-              }<br>
-              var description = d.DESCRIPTION;<br>
-             output += '<tr><td>'+d.NAME+'</td><td>'+'<tr><td>'+d.DESCRIPTION+'</td><td>'; <br>
-            }); <br>
-          });<br>
-    </p>
-    <p>I tried adding the </p>
-    <p class="code">if(d.DESCRIPTION == 'null'){ console.log("Its empty"); </p>
-    <p>To check if the object returned is empty, but it doesn't work.<br>
-        Can someone explain to me what's wrong with this?
-    </p>
-    
-    <h1> Answer</h1>
-    <div class="Answer-1">
-    <strong>Just test if the array is empty.<br></strong>
-    <p class="code">   
-         $.getJSON(url,function(json){ <br>
-            if ( json.length == 0 ) { <br>
-                console.log("NO DATA!")<br>
-            }<br>
-        });
-    </p>
-    </div>
-    <div class="Answer-2">
-    <strong>You can use $.isEmptyObject(json)<br></strong>
-    <a href="https://api.jquery.com/jQuery.isEmptyObject">https://api.jquery.com/jQuery.isEmptyObject</a> 
-    <strong>Below code(jQuery.isEmptyObject(anyObject) function is already provided) works perfectly fine, no need to write one of your own</strong>
-    <p class="code">
-        if (jQuery.isEmptyObject(anyObjectIncludingJSON))<br>
-        { <br>
-           console.log("Empty Object");<br>
-        }
-    </p>
-    </div>
-    <h1>Your Answer</h1>
-    <textarea name="useranswer" id="" cols="30" rows="10"></textarea> <br>
-    <button class="post-Ans">Post Your Answer</button> 
-    <p>Not the answer you're looking for? Browse other question tagged or <a href="">ask your own question</a></p>
-    </div>
-    <div class="hot-Ques">
-    <b>Hot network questions</b>
-    <ul>
-        <li>What are some good ways to treat frozen vegetables such that they behave like fresh vegetables when stir frying them?</li>
-        <li>Why does AES have exactly 10 rounds for a 128-bit key, 12 for 192 bits and 14 for a 256-bit key size?</li>
-        <li>Find all subarray with sum equal to number?</li>
-        <li>What is the English pronunciation of "pain au chocolat"?</li>
-        <li>Why does int i = 10; i / 0; compile, but 5 / 0 gives CS0020 - Division by constant zero?</li>
-        <li>What does "Scientists rise up against statistical significance" mean? (Comment in Nature)</li>
-    </ul>
-    </div>
+            <input type="text" placeholder="Search..." size="40">
+            <button><i class="fa fa-search" aria-hidden="true"></i></button> 
+            
+            <div class="fa2">
+                   <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+                   <a href="#"><i class="fa fa-inbox" aria-hidden="true"></i></a>
+                   <a href="#"><i class="fa fa-trophy" aria-hidden="true"></i></a>
+                   <a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                   <a href="#"><i class="fa fa-stack-exchange" aria-hidden="true"></i></a>
+            </div>
+       </div>
+           
+   </header>  
+
+   <main>
+       <aside>
+            <ol>
+                <li><a href="#">Home</a></li>
+                <li >PUBLIC </li>
+                <li>
+                <ol>
+                        
+                        <li><i class="fa fa-globe" aria-hidden="true"></i><a href="#">Stack Overflow</a></li>
+                        <li><a href="#">Tags</a></li>
+                        <li><a href="#">User</a></li>
+                        <li><a href="#">Jobs</a></li>
+                </ol>
+                </li>
+                    <li class="team">
+                        <ol>
+                           <li>
+                               <strong>Team</strong> Q&A for work
+   
+                           </li>
+                        </ol>
+                 </li>
+             </ol>
+       </aside>
+
+       <section>
+            
+            <div class="title">
+                    <a href="#"><h1>How to check if JSON return is empty with jquery </h1></a>
+                    <button>Ask question</button>
+                    <hr>
+            </div>
+
+            <div class="container">
+                <div class="content">
+                        <div class="answerform">
+                            
+                                <div class="like">
+                                    <ul>
+                                    <li><button class="up-down"><i class="fa fa-sort-asc" aria-hidden="true"></i></button></li>
+                                    <li class="count">29</li>
+                                    <li><button class="up-down"><i class="fa fa-sort-desc" aria-hidden="true"></i></button></li>
+                                    <li><button class="star"><i class="fa fa-star" aria-hidden="true"></i></button></li>
+                                    <li class="count">8</li>
+                                    </ul>
+                                </div>
+                                <div class="sub-container">
+                                <div class="answer">
+                                    <p class="code">$.getJSON(url, function(json) { <br>
+                                            var output = '';  <br>
+                                            $.each(json, function(i,d) { <br> 
+                                          
+                                              if(d.DESCRIPTION == 'null'){ <br>
+                                                console.log("Its empty"); <br>
+                                              } <br>
+                                              var description = d.DESCRIPTION; <br>
+                                              output += '<tr><td>'+d.NAME+'</td><td>'+'<tr><td>'+d.DESCRIPTION+'</td><td>';<br>
+                                            });<br>
+                                          });<br>
+                                    </p>
+                                    <p>
+                                        I tried adding the
+                                    </p>
+                                    <p class="code">if(d.DESCRIPTION == 'null'){ console.log("Its empty"); </p>
+                                    <p>to check if the object returned is empty, but it doesn't work.<br>
+                
+                                            Can someone explain to me what's wrong with this?</p>
+                                    <div class="share-edit"><a href="#">share</a> <a href="#">edit</a></div>       
+                                            <hr>
+                                </div>
+                            
+                                <div class="comment">
+                                    <ol>
+                                        <li>If you upgrade to jQuery 1.9, it will properly go to the error callback if a json string is not returned. –<a class="name-tag" href="#"> Kevin B</a> <a href="#" class="date"> Jan 15 '13 at 19:57</a></li> <hr>
+                                        <li>If you instead want to check if an object of the array contains empty data, we would need to see exactly what is being returned in your json string as it may be different depending on server-side language and your method of generating json. – Kevin B Jan 15 '13 at 19:58</li><hr>
+                                        <li>@KevinB all I get back is a text "null" on console – <a href="#" class = "name-tag"> BaconJuice</a> <a href="#" class="date">Jan 15 '13 at 20:00</a></li>
+                                    </ol>
+                                </div>
+                                </div>
+                        </div>
+                        <hr>
+                        <div class="answerform">
+                                <div class="like">
+                                    <ul>
+                                    <li><button class="up-down"><i class="fa fa-sort-asc" aria-hidden="true"></i></button></li>
+                                    <li class="count">-1</li>
+                                    <li><button class="up-down"><i class="fa fa-sort-desc" aria-hidden="true"></i></button></li>    
+                                    </ul>
+                                </div>
+                                <div class="sub-container">
+                                <div class="answer">
+                                    <p>You can use $.isEmptyObject(json)<br><a href="#">https://api.jquery.com/jQuery.isEmptyObject</a></p>
+                                    
+                                    <div class="share-edit"><a href="share">share</a> <a href="#">edit</a></div>  
+                                    <hr>
+                                </div>
+                                <div class="comment">
+                                    <ol>
+                                        <li>This is more or less just repeating this existing answer. –<a href="#" class="name-tag"> Pang</a> <a class ="date"href="#">Mar 12 '18 at 4:03</a></li><hr>
+                                        <li>Then the other answer solves your problem. –<a class="name-tag"> Kevin B</a><a class="date"> Mar 27 '14 at 14:10</a></li>
+                                        <li>.length does not work with latest java scripts. –<a class="name=tag"> Amit Kumar</a><a class="date"> Aug 16 '17 at 13:17</a></li>
+                                    </ol>
+                                </div>
+                                </div>
+            
+                        </div>
+                        <hr>
+                        <div class="answerform">
+                            <div class="like">
+                                    <ul>
+                                        <li><button class="up-down"><i class="fa fa-sort-asc" aria-hidden="true"></i></button></li>
+                                        <li class="count">7</li>
+                                        <li><button class="up-down"><i class="fa fa-sort-desc" aria-hidden="true"></i></button></li>    
+                                    </ul>
+
+                            </div>
+                            <dib class="sub-container">
+                                <div class="answer">
+                                    <p class="code">if (!json[0]) alert("JSON empty");</p>
+                                    <div class="share-edit"><a href="share">share</a> <a href="#">edit</a></div>  
+                                    <hr>
+                                </div>
+                                <div class="comment">
+                                    <ol>
+                                        <li>Hi Justin, it's better to provide some explanation along with your code, than the asker will understand why that particular code works. –<a href="#" class="name-tag">edi9999</a><a href="#"class="date"> May 27 '14 at 17:53</a></li><hr>
+                                        <li>This is the only solution that worked for me. Can you please explain what is happening? Thanks! –<a href="#" class="name-tag"> eaglei22</a><a href="#"class="date"> Dec 7 '15 at 23:04</a></li><hr>
+                                        <li>It's checking to see if the first object exists. If JSON has anything, there will be a first object. –<a href="#" class="name-tag">Justin Levene</a><a href="#"class="date">Dec 9 '15 at 7:58</a></li><hr>   
+                                        <li>this will only work with array's but not with key value object's ex. var someJSON = {'name': 'Justin Levene'} –<a href="#" class="name-tag"> Arun Pratap Singh</a><a href="#"class="date">Dec 10 '15 at 5:43</a></li>
+                                    </ol>
+
+                                </div>
+                            </dib>
+                        </div>
+                        <hr>
+                        <div class="your-answer">
+                            <h2>Your Answer</h2>
+                                <textarea rows="20" cols="80"></textarea> <hr>
+                                <button>Post Your Answer</button> <br>
+                                <p>Not the answer you're looking for? Browse other questions tagged<a class="lang-tag"> javascript</a><a class="lang-tag"> jquery</a><a class="lang-tag"> ajax</a><a class="lang-tag"> json</a> or ask your own question.</p>
+                
+                            </div>
+
+                </div>
+
+                <div class="side-content">
+                        <ol class="view">
+                            <li>asked 6 years, 2 months ago</li>
+                            <li>viewed 126,523 times </li>
+                            <li>active 1 year ago</li>
+                        </ol>
+                        
+                        <ol class="linked">
+                            <li><h3>Linked</h3></li>
+                            <li><button class="vote-score">9</button>How to check “isEmpty()” in Gson JsonObject?</li>
+                            <li><button class="vote-score">1</button>Can't check an empty JSON key: value pair</li>
+                            <li><button class="vote-score">0</button>issue on identifying respone value</li>
+                        </ol>
+                        
+                        <ol class="related">
+                            <li ></li><h3>Related</h3></li>
+                            <li><button class="vote-score">7153</button>How to check if an element is hidden in JQuery</li>
+                            <li><button class="vote-score">6424</button>Can comment be used in JSON</li>
+                            <li><button class="vote-score">3823</button>Setting "checked" for a checkbox with JQuery</li>
+                            <li><button class="vote-score">9599</button>What is the correct JSON content type</li>
+                            <li><button class="vote-score">7732</button>How do i redirect to another web page</li>
+                            <li><button class="vote-score">4183</button>How to check whether a check box is checked in jQuery</li>
+                        </ol>
+                        
+                        <ol class="hot-ques">
+                            <li><h3>
+                                    Hot Network Question
+                                </h3></li>
+                            <li>What are some good ways to treat frozen vegetables such that they behave like fresh vegetables when stir frying them?</li>
+                            <li>Why does AES have exactly 10 rounds for a 128-bit key, 12 for 192 bits and 14 for a 256-bit key size?</li>
+                            <li>Find all subarray with sum equal to number?</li>
+                            <li>What is the English pronunciation of "pain au chocolat"?</li>
+                            <li>Why does int i = 10; i / 0; compile, but 5 / 0 gives CS0020 - Division by constant zero?</li>
+                            <li>What does "Scientists rise up against statistical significance" mean? (Comment in Nature)</li>
+                            <li>What are these little yellow boxes at German pedestrian crossings?</li>
+                            <li>Does an advisor owe his/her student anything? Will an advisor keep a PhD student only out of pity?</li>
+                            <li>Make a Bowl of Alphabet Soup</li>
+                            <li>What's the name of the logical fallacy where a debater extends a statement far beyond the original statement to make it true?</li>
+                        </ol>
+
+                </div>
+            </div>
+       </section>
+       
+   </main>
+   <footer>
+        <ul>
+            <li> <strong>STACK OVERFLOW</strong></li>
+            <li><a href="">Question</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Developer Jobs Directory</a></li>
+            <li><a href="">Salary Calculator</a></li>
+            <li><a href="">Help</a></li>
+            <li><a href="">Mobile</a></li>
+            <li><a href="">Disable Responsiveness</a></li>
+        </ul>
+        <ul>
+            <li> <strong>PRODUCT</strong></li>
+            <li><a href="">Team</a></li>
+            <li><a href="">Talent</a></li>
+            <li><a href="">Advertising</a></li>
+            <li><a href="">Enterprise</a></li>
+        </ul>
+        <ul>
+            <li> <strong>COMPANY</strong></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Press</a></li>
+            <li><a href="">Work Here</a></li>
+            <li><a href="">Legal</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+        <ul>
+            <li> <strong>STACK EXCHANGE NETWORK</strong></li>
+            <li><a href="">Technology</a></li>
+            <li><a href="">Life/Arts</a></li>
+            <li><a href="">Culture/Recreation</a></li>
+            <li><a href="">Science</a></li>
+            <li><a href="">Other</a></li>
+        </ul>
+        <ul id="contact">
+                <li><a href="">Blog</a></li>
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">Linkedln</a></li>
+        </ul>
+   
+    </footer>
+
 </body>
-</html>
+
+</html> 
