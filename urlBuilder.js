@@ -1,14 +1,28 @@
+function checkNullDefine (value) {
+    let temp = !!value
+    // check if sent false
+
+    if (value === 0) {
+      return 0
+    }
+    if (value === true) {
+      return true
+    }
+    if (temp === false ) {
+        return false
+    }
+    return value
+}  
 class UrlBuilder{
     constructor (url, option){
         this.url = url
-        this.option = option
     }
 
     buildUrl() {
         var result = this.url+"?"
-        for (var propt in this.option) {
+        for (var propt in option) {
             if (propt=="sort") {
-                if (this.option[propt] == "true") {
+                if (option[propt] == "true") {
                     result = result + propt + "=asc&"
                 }
                 else {
@@ -16,10 +30,12 @@ class UrlBuilder{
                 }
             }
             else {
-                result = result + propt + "=" + this.option[propt] + "&"
+                if (checkNullDefine(option[propt]) != false) {
+                    result = result + propt + "=" + option[propt] + "&"
+                }
             }
         }
-        return result.substring(0, result.length - 1)
+        return result.substr(0 , result.length - 1)
     }
 
     changeType(char, tmp) {
@@ -34,6 +50,7 @@ class UrlBuilder{
         var str1 = "pathname";
         var str2 = "";
         for (var i = 0; i < url.length; i++) {
+            
             tmp = this.changeType(url[i], tmp)
 
           	if (url[i] == "=") continue
