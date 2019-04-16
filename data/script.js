@@ -10,6 +10,12 @@ function transit() {
 }
 function changeForm()
 {
-    window.open('../female/index.html','_self')
+    var check = document.getElementById('male').checked
+    if( check == true) {
+        window.open('../male/index.html','_self')
+    }
+    else {
+        window.open('../female/index.html','_self')
+    }
     return false;
 }
