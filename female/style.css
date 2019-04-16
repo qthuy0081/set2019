@@ -1,0 +1,12 @@
+body, html {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#form-female {
+    box-sizing: border-box;
+    width: 260px;
+    margin: 100px auto ;
+    box-shadow: 2px 2px 5px 1px #00000033;
+    padding-bottom: 40px;
+    border-radius: 3px;
+}

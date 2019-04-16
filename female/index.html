@@ -1,1 +1,38 @@
-This is a female form
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/female.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="./style.css">
+    <title>Female</title>
+    
+</head>
+<body>
+        <form id="form-female">
+        <div id="DoB">
+            <label id="label">Date of Birth</label>
+            <input id="myDate" type="date" required>
+            <div id="Bvalid" style="color:red;font-size: 12px;"></div>
+        </div>
+        <br>
+        <div id="Hobbies">
+            <label>Hobby</label>
+                <select id = "myHobbies">
+                    <option value = "EMPTY">...</option>
+                    <option value = "Household">Household</option>
+                    <option value = "Eating">Eating</option>
+                    <option value = "Playing">Playing</option>
+                    <option value = "Sleeping">Sleeping</option>
+                </select>
+        </div>
+        <br>
+            <div id="control-button">
+                <button id="back">Back</button>
+                <input type="Submit" onclick="validate(); condition()">
+            </div> 
+    </form>
+    <script src="./script.js"></script>
+</body>
+</html>
