@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="form" >
+        <input type="text" id="name-input" placeholder="Name" onchange="resetName()"><br>
+        <div class="validate" id="nameValid"></div>
+
+        <input type="text" id="address-input" placeholder="Address" onchange="resetAddress()"><br>
+        <div class="validate" id="addressValid"></div>
+
+        <span class="description-text">Gender </span>
+        <input type="radio" name="gender" id="gender-male" onchange="resetGender()">Male
+        <input type="radio" name="gender" id="gender-female" onchange="resetGender()">Female<br>
+        <div class="validate" id="genderValid"></div>
+
+
+        <button id="submit-button" onclick="submitForm()">Submit</button>
+    </div>
+
+    
+</body>
+<script src="script.js"></script>
+</html>
