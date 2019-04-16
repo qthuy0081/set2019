@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/female.png" type="image/x-icon"/>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Female</title>
     
 </head>
 <body>
-    <form id="form-female">
+        <form id="form-female" onsubmit='return false'>
         <div id="DoB">
             <label id="label">Date of Birth</label>
             <input id="myDate" type="date" required>
@@ -29,10 +29,11 @@
         </div>
         <br>
             <div id="control-button">
-                <button id="back">Back</button>
+                <button id="back" onclick='Back()'>Back</button>
                 <input type="Submit" onclick="validate(); condition()">
             </div> 
     </form>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+

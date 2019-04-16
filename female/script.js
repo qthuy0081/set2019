@@ -16,7 +16,11 @@ function condition() {
     if('2019'- a > 18 &&  myid == '1'){
         alert('Alert can marry!!')
     }
-    else if('2019'- a <= 18 &&  myid == '0,4,2,3'){
+    else if('2019'- a <= 18 &&  myid == '1'||'2019'- a <= 18 &&  myid == '0'|| '2019'- a <= 18 &&  myid == '2' || '2019'- a <= 18 &&  myid == '3' || '2019'- a <= 18 &&  myid == '4' ){
         alert('Still be a girl!!')
     }
+    return false;
+}
+function Back() {
+    window.history.back()
 }
