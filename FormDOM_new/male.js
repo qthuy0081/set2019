@@ -23,8 +23,7 @@ function getDateToDay () {
 function reset () {
     document.getElementById('valid-birthday').innerText = ""
 }
-
-function submitPrivateInfo () {
+function isAdult () {
     let birthYear = document.getElementById('birthday-input').value
     birthYear = parseInt( birthYear.substr(0,4))
     let birthMonth = document.getElementById('birthday-input').value
@@ -36,34 +35,31 @@ function submitPrivateInfo () {
     let currentYear = parseInt( toDay.substr(0, 4))
     let currentMonth = parseInt ( toDay.substr(5, 7))
     let currentDay = parseInt( toDay.substr(8, 10))
+
+    if (currentYear - birthYear > 18) return true
+
+    if (currentYear - birthYear == 18)  {
+        if (birthMonth == currentMonth) {
+            if (birthDay <= currentDay) return true
+        }
+        else {
+            if (birthMonth < currentMonth) return true
+        }
+    }    
+    
+    return false
+}
+function submitPrivateInfo () {
     
     if (checkInfo () != true) return
 
-    var boy = true
+    var boy = !isAdult()
     var hobby = document.getElementById('hobby-input').value
 
-    debugger
-
-    if (currentYear - birthYear > 18) boy = false
-
-    if (currentYear - birthYear == 18)
-    {
-        if (birthMonth == currentMonth)
-        {
-            if (birthDay <= currentDay) boy = false
-        }
-        else 
-        {
-            if (birthMonth < currentMonth) boy = false
-        }
-    }    
-
-    if (!boy && hobby == 'sport') 
-    {
+    if (boy == false && hobby == 'sport') {
         alert('Can be in jail')
     }
-    else
-    {
+    else {
         alert('Still be a boy')
     }
 }
