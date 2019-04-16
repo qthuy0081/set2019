@@ -8,3 +8,8 @@ function transit() {
 
     }
 }
+function changeForm()
+{
+    window.open('../female/index.html','_self')
+    return false;
+}
