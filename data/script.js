@@ -12,3 +12,8 @@ function transit() {
         }
     return false
 }
+function changeForm()
+{
+    window.open('../female/index.html','_self')
+    return false;
+}
