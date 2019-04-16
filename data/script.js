@@ -6,7 +6,7 @@ function transit() {
 //    window.open("test.html", "_self");
     var gender = document.getElementsByName("gender");
     if (gender[0].checked) {
-        window.open("../male/index.html")
+        window.open(srcMale)
     }
     else 
         if (gender[1].checked) {
