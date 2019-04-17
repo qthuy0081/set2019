@@ -1,5 +1,5 @@
 // Female Form
-var bDate = document.getElementById('myDate');
+var bDate = document.getElementById('my-date');
 
 
 function validateFemaleForm() {
@@ -33,8 +33,8 @@ function submitFemaleForm () {
 
 // Initial Form
 var Address = document.getElementById('address-input')
-var GenderMale = document.getElementById('genderMale')
-var GenderFemale = document.getElementById('genderFemale')
+var GenderMale = document.getElementById('gender-male')
+var GenderFemale = document.getElementById('gender-female')
 var Name = document.getElementById("name-input")
 
 function validate() {
@@ -42,18 +42,18 @@ function validate() {
 
     if(Name.value == ""){
         Name.style.border = "2px solid red"
-        document.getElementById('nameValid').innerText = '*this field is mandatory'
+        document.getElementById('name-valid').innerText = '*this field is mandatory'
         flag = false
     }
 
     if(Address.value == ""){
         Address.style.border = "2px solid red"
-        document.getElementById('addressValid').innerText = '*this field is mandatory'
+        document.getElementById('address-valid').innerText = '*this field is mandatory'
         flag = false
     }
 
     if(GenderMale.checked == GenderFemale.checked){
-        document.getElementById('genderValid').innerText = '*this field is mandatory'
+        document.getElementById('gender-valid').innerText = '*this field is mandatory'
         flag = false
     }
 
@@ -64,28 +64,28 @@ function clearInvalid() {
     Name.style.border = "1px solid rgba(128, 128, 128, 0.486)"
     Address.style.border = "1px solid rgba(128, 128, 128, 0.486)"
 
-    document.getElementById("nameValid").innerText = ""
-    document.getElementById("addressValid").innerText = ""
-    document.getElementById("genderValid").innerText = ""
+    document.getElementById("name-valid").innerText = ""
+    document.getElementById("address-valid").innerText = ""
+    document.getElementById("gender-valid").innerText = ""
 }
 
 function submitInitialForm () {
     if(validate()){
         clearInvalid()
-        document.getElementById('nameAndAdressForm').style.display = 'none'
+        document.getElementById('name-and-adress-form').style.display = 'none'
         if(GenderMale.checked)    
-            document.getElementById('maleHobbyAndDobForm').style.display = 'block'
+            document.getElementById('male-hobby-and-dob-form').style.display = 'block'
         else
-            document.getElementById('femaleHobbyAndDobForm').style.display = 'block'
+            document.getElementById('female-hobby-and-dob-form').style.display = 'block'
     }
 }
 
 function back () {
-    document.getElementById('nameAndAdressForm').style.display = 'block'
+    document.getElementById('name-and-adress-form').style.display = 'block'
     if(GenderMale.checked)    
-        document.getElementById('maleHobbyAndDobForm').style.display = 'none'
+        document.getElementById('male-hobby-and-dob-form').style.display = 'none'
     else
-        document.getElementById('femaleHobbyAndDobForm').style.display = 'none'
+        document.getElementById('female-hobby-and-dob-form').style.display = 'none'
 }
 
 //Male Form

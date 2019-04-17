@@ -9,22 +9,22 @@
 </head>
 
 <body>
-    <div class="form" id="nameAndAdressForm">
+    <div class="form" id="name-and-adress-form">
         <input type="text" id="name-input" placeholder="Name"><br>
-        <div class="validate" id="nameValid"></div>
+        <div class="validate" id="name-valid"></div>
 
         <input type="text" id="address-input" placeholder="Address"><br>
-        <div class="validate" id="addressValid"></div>
+        <div class="validate" id="address-valid"></div>
 
         <span class="description-text">Gender </span>
-        <input type="radio" name="gender" id="genderMale">Male
-        <input type="radio" name="gender"  id="genderFemale">Female<br>
-        <div class="validate" id="genderValid"></div>
+        <input type="radio" name="gender" id="gender-male">Male
+        <input type="radio" name="gender"  id="gender-female">Female<br>
+        <div class="validate" id="gender-valid"></div>
         <hr>
         <button onclick="submitInitialForm()">Submit</button>
     </div>
 
-    <div class="form" id="maleHobbyAndDobForm">
+    <div class="form" id="male-hobby-and-dob-form">
         <input type="date" id = "birthday-input" onchange="reset()">
         <div id = "valid-birthday"></div>
         <select id = "hobby-input">
@@ -36,14 +36,14 @@
         <button onclick="submitPrivateInfo()">Submit</button>
     </div>
 
-    <div class="form" id="femaleHobbyAndDobForm">
+    <div class="form" id="female-hobby-and-dob-form">
         <span class="description-text">Date Of Birth </span>
-        <input id="myDate" type="date" required>
-        <div id="bValid" class="validate"></div>
+        <input id="my-date" type="date" required>
+        <div id="b-valid" class="validate"></div>
 
         <span class="description-text">Hobby </span>            
         <select id = "hobbies">                   
-            <option value="Emty"></option>
+            <option value="Empty"></option>
             <option value = "Household">Household</option>
             <option value = "Barbie">Barbie</option>
             <option value = "Reading">Reading</option>

@@ -18,15 +18,15 @@ hr {
     padding: 10px 0 10px 0;
 }
 
-#nameAndAdressForm {
+#name-and-adress-form {
     display:block;
 }
 
-#maleHobbyAndDobForm {
+#male-hobby-and-dob-form {
     display:none;
 }
 
-#femaleHobbyAndDobForm {
+#female-hobby-and-dob-form {
     display: none;
 }
 
