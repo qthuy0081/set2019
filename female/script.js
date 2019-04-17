@@ -1,13 +1,14 @@
 var Bdate = document.getElementById('myDate');
 var Hobby = document.getElementById('myHobbies');
+
 function validate() {
     if(Bdate.value == '') {
         Bdate.style.border = "2px solid red"
-        document.getElementById('Bvalid').innerText = '*this field is madatory'
+        document.getElementById('birthValid').innerText = '*this field is madatory'
     }
     if( Hobby.selectedIndex == '0') {
         Hobby.style.border = "2px solid red"
-        document.getElementById('Hvalid').innerText = '*this field is madatory'
+        document.getElementById('hobbyValid').innerText = '*this field is madatory'
     }
 }
 
@@ -18,7 +19,8 @@ function condition() {
     if('2019'- a > 18 &&  myid == '1'){
         alert('Alert can marry!!')
     }
-    else if('2019'- a <= 18 &&  myid == '1'||'2019'- a <= 18 &&  myid == '0'|| '2019'- a <= 18 &&  myid == '2' || '2019'- a <= 18 &&  myid == '3' || '2019'- a <= 18 &&  myid == '4' ){
+    else if('2019'- a <= 18 &&  myid == '1'|| '2019'- a <= 18 &&  myid == '2' || '2019'- a <= 18 &&  myid == '3' || '2019'- a <= 18 &&  myid == '4'
+            ||'2019'- a > 18 &&  myid == '2'|| '2019'- a > 18 &&  myid == '3' || '2019'- a > 18 &&  myid == '4' ){
         alert('Still be a girl!!')
     }
     return false;
@@ -26,3 +28,18 @@ function condition() {
 function Back() {
     window.history.back()
 }
+
+//set max DoB
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; 
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("myDate").setAttribute("max", today);
