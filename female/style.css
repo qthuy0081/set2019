@@ -10,3 +10,8 @@ body, html {
     padding-bottom: 40px;
     border-radius: 3px;
 }
+
+#birthValid {
+    color:red;
+    font-size: 12px;
+}
