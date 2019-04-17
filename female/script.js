@@ -1,34 +1,33 @@
-var bDate = document.getElementById('myDate');
+var birthDate = document.getElementById('myDate');
 var hobby = document.getElementById('myHobbies');
 
 function validate() {
-    if(bDate.value == '') {
+    if(birthDate.value == '') {
         document.getElementById('birthValid').style.display = "block"
-        bDate.style.border = "2px solid red"
+        birthDate.style.border = "2px solid red"
         document.getElementById('birthValid').innerText = '*this field is madatory'
     }
 }
 
 function condition() {
     if (age < 0) return false;
-    if(bDate.value!= '') {
-        
+    if(birthDate.value!= '') {    
         var myid = document.getElementById('myHobbies').selectedIndex 
-        if( age > 18 &&  myid == '1') {
+        if(age > 18 &&  myid == '1') {
             document.getElementById('birthValid').style.display = "none"
-            bDate.style.border = "1px solid gray"
+            birthDate.style.border = "1px solid gray"
             alert('Alert can marry!!')
         }
-        else if( age <= 18 ||  myid == '0') {
+        else if(age <= 18 ||  myid == '0') {
             document.getElementById('birthValid').style.display = "none"
-            bDate.style.border = "1px solid gray"
+            birthDate.style.border = "1px solid gray"
             alert('Still be a girl!!')
         }
     }
     return false;
 }
 
-function Back() {
+function goBack() {
     window.history.back()
 }
 
