@@ -16,32 +16,34 @@ function condition() {
         Bdate.style.border = '1px solid gray'
         alert('Can be in Jail !!')
     }
-    else if( age <= 18 &&  myid == '0'){
+    else if( age <= 18 || myid == '0'){
             document.getElementById('birthValid').style.display='none'
             Bdate.style.border = '1px solid gray'
         alert('Still be a boy !!')
     }
     return false;
 }
+
 function Back() {
     window.history.back()
 }
+
 function getAge(dateString) {
 
     var dates = dateString.split("-");
     var d = new Date();
 
-    var useryear = dates[0];
-    var usermonth = dates[1];
-    var userday = dates[2];
+    var userYear = dates[0];
+    var userMonth = dates[1];
+    var userDay = dates[2];
 
-    var curday = d.getDate();
-    var curmonth = d.getMonth()+1;
-    var curyear = d.getFullYear();
+    var curentDay = d.getDate();
+    var curentMonth = d.getMonth()+1;
+    var curentYear = d.getFullYear();
 
-    var age = curyear - useryear;
+    var age = curentYear - userYear;
 
-    if((curmonth < usermonth) || ( (curmonth == usermonth) && curday < userday   )){
+    if((curentMonth < userMonth) || ( (curentMonth == userMonth) && curentDay < userDay   )){
         age--;
     }
     return age;
