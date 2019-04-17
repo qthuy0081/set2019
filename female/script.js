@@ -10,6 +10,7 @@ function validate() {
 }
 
 function condition() {
+    if (age < 0) return false;
     if(bDate.value!= '') {
         var age = getAge(bDate.value)
         var myid = document.getElementById('myHobbies').selectedIndex 

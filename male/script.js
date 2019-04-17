@@ -9,8 +9,10 @@ function validate() {
 }
 
 function condition() {
+    var age = getAge(bDate.value)
+    if (age < 0) return false;
     if(bDate.value!= '') {
-        var age = getAge(bDate.value)
+        
         var myid = document.getElementById('myHobbies').selectedIndex 
         if( age > 18 &&  myid == '1') {
             document.getElementById('birthValid').style.display='none'
