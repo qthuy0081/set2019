@@ -1,39 +1,32 @@
-var bDate = document.getElementById('DoB')      //DoB=DateOfBirth in HTML
-var hobbySelector = document.getElementById('hobby').selectedIndex
-
-function validated() {
-    let flag = true
-    if(bDate.value == '') {
-        bDate.style.border = "2px solid red"
-        document.getElementById('bValid').innerText = '* This field is madatory!'
-        flag = false
+var Bdate = document.getElementById('myDate');
+var Hobby = document.getElementById('myHobbies');
+function validate() {
+    if(Bdate.value == '') {
+        Bdate.style.border = "2px solid red"
+        document.getElementById('Bvalid').innerText = '*this field is madatory'
     }
-    return flag
+    if( Hobby.selectedIndex == '0') {
+        Hobby.style.border = "2px solid red"
+        document.getElementById('Hvalid').innerText = '*this field is madatory'
+    }
 }
 
-function hobbySelect() {
-    let flag = true
-    if(hobbySelector == '0' || hobbySelector == isNaN) {
-        hobby.style.border = "2px solid red"
-        document.getElementById('hSelect').innerText = '* This field is mandatory!'
-        flag = false
+function condition() {
+    var str = Bdate.value.split("-")
+    var a = str[0]
+    var myid = document.getElementById('myHobbies').selectedIndex 
+    if('2019'- a > 18 &&  myid == '1'){
+        alert('Can be in Jail !!')
     }
-    return flag
-}
-
-function submitAlert() {
-    let dOB = bDate.value.split("-")    //dOB=dateOfBirth
-    let dStr = dOB[0]                   
-    //let hobbyID = document.getElementById('hobby').selectedIndex
-    if('2019' - dStr >= 18) {
-        alert('Can go to JAIL')
-    }
-    else if ('2019' - dStr < 18) {
-        alert('Still be a BOY')
+    else if('2019'- a <= 18 &&  myid == '1'
+            ||'2019'- a <= 18 &&  myid == '0'
+            || '2019'- a <= 18 &&  myid == '2' 
+            || '2019'- a <= 18 &&  myid == '3' 
+            || '2019'- a <= 18 &&  myid == '4' ){
+        alert('Still be a boy !!')
     }
     return false;
 }
-
 function Back() {
     window.history.back()
 }
