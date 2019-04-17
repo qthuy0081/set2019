@@ -32,10 +32,12 @@ function submitForm () {
 
 function resetName () {
     document.getElementById('nameValid').innerText = ""
+    Name.style.border = "1px solid rgba(128, 128, 128, 0.486)"
 }
 
 function resetGender () {
     document.getElementById('genderValid').innerText = ""
+    Address.style.border = "1px solid rgba(128, 128, 128, 0.486)"
 }
 
 function resetAddress () {
