@@ -10,17 +10,19 @@ function validate() {
 }
 
 function condition() {
-    var age = getAge(Bdate.value)
-    var myid = document.getElementById('myHobbies').selectedIndex 
-    if( age > 18 &&  myid == '1') {
-        document.getElementById('birthValid').style.display = "none"
-        Bdate.style.border = "1px solid gray"
-        alert('Alert can marry!!')
-    }
-    else if( age <= 18 ||  myid == '0') {
-        document.getElementById('birthValid').style.display = "none"
-        Bdate.style.border = "1px solid gray"
-        alert('Still be a girl!!')
+    if(Bdate.value!= '') {
+        var age = getAge(Bdate.value)
+        var myid = document.getElementById('myHobbies').selectedIndex 
+        if( age > 18 &&  myid == '1') {
+            document.getElementById('birthValid').style.display = "none"
+            Bdate.style.border = "1px solid gray"
+            alert('Alert can marry!!')
+        }
+        else if( age <= 18 ||  myid == '0') {
+            document.getElementById('birthValid').style.display = "none"
+            Bdate.style.border = "1px solid gray"
+            alert('Still be a girl!!')
+        }
     }
     return false;
 }
