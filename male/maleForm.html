@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./maleForm.css" rel=styleSheet>
+    <title>Form : Male</title>
+</head>
+<body>
+    <div>
+        <form id="form-male" onsubmit='return false'>
+            <label>Date Of Birth</label>
+            <input id="DoB" type="date" onchange="validated()" required/>
+            <div id="bValid" style="color:red;font-size: 12px"></div>
+            </br>
+
+            <label id="hLabel">Hobby</label>
+            <select id="hobby" onchange="hobbySelect()" required>
+                <option value="">Please pick one</option>
+                <option value="sport">Sport</option>
+                <option value="sleep">Sleep</option>
+                <option value="eat">Eat</option>
+                <option value="study">Study</option>
+                <option value="gym">Gym</option>
+            </select>
+            <div id="hSelect" style="color:red;font-size: 12px"></div>
+            </br>
+
+            <div id="controlButton">
+                <button onclick="window.history.back()">Back</button>
+                <input type="submit" onclick="submitAlert()"/>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="./maleForm.js"></script>
+</html>
