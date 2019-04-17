@@ -10,15 +10,15 @@
 <body>
     <div class="form" >
         <input type="text" id="name-input" placeholder="Name" onchange="resetName()"/><br>
-        <div class="validate" id="nameValid"></div>
+        <div class="validate" id="name-valid"></div>
 
         <input type="text" id="address-input" placeholder="Address" onchange="resetAddress()"/><br>
-        <div class="validate" id="addressValid"></div>
+        <div class="validate" id="address-valid"></div>
 
         <span class="description-text">Gender </span>
         <input type="radio" name="gender" id="gender-male" onchange="resetGender()">Male
         <input type="radio" name="gender" id="gender-female" onchange="resetGender()">Female<br>
-        <div class="validate" id="genderValid"></div>
+        <div class="validate" id="gender-valid"></div>
 
 
         <button id="submit-button" onclick="submitForm()">Submit</button>

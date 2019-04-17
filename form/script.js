@@ -25,30 +25,30 @@ function validate () {
     let flag = true
     if (Name.value.trim() == "") {
         Name.style.border = "2px solid red"
-        document.getElementById('nameValid').innerText = '* This field is mandatory'
+        document.getElementById('name-valid').innerText = '* This field is mandatory'
         flag = false
     }
 
     if (Address.value.trim() == "") {
         Address.style.border = "2px solid red"
-        document.getElementById('addressValid').innerText = '* This field is mandatory'
+        document.getElementById('address-valid').innerText = '* This field is mandatory'
         flag = false
     }
 
     if (GenderMale.checked == GenderFemale.checked) {
-        document.getElementById('genderValid').innerText = '* This field is mandatory'
+        document.getElementById('gender-valid').innerText = '* This field is mandatory'
         flag = false
     }
 
     if (Name.value != "" && !validateSpecialCharacterName()) {
         Name.style.border = "2px solid red"
-        document.getElementById('nameValid').innerText = '* Invalid input, only alphabet characters allowed'
+        document.getElementById('name-valid').innerText = '* Invalid input, only alphabet characters allowed'
         flag = false
     }
 
     if (Address.value != "" && !validateSpecialCharacterAddress()) {
         Address.style.border = "2px solid red"
-        document.getElementById('addressValid').innerText = '* Invalid input, only alphabet characters and numbers allowed'
+        document.getElementById('address-valid').innerText = '* Invalid input, only alphabet characters and numbers allowed'
         flag = false
     }
 
@@ -63,17 +63,17 @@ function submitForm () {
 }
 
 function resetName () {
-    document.getElementById('nameValid').innerText = ""
+    document.getElementById('name-valid').innerText = ""
     Name.style.border = "1px solid rgba(128, 128, 128, 0.486)"
 }
 
 function resetAddress () {
-    document.getElementById('addressValid').innerText = ""
+    document.getElementById('address-valid').innerText = ""
     Address.style.border = "1px solid rgba(128, 128, 128, 0.486)"
 }
 
 function resetGender () {
-    document.getElementById('genderValid').innerText = ""
+    document.getElementById('gender-valid').innerText = ""
 }
 
 
