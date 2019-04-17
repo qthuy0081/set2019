@@ -6,9 +6,10 @@ function transit() {
     if (gender[0].checked) {
         window.open(srcMale, '_self')
     }
-    else 
+    else {
         if (gender[1].checked) {
             window.open(srcFemale, '_self')
         }
+    }
     return false
 }
