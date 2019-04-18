@@ -4,16 +4,28 @@ function createTask(text) {
     
     var label = document.createElement('label')
 
-    label.innerHTML += '<input type="chec">'
-  
-    chkbox.type = 'checkbox'
-    chkbox.value=1
-    span.className='strike'
-    span.appendChild(document.createTextNode(text))
-    li.appendChild(chkbox)
-    li.appendChild(span)
-  
-    return li
+    label.innerHTML += '<input type="checkbox" class="input-task-checkbox">'
+    label.innerHTML += '<div class="title-task-name">'+text+'</div>'
+
+    taskItem.append(label)
+
+    var edit = document.createElement('button')
+    edit.setAttribute('id', 'edit-task-button')
+    taskItem.append(edit)
+
+    var del = document.createElement('button')
+    del.setAttribute('id', 'del-task-button')
+    taskItem.append(del)
+
+    var yes = document.createElement('button')
+    yes.setAttribute('id', 'yes-button')
+    taskItem.append(yes)
+
+    var no = document.createElement('button')
+    no.setAttribute('id', 'no-button')
+    taskItem.append(no)
+    
+    return taskItem
   }
   function modifyTask() {
     if (validate() == true) {
