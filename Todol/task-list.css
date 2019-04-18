@@ -52,7 +52,7 @@
     width: 62%;
 }
 
-.edit-task-button {
+#edit-task-button {
     display: inline-block;
     vertical-align: top;    
     margin-top: 3px;
@@ -64,12 +64,36 @@
     color: #ffffff;
 }
 
-.del-task-button {
+#del-task-button {
     display: inline-block;
     vertical-align: top;
     margin-top: 3px;
     padding: 5px;
     width: 15%;
+    font-weight: bold;
+    background-color: #DB3340;
+    border: none;
+    color: #ffffff;
+}
+
+#yes-button {
+    display: none;
+    vertical-align: top;    
+    margin-top: 3px;
+    padding: 5px;
+    width: 12%;
+    font-weight: bold;
+    background-color: #28ABE3;
+    border: none;
+    color: #ffffff;
+}
+
+#no-button {
+    display: none;
+    vertical-align: top;
+    margin-top: 3px;
+    padding: 5px;
+    width: 12%;
     font-weight: bold;
     background-color: #DB3340;
     border: none;
