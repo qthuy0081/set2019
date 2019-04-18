@@ -3,20 +3,14 @@ function editButtonClick () {
     document.getElementById('input-task-name').value = titleTaskName
 }
 
-function deleteButtonClick () {
+function deleteButtonClick () {    
     let item = event.currentTarget.parentElement
-    var editButton = event.currentTarget
-    editButton = document.getElementById('edit-task-button')
-    editButton.style.display = 'none'
-    
-    let deleteButton = event.currentTarget
-    deleteButton = document.getElementById('del-task-button')
-    deleteButton.style.display = 'none'
-
-    item.innerHTML += '<button id = "yes-button" onclick = "selectYes()">YES</button>'
+    item.innerHTML = item.innerHTML.replace('<button id="del-task-button" onclick="deleteButtonClick()">DELETE</button>','') 
+    item.innerHTML = item.innerHTML.replace('<button id="edit-task-button" onclick="editButtonClick()">EDIT</button>','') 
+    item.innerHTML += '<button id = "yes-button" onclick = "selectYes()">YES</button> '
     item.innerHTML += '<button id = "no-button" onclick = "selectNo()">NO</button>'
-
 }
+
 function changeColor() {
     let tasksList = document.getElementsByClassName('task-item')
     let numberOfTasks = tasksList.length
@@ -27,8 +21,8 @@ function changeColor() {
             task.style.backgroundColor = '#CCCCCC'
         } 
     }
-
 }
+
 function selectYes () {
     let item = event.currentTarget.parentElement
     item.remove()
@@ -36,20 +30,17 @@ function selectYes () {
 }
 
 function selectNo () {
-    let editButton = event.currentTarget
-    editButton = document.getElementById('edit-task-button')
-    editButton.style.display = 'inline'
+    let item = event.currentTarget.parentElement
     
-    let deleteButton = event.currentTarget
-    deleteButton = document.getElementById('del-task-button')
-    deleteButton.style.display = 'inline'
-
     let yesButton = event.currentTarget
     yesButton = document.getElementById('yes-button')
     yesButton.remove()
-
+    
     let noButton = event.currentTarget
     noButton = document.getElementById('no-button')
     noButton.remove()
+    
+    item.innerHTML += '<button id="edit-task-button" onclick="editButtonClick()">EDIT</button> '
+    item.innerHTML += '<button id="del-task-button" onclick="deleteButtonClick()">DELETE</button>'
 }
 
