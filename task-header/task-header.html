@@ -11,17 +11,12 @@
 
     <div id="content">
         <div id="task-header">
-            <input id="input-task-name" placeholder="Task name">
-            <button id="add-task-button" onclick="addTask()">ADD</button>
+            <input id="input-task-name" placeholder="Task name" onchange="clearAllInforms()">
+            <button id="add-task-button" onclick="modifyTask()" >ADD</button>
             <button id="edit-name-button">EDIT</button>
             <div id="validate-task-name"></div>
-            <div id="blockList">
-                <ul id="taskList">
-
-                </ul>
-            </div>
         </div>
     </div>  
-    <script src="./javascript.js"></script>
+    <script src="./headerScript.js"></script>
 </body>
 </html>
