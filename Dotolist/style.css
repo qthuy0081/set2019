@@ -17,7 +17,7 @@
 #footer{
     display: block;
 }
-
+/* Dropdown style */
 .dropbtn {
     background-color: #3498DB;
     color: white;
@@ -56,3 +56,4 @@
   .dropdown a:hover {background-color: #ddd;}
   
   .show {display: block;}
+/* Dropdown Style end */

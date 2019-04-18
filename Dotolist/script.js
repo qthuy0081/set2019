@@ -14,8 +14,8 @@ function deleteFake(event) {
     item.innerHTML = item.innerHTML.replace('<button id="yes-button" onclick="deleteForever(event)">Yes</button>','')
     item.innerHTML += '<button id="delete-button" onclick="deleteItem(event)">Delete</button>'
 }
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+function dropDown() {
+    document.getElementById("dropDownList").classList.toggle("show");
 }
 
 window.onclick = function(event) {
