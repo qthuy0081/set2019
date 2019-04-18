@@ -17,10 +17,22 @@ function deleteButtonClick () {
     item.innerHTML += '<button id = "no-button" onclick = "selectNo()">NO</button>'
 
 }
+function changeColor() {
+    let tasksList = document.getElementsByClassName('task-item')
+    let numberOfTasks = tasksList.length
 
+    for (var i = 0 ; i < numberOfTasks;i++) {
+        let task = tasksList[i]
+        if (i % 2 == 0) {
+            task.style.backgroundColor = '#CCCCCC'
+        } 
+    }
+
+}
 function selectYes () {
     let item = event.currentTarget.parentElement
     item.remove()
+    changeColor()
 }
 
 function selectNo () {
