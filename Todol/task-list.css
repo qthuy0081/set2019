@@ -77,7 +77,6 @@
 }
 
 #yes-button {
-    display: none;
     vertical-align: top;    
     margin-top: 3px;
     padding: 5px;
@@ -89,7 +88,6 @@
 }
 
 #no-button {
-    display: none;
     vertical-align: top;
     margin-top: 3px;
     padding: 5px;
