@@ -7,45 +7,43 @@ function slectOption() {
         displayAllTasks()
     } else if(selection == 'done') {
        displayTaskDone()
+       
     } else {
         displayUndoneTasks()
     }
 }
 function displayTaskDone() {
-    let numberOfTasks = toBeChecked.length
+    
     let toBeChecked = document.getElementsByClassName('input-task-checkbox')
+    let numberOfTasks = toBeChecked.length
+    
     for (var i = 0; i < numberOfTasks; i++) {
-        let task = numberOfTasks.toBeChecked[i]
-        if (task.checked) {
-            task.style.display = "block"
+        let task = toBeChecked[i]
+        if (!task.checked) {
+            let elementToDisplay = task.parentElement.parentElement
+            elementToDisplay.style.display = "none"
         }
     }
 }
 function displayAllTasks() {
-    let numberOfTasks = toBeChecked.length
+    
     let toBeChecked = document.getElementsByClassName('input-task-checkbox')
+    let numberOfTasks = toBeChecked.length
     for (var i = 0; i < numberOfTasks; i++) {
-        let task = numberOfTasks.toBeChecked[i]
-        task.style.display = "block"
+        let task = toBeChecked[i]
+        let elementToDisplay = task.parentElement.parentElement
+        elementToDisplay.style.display = "block"
     }
 }
 function displayUndoneTasks() {
-    let numberOfTasks = toBeChecked.length
+    
     let toBeChecked = document.getElementsByClassName('input-task-checkbox')
+    let numberOfTasks = toBeChecked.length
     for (var i = 0; i < numberOfTasks; i++) {
-        let task = numberOfTasks.toBeChecked[i]
-        if (!task.checked) {
-            task.style.display = "block"
+        let task = toBeChecked[i]
+        if (task.checked) {
+            let elementToDisplay = task.parentElement.parentElement
+            elementToDisplay.style.display = "none"
         }
-    }
-}
-function submitInitialForm () {
-    if(validate()){
-        clearInvalid()
-        document.getElementById('nameAndAdressForm').style.display = 'none'
-        if(GenderMale.checked)    
-            document.getElementById('maleHobbyAndDobForm').style.display = 'block'
-        else
-            document.getElementById('femaleHobbyAndDobForm').style.display = 'block'
     }
 }
