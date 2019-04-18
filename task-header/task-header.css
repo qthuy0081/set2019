@@ -44,3 +44,11 @@
     border: 1px solid;
     min-height: 20px;
 }
+
+input[type=checkbox]:checked + span.strike {
+    text-decoration: line-through;
+  }
+
+#taskList li {
+    list-style-type: none;
+}
