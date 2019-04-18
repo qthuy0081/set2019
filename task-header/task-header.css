@@ -1,0 +1,46 @@
+#content {
+    border: 1px solid;
+    width: 500px;
+    min-height: 100px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#input-task-name {
+    display: inline-block;
+    padding: 5px;
+    width: 80%;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#add-task-button {
+    font-size: 16px;
+    width: 16%;
+    padding: 5px;
+    background-color: #28abe3;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#edit-name-button {
+    font-size: 16px;
+    width: 16%;
+    padding: 5px;
+    background-color: #1fda9a;
+    border: none;
+    border-radius: 5px;
+    margin: 2px;
+    color: #ffffff;
+    font-weight: bold;
+    display: none;
+}
+
+#validate-task-name {
+    border: 1px solid;
+    min-height: 20px;
+}
