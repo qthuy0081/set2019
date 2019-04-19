@@ -158,7 +158,7 @@ function editTaskName(event) {
 function disabledButton(event) {
     var check = event.currentTarget.parentElement
     var checkParent = check.parentElement
-    if (checkParent.innerHTML.includes('checked="true"')==true){
+    if (checkParent.innerHTML.includes('checked="true"')==true) {
        checkParent.innerHTML = checkParent.innerHTML.replace('checked="true"','')
        checkParent.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
        checkParent.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
@@ -171,8 +171,7 @@ function disabledButton(event) {
         checkParent.remove()
 
     }
-    else
-    {
+    else {
         var onsave = document.getElementById('header')
         if(onsave.style.display!='none') {
         checkParent.innerHTML = checkParent.innerHTML.replace('(event)"','(event)" checked="true"')
@@ -213,18 +212,21 @@ window.onclick = function(event) {
     }
   }
 }
+
 function allShow() {
     var listTask = document.getElementById('task-list')
     var doneList = document.getElementById('done-list')
     listTask.style.display = 'block'
     doneList.style.display = 'block'
 }
+
 function doneShow() {
     var listTask = document.getElementById('task-list')
     var doneList = document.getElementById('done-list')
     listTask.style.display = 'none'
     doneList.style.display = 'block'
 }
+
 function undoneShow() {
     var listTask = document.getElementById('task-list')
     var doneList = document.getElementById('done-list')
