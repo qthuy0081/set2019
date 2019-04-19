@@ -3,7 +3,7 @@ function createTask(text) {
     taskItem.setAttribute("class", "task-item")
     
     var label = document.createElement('label')
-
+    label.setAttribute('onclick','changeTaskState()')
     label.innerHTML += '<input type="checkbox" class="input-task-checkbox">'
     label.innerHTML += '<div class="title-task-name">'+text+'</div>'
 
@@ -31,6 +31,7 @@ function createTask(text) {
     
     return taskItem
   }
+  
   function modifyTask() {
     if (validate() == true) {
       addTask()  
@@ -69,21 +70,21 @@ function createTask(text) {
     return true
   }
   function editButtonClick () {
-    var titleTaskName = document.getElementById('title-task-name')
-    document.getElementById('input-task-name').value = titleTaskName.innerText
-    alert('run3')
+    var titleTaskName = document.getElementsByClassName('title-task-name')
+    document.getElementById('input-task-name').value = titleTaskName.innerHTML
+    alert(titleTaskName.innerHTML)
 
 }
 
 function deleteButtonClick () {
     let item = event.currentTarget.parentElement
-    var editButton = event.currentTarget
-    editButton = document.getElementById('edit-task-button')
+    var editButton = item.children[1]
     editButton.style.display = 'none'
-    
-    let deleteButton = event.currentTarget
-    deleteButton = document.getElementById('del-task-button')
+
+
+    let deleteButton = item.children[2]
     deleteButton.style.display = 'none'
+
 
     item.innerHTML += '<button id = "yes-button" onclick = "selectYes()">YES</button>'
     item.innerHTML += '<button id = "no-button" onclick = "selectNo()">NO</button>'
@@ -110,20 +111,18 @@ function selectYes () {
 }
 
 function selectNo () {
-    let editButton = event.currentTarget
-    editButton = document.getElementById('edit-task-button')
+    let containerElement = event.currentTarget.parentElement
+
+    let editButton = containerElement.children[1]
     editButton.style.display = 'inline'
     
-    let deleteButton = event.currentTarget
-    deleteButton = document.getElementById('del-task-button')
+    let deleteButton = containerElement.children[2]
     deleteButton.style.display = 'inline'
 
-    let yesButton = event.currentTarget
-    yesButton = document.getElementById('yes-button')
+    let yesButton = containerElement.children[3]
     yesButton.remove()
 
-    let noButton = event.currentTarget
-    noButton = document.getElementById('no-button')
+    let noButton = containerElement.children[3]
     noButton.remove()
 }
 
