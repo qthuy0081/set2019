@@ -1,37 +1,35 @@
+var i = 0;
+
 function createTask(text) {
+    i = i + 1
+
     var taskItem = document.createElement('div')
     taskItem.setAttribute("class", "task-item")
     
     var label = document.createElement('label')
     label.setAttribute('onclick','changeTaskState()')
     label.innerHTML += '<input type="checkbox" class="input-task-checkbox">'
-    label.innerHTML += '<div class="title-task-name">'+text+'</div>'
+    var id = 'task' + i
+    label.innerHTML += '<div class="title-task-name" id=' + id +'>' +text+'</div>'
 
     taskItem.append(label)
 
     var edit = document.createElement('button')
     edit.setAttribute('id', 'edit-task-button')
     edit.setAttribute('onclick', 'editButtonClick()')
-    edit.innerText = "edit"
+    edit.innerText = "EDIT"
     taskItem.append(edit)
 
     var del = document.createElement('button')
     del.setAttribute('id', 'del-task-button')
     del.setAttribute('onclick','deleteButtonClick ()' )
-    del.innerText = "del"
+    del.innerText = "DELETE"
     taskItem.append(del)
-
-    // var yes = document.createElement('button')
-    // yes.setAttribute('id', 'yes-button')
-    // taskItem.append(yes)
-
-    // var no = document.createElement('button')
-    // no.setAttribute('id', 'no-button')
-    // taskItem.append(no)
     
     return taskItem
-  }
-  function changeTaskState() {
+}
+
+function changeTaskState() {
     let containerElement = event.currentTarget.parentElement
     let toBeLined = containerElement.children[0].children[1]
     let aCheckbox = containerElement.children[0].children[0]
@@ -50,8 +48,9 @@ function createTask(text) {
       let delButton = event.currentTarget.parentElement.children[2]
       delButton.style.display = 'inline-block'
     }
-  }
-  function modifyTask() {
+}
+
+function modifyTask() {
     if (validate() == true) {
       addTask()  
       changeColor()
@@ -59,18 +58,16 @@ function createTask(text) {
       let annoucement = document.getElementById('validate-task-name')
       annoucement.innerText = '*This field is mandatory'
       annoucement.style.display = 'block'
-      annoucement.style.border = '1px solid red'
       annoucement.style.color = 'red'
     }
-  }
-  function clearAllInforms() {
+}
+
+function clearAllInforms() {
     let validateField = document.getElementById('validate-task-name')
     validateField.innerText = ""
-    validate.style.block = 'none'
-    validateField.style.border = '1px solid'
-    validateField.style.color = 'black'
-  }
-  function addTask() {
+}
+
+function addTask() {
     var taskInput = document.getElementById('input-task-name')
     var taskTxt = taskInput.value.trim()
     var taskList = document.getElementById('task-list')
@@ -80,19 +77,26 @@ function createTask(text) {
     }
     taskList.appendChild(createTask(taskTxt))
     taskInput.value = ''
-  }
-  function validate() {
+}
+
+function validate() {
     let inputTaskName = document.getElementById('input-task-name')
     if (inputTaskName.value == '') {
       return false
     }
     return true
-  }
-  function editButtonClick () {
-    var titleTaskName = document.getElementsByClassName('title-task-name')
-    document.getElementById('input-task-name').value = titleTaskName.innerHTML
-    alert(titleTaskName.innerHTML)
+}
 
+function editButtonClick () {
+    var item = event.currentTarget.parentElement
+    var inputTaskName = document.getElementById('input-task-name')
+    inputTaskName.value = item.children[0].children[1].innerText
+
+    var editButton = document.getElementById('edit-name-button')
+    editButton.style.display = 'inline-block'
+
+    var addButton = document.getElementById('add-task-button')
+    addButton.style.display = 'none'
 }
 
 function deleteButtonClick () {
@@ -109,6 +113,7 @@ function deleteButtonClick () {
     item.innerHTML += '<button id = "no-button" onclick = "selectNo()">NO</button>'
 
 }
+
 function changeColor() {
     let tasksList = document.getElementsByClassName('task-item')
     let numberOfTasks = tasksList.length
@@ -118,11 +123,12 @@ function changeColor() {
         if (i % 2 == 0) {
             task.style.backgroundColor = '#CCCCCC'
         } else {
-          task.style.backgroundColor = 'white'
+          task.style.backgroundColor = '#FFFFFF'
         }
     }
 
 }
+
 function selectYes () {
     let item = event.currentTarget.parentElement
     item.remove()
@@ -160,6 +166,7 @@ function slectOption() {
   }
   changeColor()
 }
+
 function displayTaskDone() {
   
   let toBeChecked = document.getElementsByClassName('input-task-checkbox')
@@ -176,6 +183,7 @@ function displayTaskDone() {
       }
   }
 }
+
 function displayAllTasks() {
   
   let toBeChecked = document.getElementsByClassName('input-task-checkbox')
@@ -186,6 +194,7 @@ function displayAllTasks() {
       elementToDisplay.style.display = "block"
   }
 }
+
 function displayUndoneTasks() {
   
   let toBeChecked = document.getElementsByClassName('input-task-checkbox')
