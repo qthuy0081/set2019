@@ -23,6 +23,12 @@ body {
     border-radius: 5px;
     color:#F1F1F1;
 }
+#task-list {
+  display:block;
+}
+#done-list {
+  display:block;
+}
 #body {
     display: block;
     margin-top:5px;
@@ -99,7 +105,7 @@ li:nth-child(even) {
 .drop-button {
     background-color: #3498DB;
     color: white;
-    padding: 16px;
+    padding: 8px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -145,6 +151,7 @@ li:nth-child(even) {
     padding: 16px;
     font-size: 16px;
     border: none;
+    margin: 0;
     cursor: pointer;
 }
   
