@@ -1,5 +1,9 @@
 * {
   font-size: 16px;
+<<<<<<< HEAD
+=======
+  list-style-type: none;
+>>>>>>> Team1_Quyen
 }
 
 #to-do-list{
@@ -8,21 +12,44 @@
 
 #header{
   display: block;
+<<<<<<< HEAD
+=======
+  margin-bottom: 5px;
+>>>>>>> Team1_Quyen
 }
 
 #body{
   display: block;
+<<<<<<< HEAD
+=======
+  margin-top:5px;
+  margin-bottom:5px;
+>>>>>>> Team1_Quyen
 }
 
 #footer{
   display: block;
+<<<<<<< HEAD
+=======
+  margin-top:5px;
+>>>>>>> Team1_Quyen
 }
 
 #save-edit {
   display: none;
+<<<<<<< HEAD
   }
   
 /* li color by nth row*/
+=======
+  margin-bottom: 5px;
+  }
+  
+/* li color by nth row*/
+ul{
+  padding:0px;
+}
+>>>>>>> Team1_Quyen
 li:nth-child(odd) {
 background: #4CAF50;
 }
