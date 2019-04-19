@@ -1,5 +1,6 @@
 * {
   font-size: 16px;
+  list-style-type: none;
 }
 
 #to-do-list{
@@ -8,21 +9,29 @@
 
 #header{
   display: block;
+  margin-bottom: 5px;
 }
 
 #body{
   display: block;
+  margin-top:5px;
+  margin-bottom:5px;
 }
 
 #footer{
   display: block;
+  margin-top:5px;
 }
 
 #save-edit {
   display: none;
+  margin-bottom: 5px;
   }
   
 /* li color by nth row*/
+ul{
+  padding:0px;
+}
 li:nth-child(odd) {
 background: #4CAF50;
 }
