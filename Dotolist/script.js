@@ -84,6 +84,7 @@ function deleteFake(event) {
     item.innerHTML += '<button id="edit-button" onclick="editTaskName(event)">Edit</button>'
     item.innerHTML += '<button id="delete-button" onclick="deleteItem(event)">Delete</button>'
 }
+<<<<<<< HEAD
 
 //save
 function saveTask() {
@@ -188,3 +189,24 @@ function disabledButton(event) {
         }
     }
 }
+=======
+//dropDown fnc
+function dropDown() {
+    document.getElementById("dropDownList").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+    
+      }
+    }
+  }
+}
+//Dropdown fnc
+>>>>>>> delete-button

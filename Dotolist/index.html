@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To Do List</title>
+<<<<<<< HEAD
     <link href="./style.css" type="text/css" rel="stylesheet" >
+=======
+    <link href="style.css" rel="Stylesheet">
+>>>>>>> delete-button
 </head>
 <body>
     
@@ -23,15 +27,19 @@
         <div id="body">
             <ul id="task-list"></ul>
         </div>
-        <div id="footer">
-            <select>
-                <option value='all'>All</option>
-                <option value='done'>Done</option>
-                <option value='undone'>Undone</option>
-            </select>
+        <!--Dropdown button-->
+        <div class="dropdown">
+            <button onclick="dropDown()" class="dropbtn">Dropdown</button>
+            <div id="dropDownList" class="dropdown-content">
+                <a href="#alls">All</a>
+                <a href="#done">Done</a>
+                <a href="#undone">Undone</a>
+            </div>
+            </div>
         </div>
     </div>
 
     <script src="./script.js"></script>
 </body>
+<script src="./script.js"></script>
 </html>
