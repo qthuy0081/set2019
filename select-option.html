@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./style-select-option.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+            <div id="task-list">
+                <div class="task-item odd-item">
+                    <label>
+                        <input type="checkbox" class="input-task-checkbox">
+                        <div class="title-task-name">Task Name </div>
+                    </label>
+                    <button class="edit-task-button">EDIT</button>
+                    <button class="del-task-button">DELETE</button>
+                </div>
+        
+                <div class="task-item">
+                    <label>
+                        <input type="checkbox" class="input-task-checkbox">
+                        <div class="title-task-name">Task Name </div>
+                    </label>
+                    <button class="edit-task-button">EDIT</button>
+                    <button class="del-task-button">DELETE</button>
+                </div>
+            </div>       
+    </div>    
+    <select id = "select-box" onchange="slectOption()">
+        <option value = "all">All</option>
+        <option value="done">Done</option>
+        <option value="undone">Undone</option>
+    </select>
+    <script src="./script-slect-option.js"></script>
+</body>
+</html>
