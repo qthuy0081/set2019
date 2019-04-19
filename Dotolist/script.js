@@ -30,14 +30,14 @@ function deleteAttention() {
 }
 
 function deleteItem(event) {
-    if(document.getElementById('valid').style.display == 'block'||document.getElementById('valid-edit').style.display == 'block') {
+    if(document.getElementById('valid').style.display == 'block'|| document.getElementById('valid-edit').style.display == 'block') {
         document.getElementById('valid').style.display = 'none'
         document.getElementById('valid-edit').style.display = 'none'
     }
-    var item = event.currentTarget.parentElement
+    var item=event.currentTarget.parentElement
     var a=item.childNodes[0]
     var b=a.childNodes[0]
-    if(b.checked==true){
+    if(b.checked == true) {
        item.innerHTML = item.innerHTML.replace('<label><input type="checkbox onclick="disabledButton(event)">','<label><input type="checkbox" checked="true">')
     }
     item.innerHTML = item.innerHTML.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
@@ -47,11 +47,11 @@ function deleteItem(event) {
 }
 
 function deleteForever(event) {
-    var item = event.currentTarget.parentElement
+    var item=event.currentTarget.parentElement
     item.innerHTML += 'check'
-    var checkDisplay = document.getElementById('header')
+    var checkDisplay=document.getElementById('header')
     if(checkDisplay.style.display == 'none') {
-        if(item.innerHTML == document.getElementById('task-list').childNodes[document.getElementById('save').value].innerHTML){
+        if(item.innerHTML == document.getElementById('task-list').childNodes[document.getElementById('save').value].innerHTML) {
             checkDisplay.style.display = 'block'
             document.getElementById('save-edit').style.display = 'none'
             document.getElementById('header-taskname-edit').value=''
@@ -61,10 +61,8 @@ function deleteForever(event) {
             item.innerHTML += 'delete'
             var taskList = document.getElementById('task-list')
             for ( var i = 0 ; i<taskList.childNodes.length;i++) {
-                if(item.innerHTML == taskList.childNodes[i].innerHTML)
-                {
-                    if(i < document.getElementById('save').value)
-                    {
+                if(item.innerHTML == taskList.childNodes[i].innerHTML) {
+                    if(i < document.getElementById('save').value) {
                         document.getElementById('save').value--
                         break
                     }
@@ -88,17 +86,15 @@ function deleteFake(event) {
 function saveTask() {
     var checkValidate = document.getElementById('header-taskname-edit')
     if(checkValidate.value.trim() != '') {
-        var saveIndex = document.getElementById('save')
-        var taskList = document.getElementById('task-list')
-        var liSave = taskList.childNodes[saveIndex.value]
+        var saveIndex=document.getElementById('save')
+        var taskList=document.getElementById('task-list')
+        var liSave=taskList.childNodes[saveIndex.value]
         var a=liSave.childNodes[0]
         var b=a.childNodes[0]
-        if(b.checked==true)
-        {
+        if(b.checked==true) {
             liSave.innerHTML  = '<label><input type="checkbox" onclick="disabledButton(event)" checked="true">'+checkValidate.value.trim()+'</label>' 
         }
-        else
-        {
+        else {
             liSave.innerHTML  = '<label><input type="checkbox" onclick="disabledButton(event)">'+checkValidate.value.trim()+'</label>'     
         }
         liSave.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
@@ -118,16 +114,14 @@ function validateEdit() {
 
 function deleteAttentionEdit() {
     var checkBorder = document.getElementById('header-taskname-edit')
-    if(document.getElementById('valid-edit').style.display=='block')
-    {
+    if(document.getElementById('valid-edit').style.display=='block') {
         document.getElementById('valid-edit').style.display='none'
         checkBorder.style.border = "default"
     }
 }
 
 function editTaskName(event) {
-    if(document.getElementById('header').style.display == 'none')
-    {
+    if(document.getElementById('header').style.display == 'none') {
         alert('Have to save before edit next')
     }
 
@@ -149,9 +143,8 @@ function editTaskName(event) {
         document.getElementById('save-edit').style.display = 'block'
         var taskList = document.getElementById('task-list')
         var i = 0
-        for(i; i< taskList.childNodes.length;i++){
-            if(taskList.childNodes[i].innerHTML == item.innerHTML)
-            {
+        for(i; i<taskList.childNodes.length; i++) {
+            if(taskList.childNodes[i].innerHTML == item.innerHTML) {
                 break;
             }
         }
@@ -171,8 +164,7 @@ function disabledButton(event) {
        checkParent.innerHTML = checkParent.innerHTML.replace('<strike>','') 
        checkParent.innerHTML = checkParent.innerHTML.replace('</strike>','') 
     }
-    else
-    {
+    else {
         var onsave = document.getElementById('header')
         if(onsave.style.display!='none') {
         checkParent.innerHTML = checkParent.innerHTML.replace('(event)"','(event)" checked="true"')
@@ -194,7 +186,7 @@ function dropDown() {
 }
 
 window.onclick = function(event) {
-  if(!event.target.matches('.dropbtn')) {
+  if(!event.target.matches('.drop-button')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for(i = 0; i < dropdowns.length; i++) {
@@ -207,10 +199,9 @@ window.onclick = function(event) {
 }
 function allShow() {
     var listTask = document.getElementById('task-list')
-    for(var i = 0; i< listTask.childNodes.length; i++)
-        {
+    for(var i = 0; i< listTask.childNodes.length; i++) {
             listTask.childNodes[i].style.visibility = 'visible'
-        }
+    }
 }
 function doneShow() {
     var listTask = document.getElementById('task-list')
@@ -218,8 +209,7 @@ function doneShow() {
         alert('No Task')
     }
     else {
-        for(var i = 0; i< listTask.childNodes.length; i++)
-        {
+        for(var i = 0; i< listTask.childNodes.length; i++) {
             if(listTask.childNodes[i].innerHTML.includes('<strike>') == false) {
                 listTask.childNodes[i].style.visibility = 'hidden'
             }
@@ -237,8 +227,7 @@ function undoneShow() {
         alert('No Task')
     }
     else {
-        for(var i = 0; i< listTask.childNodes.length; i++)
-        {
+        for(var i = 0; i< listTask.childNodes.length; i++) {
             if(listTask.childNodes[i].innerHTML.includes('<strike>') == true) {
                 listTask.childNodes[i].style.visibility = 'hidden'
             }

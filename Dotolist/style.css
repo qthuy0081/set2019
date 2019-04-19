@@ -96,7 +96,7 @@ li:nth-child(even) {
 
 
 /* Dropdown style */
-.dropbtn {
+.drop-button {
     background-color: #3498DB;
     color: white;
     padding: 16px;
@@ -105,7 +105,7 @@ li:nth-child(even) {
     cursor: pointer;
     border-radius: 5px;
 }
-.dropbtn:hover, .dropbtn:focus {
+.drop-button:hover, .drop-button:focus {
     background-color: #2980B9;
 }
 
@@ -139,7 +139,7 @@ li:nth-child(even) {
     display: block;
 }
 
-.dropbtn {
+.drop-button {
     background-color: #3498DB;
     color: white;
     padding: 16px;
@@ -148,7 +148,7 @@ li:nth-child(even) {
     cursor: pointer;
 }
   
-.dropbtn:hover, .dropbtn:focus {
+.drop-button:hover, .drop-button:focus {
     background-color: #2980B9;
 }
   
