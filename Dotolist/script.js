@@ -8,7 +8,6 @@ function add() {
         item.innerHTML += '<label><input type="checkbox" onclick="disabledButton(event)"/>'+add.value.trim()+'</label>'
         item.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
         item.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
-        
         taskList.append(item)
         document.getElementById('header-taskname').value = ''
     }
@@ -16,7 +15,7 @@ function add() {
 
 function validate() {
     var checkValidate = document.getElementById('header-taskname')
-    if (checkValidate.value.trim() == '') {
+    if(checkValidate.value.trim() == '') {
         document.getElementById('valid').style.display = 'block'
         document.getElementById('valid').innerText = '*this field is madatory'
     }
@@ -24,14 +23,14 @@ function validate() {
 
 function deleteAttention() {
     var checkBorder = document.getElementById('header-taskname')
-    if( document.getElementById('valid').style.display=='block'){
+    if(document.getElementById('valid').style.display=='block') {
         document.getElementById('valid').style.display='none'
         checkBorder.style.border = "default"
     }
 }
 
 function deleteItem(event) {
-    if(document.getElementById('valid').style.display == 'block'||document.getElementById('valid-edit').style.display == 'block'){
+    if(document.getElementById('valid').style.display == 'block'||document.getElementById('valid-edit').style.display == 'block') {
         document.getElementById('valid').style.display = 'none'
         document.getElementById('valid-edit').style.display = 'none'
     }
@@ -45,16 +44,13 @@ function deleteItem(event) {
     item.innerHTML = item.innerHTML.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
     item.innerHTML+='<button class="no-button" onclick="deleteFake(event)">No</button>'
     item.innerHTML+='<button class="yes-button" onclick="deleteForever(event)">Yes</button>'
-    
-        
-    
 }
 
 function deleteForever(event) {
     var item = event.currentTarget.parentElement
     item.innerHTML += 'check'
     var checkDisplay = document.getElementById('header')
-    if( checkDisplay.style.display == 'none') {
+    if(checkDisplay.style.display == 'none') {
         if(item.innerHTML == document.getElementById('task-list').childNodes[document.getElementById('save').value].innerHTML){
             checkDisplay.style.display = 'block'
             document.getElementById('save-edit').style.display = 'none'
@@ -65,9 +61,9 @@ function deleteForever(event) {
             item.innerHTML += 'delete'
             var taskList = document.getElementById('task-list')
             for ( var i = 0 ; i<taskList.childNodes.length;i++) {
-                if ( item.innerHTML == taskList.childNodes[i].innerHTML)
+                if(item.innerHTML == taskList.childNodes[i].innerHTML)
                 {
-                    if ( i < document.getElementById('save').value)
+                    if(i < document.getElementById('save').value)
                     {
                         document.getElementById('save').value--
                         break
@@ -91,7 +87,7 @@ function deleteFake(event) {
 //save
 function saveTask() {
     var checkValidate = document.getElementById('header-taskname-edit')
-    if (checkValidate.value.trim() != '') {
+    if(checkValidate.value.trim() != '') {
         var saveIndex = document.getElementById('save')
         var taskList = document.getElementById('task-list')
         var liSave = taskList.childNodes[saveIndex.value]
@@ -122,7 +118,7 @@ function validateEdit() {
 
 function deleteAttentionEdit() {
     var checkBorder = document.getElementById('header-taskname-edit')
-    if( document.getElementById('valid-edit').style.display=='block')
+    if(document.getElementById('valid-edit').style.display=='block')
     {
         document.getElementById('valid-edit').style.display='none'
         checkBorder.style.border = "default"
@@ -136,38 +132,39 @@ function editTaskName(event) {
     }
 
     else {
-    var item = event.currentTarget.parentElement
-    var item1 = event.currentTarget.parentElement.innerHTML
-    item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)" checked="true">','')
-    item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)">','')
-    item1 = item1.replace('</label>','')
-    item1 = item1.replace('<button class="yes-button" onclick="deleteForever(event)">Yes</button>','')
-    item1 = item1.replace('<button class="no-button" onclick="deleteFake(event)">No</button>','')
-    item1 = item1.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
-    item1 = item1.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
-    var transit = document.getElementById('header-taskname-edit')
-    transit.value = item1
-    var item2 = event.currentTarget
-    item2.innerHTML +='hello'
-    document.getElementById('header').style.display = 'none'
-    document.getElementById('save-edit').style.display = 'block'
-    var taskList = document.getElementById('task-list')
-    var i = 0
-    for( i; i< taskList.childNodes.length;i++){
-        if(taskList.childNodes[i].innerHTML == item.innerHTML)
-        {
-            break;
+        var item = event.currentTarget.parentElement
+        var item1 = event.currentTarget.parentElement.innerHTML
+        item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)" checked="true">','')
+        item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)">','')
+        item1 = item1.replace('</label>','')
+        item1 = item1.replace('<button class="yes-button" onclick="deleteForever(event)">Yes</button>','')
+        item1 = item1.replace('<button class="no-button" onclick="deleteFake(event)">No</button>','')
+        item1 = item1.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
+        item1 = item1.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
+        var transit = document.getElementById('header-taskname-edit')
+        transit.value = item1
+        var item2 = event.currentTarget
+        item2.innerHTML +='hello'
+        document.getElementById('header').style.display = 'none'
+        document.getElementById('save-edit').style.display = 'block'
+        var taskList = document.getElementById('task-list')
+        var i = 0
+        for(i; i< taskList.childNodes.length;i++){
+            if(taskList.childNodes[i].innerHTML == item.innerHTML)
+            {
+                break;
+            }
         }
-    }
-    item2.innerHTML = item2.innerHTML.replace('hello','')
-    var saveIndex = document.getElementById('save')
-    saveIndex.value=i
+        item2.innerHTML = item2.innerHTML.replace('hello','')
+        var saveIndex = document.getElementById('save')
+        saveIndex.value=i
     }
 }
+
 function disabledButton(event) {
     var check = event.currentTarget.parentElement
     var checkParent = check.parentElement
-    if (checkParent.innerHTML.includes('checked="true"')==true){
+    if(checkParent.innerHTML.includes('checked="true"')==true) {
        checkParent.innerHTML = checkParent.innerHTML.replace('checked="true"','')
        checkParent.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
        checkParent.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
@@ -186,66 +183,66 @@ function disabledButton(event) {
         var checkInner = checkParent.innerText
         checkParent.innerHTML = checkParent.innerHTML.replace(checkInner,'<strike>'+checkInner+'</strike>')
         }
-        else{
+        else {
             check.childNodes[0].checked = false
         }
     }
 }
 
 function dropDown() {
-    document.getElementById("dropDownList").classList.toggle("show");
+    document.getElementById("dropdown-list").classList.toggle("show");
 }
 
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+  if(!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
-    for (i = 0; i < dropdowns.length; i++) {
+    for(i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
+      if(openDropdown.classList.contains('show')) {
         openDropdown.classList.remove('show');
-    
       }
     }
   }
 }
 function allShow() {
     var listTask = document.getElementById('task-list')
-    for (var i = 0; i< listTask.childNodes.length; i++)
+    for(var i = 0; i< listTask.childNodes.length; i++)
         {
             listTask.childNodes[i].style.visibility = 'visible'
         }
 }
 function doneShow() {
     var listTask = document.getElementById('task-list')
-    if(listTask.childNodes.length == 0){
+    if(listTask.childNodes.length == 0) {
         alert('No Task')
     }
     else {
-        for (var i = 0; i< listTask.childNodes.length; i++)
+        for(var i = 0; i< listTask.childNodes.length; i++)
         {
-            if (listTask.childNodes[i].innerHTML.includes('<strike>') == false) {
+            if(listTask.childNodes[i].innerHTML.includes('<strike>') == false) {
                 listTask.childNodes[i].style.visibility = 'hidden'
             }
-            else{
+            else {
                 listTask.childNodes[i].style.visibility = 'visible'
             }
         }
 
     }
 }
+
 function undoneShow() {
     var listTask = document.getElementById('task-list')
-    if(listTask.childNodes.length == 0){
+    if(listTask.childNodes.length == 0) {
         alert('No Task')
     }
-    else{
-        for (var i = 0; i< listTask.childNodes.length; i++)
+    else {
+        for(var i = 0; i< listTask.childNodes.length; i++)
         {
-            if (listTask.childNodes[i].innerHTML.includes('<strike>') == true) {
+            if(listTask.childNodes[i].innerHTML.includes('<strike>') == true) {
                 listTask.childNodes[i].style.visibility = 'hidden'
             }
-            else{
+            else {
                 listTask.childNodes[i].style.visibility = 'visible'
             }
         }
