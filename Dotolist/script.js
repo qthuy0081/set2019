@@ -212,12 +212,14 @@ window.onclick = function(event) {
     }
   }
 }
+var buttonText = document.getElementsByClassName('drop-button')
 
 function allShow() {
     var listTask = document.getElementById('task-list')
     var doneList = document.getElementById('done-list')
     listTask.style.display = 'block'
     doneList.style.display = 'block'
+    buttonText[0].innerText = 'All'
 }
 
 function doneShow() {
@@ -225,6 +227,7 @@ function doneShow() {
     var doneList = document.getElementById('done-list')
     listTask.style.display = 'none'
     doneList.style.display = 'block'
+    buttonText[0].innerText = 'Done'
 }
 
 function undoneShow() {
@@ -232,4 +235,5 @@ function undoneShow() {
     var doneList = document.getElementById('done-list')
     listTask.style.display = 'block'
     doneList.style.display = 'none'
+    buttonText[0].innerText = 'Undone'
 }
