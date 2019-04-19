@@ -115,10 +115,8 @@ function deleteButtonClick () {
     var editButton = item.children[1]
     editButton.style.display = 'none'
 
-
     let deleteButton = item.children[2]
     deleteButton.style.display = 'none'
-
 
     item.innerHTML += '<button id = "yes-button" onclick = "selectYes()">YES</button>'
     item.innerHTML += '<button id = "no-button" onclick = "selectNo()">NO</button>'
@@ -137,7 +135,6 @@ function changeColor() {
           task.style.backgroundColor = '#FFFFFF'
         }
     }
-
 }
 
 function selectYes () {
@@ -207,7 +204,7 @@ function displayAllTasks() {
 }
 
 function displayUndoneTasks() {
-  
+
   let toBeChecked = document.getElementsByClassName('input-task-checkbox')
   let numberOfTasks = toBeChecked.length
   for (var i = 0; i < numberOfTasks; i++) {
