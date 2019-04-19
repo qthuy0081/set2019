@@ -101,6 +101,7 @@ function saveTask() {
         liSave.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
         document.getElementById('header').style.display = 'block'
         document.getElementById('save-edit').style.display = 'none'
+        document.getElementById('valid-edit').style.display = 'none'
     }
 }
 
@@ -157,14 +158,21 @@ function editTaskName(event) {
 function disabledButton(event) {
     var check = event.currentTarget.parentElement
     var checkParent = check.parentElement
-    if(checkParent.innerHTML.includes('checked="true"')==true) {
+    if (checkParent.innerHTML.includes('checked="true"')==true){
        checkParent.innerHTML = checkParent.innerHTML.replace('checked="true"','')
        checkParent.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
        checkParent.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
        checkParent.innerHTML = checkParent.innerHTML.replace('<strike>','') 
        checkParent.innerHTML = checkParent.innerHTML.replace('</strike>','') 
+       var taskList = document.getElementById('task-list')
+        var item = document.createElement('li')
+        item.innerHTML = checkParent.innerHTML
+        taskList.append(item)
+        checkParent.remove()
+
     }
-    else {
+    else
+    {
         var onsave = document.getElementById('header')
         if(onsave.style.display!='none') {
         checkParent.innerHTML = checkParent.innerHTML.replace('(event)"','(event)" checked="true"')
@@ -174,8 +182,16 @@ function disabledButton(event) {
         checkParent.innerHTML = checkParent.innerHTML.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
         var checkInner = checkParent.innerText
         checkParent.innerHTML = checkParent.innerHTML.replace(checkInner,'<strike>'+checkInner+'</strike>')
+        var doneList = document.getElementById('done-list')
+        var item = document.createElement('li')
+        item.innerHTML = checkParent.innerHTML
+        doneList.append(item)
+        checkParent.remove()
         }
-        else {
+        else{
+            var checkValidate = document.getElementById('header-taskname-edit')
+            document.getElementById('valid-edit').style.display='block'
+            document.getElementById('valid-edit').innerText = 'Saving before changing'
             check.childNodes[0].checked = false
         }
     }
@@ -199,41 +215,19 @@ window.onclick = function(event) {
 }
 function allShow() {
     var listTask = document.getElementById('task-list')
-    for(var i = 0; i< listTask.childNodes.length; i++) {
-            listTask.childNodes[i].style.visibility = 'visible'
-    }
+    var doneList = document.getElementById('done-list')
+    listTask.style.display = 'block'
+    doneList.style.display = 'block'
 }
 function doneShow() {
     var listTask = document.getElementById('task-list')
-    if(listTask.childNodes.length == 0) {
-        alert('No Task')
-    }
-    else {
-        for(var i = 0; i< listTask.childNodes.length; i++) {
-            if(listTask.childNodes[i].innerHTML.includes('<strike>') == false) {
-                listTask.childNodes[i].style.visibility = 'hidden'
-            }
-            else {
-                listTask.childNodes[i].style.visibility = 'visible'
-            }
-        }
-
-    }
+    var doneList = document.getElementById('done-list')
+    listTask.style.display = 'none'
+    doneList.style.display = 'block'
 }
-
 function undoneShow() {
     var listTask = document.getElementById('task-list')
-    if(listTask.childNodes.length == 0) {
-        alert('No Task')
-    }
-    else {
-        for(var i = 0; i< listTask.childNodes.length; i++) {
-            if(listTask.childNodes[i].innerHTML.includes('<strike>') == true) {
-                listTask.childNodes[i].style.visibility = 'hidden'
-            }
-            else {
-                listTask.childNodes[i].style.visibility = 'visible'
-            }
-        }
-    }
+    var doneList = document.getElementById('done-list')
+    listTask.style.display = 'block'
+    doneList.style.display = 'none'
 }

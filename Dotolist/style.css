@@ -23,6 +23,12 @@ body {
     border-radius: 5px;
     color:#F1F1F1;
 }
+#task-list {
+  display:block;
+}
+#done-list {
+  display:block;
+}
 #body {
     display: block;
     margin-top:5px;
