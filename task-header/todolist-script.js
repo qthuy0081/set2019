@@ -31,7 +31,26 @@ function createTask(text) {
     
     return taskItem
   }
-  
+  function changeTaskState() {
+    let containerElement = event.currentTarget.parentElement
+    let toBeLined = containerElement.children[0].children[1]
+    let aCheckbox = containerElement.children[0].children[0]
+    // let toBeLined = toBeLined.children[1]
+
+    if (aCheckbox.checked) {
+      toBeLined.style.textDecoration = 'line-through'
+      let editButton = event.currentTarget.parentElement.children[1]
+      editButton.style.display = 'none'
+      let delButton = event.currentTarget.parentElement.children[2]
+      delButton.style.display = 'none'
+    } else {
+      toBeLined.style.textDecoration = 'none'
+      let editButton = event.currentTarget.parentElement.children[1]
+      editButton.style.display = 'inline-block'
+      let delButton = event.currentTarget.parentElement.children[2]
+      delButton.style.display = 'inline-block'
+    }
+  }
   function modifyTask() {
     if (validate() == true) {
       addTask()  
@@ -114,10 +133,10 @@ function selectNo () {
     let containerElement = event.currentTarget.parentElement
 
     let editButton = containerElement.children[1]
-    editButton.style.display = 'inline'
+    editButton.style.display = 'inline-block'
     
     let deleteButton = containerElement.children[2]
-    deleteButton.style.display = 'inline'
+    deleteButton.style.display = 'inline-block'
 
     let yesButton = containerElement.children[3]
     yesButton.remove()
