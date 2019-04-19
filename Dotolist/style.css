@@ -30,6 +30,12 @@ body {
   margin-bottom:5px;
   overflow:hidden;
 }
+#task-list {
+  display:block;
+}
+#done-list {
+  display:block;
+}
 label {
   display:inline-block;
   padding-top:4px;
