@@ -35,22 +35,15 @@ function deleteItem(event) {
         document.getElementById('valid-edit').style.display = 'none'
     }
     var item = event.currentTarget.parentElement
-<<<<<<< HEAD
-    event.currentTarget.remove()
-    item.innerHTML += '<button id="yes-button" onclick="deleteForever(event)">Yes</button>'
-    item.innerHTML += '<button id="no-button" onclick="deleteFake(event)">No</button>'
-=======
     var a=item.childNodes[0]
     var b=a.childNodes[0]
     if(b.checked==true){
        item.innerHTML = item.innerHTML.replace('<label><input type="checkbox">','<label><input type="checkbox" checked="true">')
     }
+    item.innerHTML = item.innerHTML.replace('<button id="edit-button" onclick="editTaskName(event)">Edit</button>','')
     item.innerHTML = item.innerHTML.replace('<button id="delete-button" onclick="deleteItem(event)">Delete</button>','')
     item.innerHTML+='<button id="yes-button" onclick="deleteForever(event)">Yes</button>'
     item.innerHTML+='<button id="no-button" onclick="deleteFake(event)">No</button>'
-        
-    
->>>>>>> Team1_Quyen
 }
 
 function deleteForever(event) {
@@ -96,9 +89,6 @@ function saveTask() {
         var saveIndex = document.getElementById('save')
         var taskList = document.getElementById('task-list')
         var liSave = taskList.childNodes[saveIndex.value]
-<<<<<<< HEAD
-        liSave.innerHTML = '<label><input type="checkbox"/>'+checkValidate.value.trim()+'</label>'
-=======
         var a=liSave.childNodes[0]
         var b=a.childNodes[0]
         if(b.checked==true)
@@ -109,7 +99,6 @@ function saveTask() {
         {
             liSave.innerHTML  = '<label><input type="checkbox">'+checkValidate.value.trim()+'</label>'     
         }
->>>>>>> Team1_Quyen
         liSave.innerHTML += '<button id="edit-button" onclick="editTaskName(event)">Edit</button>'
         liSave.innerHTML += '<button id="delete-button" onclick="deleteItem(event)">Delete</button>'
         document.getElementById('header').style.display = 'block'
@@ -135,10 +124,6 @@ function deleteAttentionEdit() {
 }
 
 function editTaskName(event) {
-<<<<<<< HEAD
-    var item = event.currentTarget.parentElement
-    var item1 = event.currentTarget.parentElement.innerHTML
-=======
     if(document.getElementById('header').style.display == 'none')
     {
         alert('Have to save before edit next')
@@ -148,23 +133,16 @@ function editTaskName(event) {
     var item = event.currentTarget.parentElement
     var item1 = event.currentTarget.parentElement.innerHTML
     item1 = item1.replace('<label><input type="checkbox" checked="true">','')
->>>>>>> Team1_Quyen
     item1 = item1.replace('<label><input type="checkbox">','')
     item1 = item1.replace('</label>','')
     item1 = item1.replace('<button id="yes-button" onclick="deleteForever(event)">Yes</button>','')
     item1 = item1.replace('<button id="no-button" onclick="deleteFake(event)">No</button>','')
     item1 = item1.replace('<button id="edit-button" onclick="editTaskName(event)">Edit</button>','')
     item1 = item1.replace('<button id="delete-button" onclick="deleteItem(event)">Delete</button>','')
-<<<<<<< HEAD
-    item.innerHTML+='save'
-    var transit = document.getElementById('header-taskname-edit')
-    transit.value = item1
-=======
     var transit = document.getElementById('header-taskname-edit')
     transit.value = item1
     var item2 = event.currentTarget
     item2.innerHTML +='hello'
->>>>>>> Team1_Quyen
     document.getElementById('header').style.display = 'none'
     document.getElementById('save-edit').style.display = 'block'
     var taskList = document.getElementById('task-list')
@@ -175,14 +153,8 @@ function editTaskName(event) {
             break;
         }
     }
-<<<<<<< HEAD
-    item.innerHTML = item.innerHTML.replace('save','')
-    var saveIndex = document.getElementById('save')
-    saveIndex.value=i
-=======
     item2.innerHTML = item2.innerHTML.replace('hello','')
     var saveIndex = document.getElementById('save')
     saveIndex.value=i
     }
->>>>>>> Team1_Quyen
 }
