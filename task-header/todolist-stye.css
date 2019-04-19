@@ -3,18 +3,28 @@
 }
 #content {
     border: 1px solid;
-    width: 500px;
-    min-height: 100px;
+    width: 30%;
+    min-height: 20%;
     margin: 0 auto;
     padding: 10px;
 }
-
+#task-header {
+    padding-bottom: 10px;
+}
+#task-list {
+    min-height: 20px;
+    border: 1px solid black;
+    /* padding-bottom: 10px; */
+}
+#task-list-container {
+    padding-bottom: 10px;
+}
 #input-task-name {
     display: inline-block;
     padding: 5px;
     width: 80%;
     font-size: 16px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px;x */
     border-radius: 5px;
 }
 
@@ -44,8 +54,9 @@
 }
 
 #validate-task-name {
-    border: 1px solid;
+    /* border: 1px solid; */
     min-height: 20px;
+    display: none;
 }
 
 input[type=checkbox]:checked + span.strike {
@@ -151,8 +162,7 @@ input[type=checkbox]:checked + span.strike {
     border: none;
     color: #ffffff;
 }
-
-
+ 
 #select-box {
     display: block;
     width: 100%;

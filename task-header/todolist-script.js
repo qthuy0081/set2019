@@ -38,6 +38,7 @@ function createTask(text) {
     } else {
       let annoucement = document.getElementById('validate-task-name')
       annoucement.innerText = '*This field is mandatory'
+      annoucement.style.display = 'block'
       annoucement.style.border = '1px solid red'
       annoucement.style.color = 'red'
     }
@@ -45,6 +46,7 @@ function createTask(text) {
   function clearAllInforms() {
     let validateField = document.getElementById('validate-task-name')
     validateField.innerText = ""
+    validate.style.block = 'none'
     validateField.style.border = '1px solid'
     validateField.style.color = 'black'
   }
@@ -68,7 +70,9 @@ function createTask(text) {
   }
   function editButtonClick () {
     var titleTaskName = document.getElementById('title-task-name')
-    document.getElementById('input-task-name').value = titleTaskName
+    document.getElementById('input-task-name').value = titleTaskName.innerText
+    alert('run3')
+
 }
 
 function deleteButtonClick () {
@@ -136,6 +140,7 @@ function slectOption() {
   } else {
       displayUndoneTasks()
   }
+  changeColor()
 }
 function displayTaskDone() {
   
