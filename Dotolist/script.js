@@ -5,9 +5,10 @@ function add() {
         var taskList = document.getElementById('task-list')
         var add = document.getElementById('header-taskname')
         var item = document.createElement('li')
-        item.innerHTML += '<label><input type="checkbox"/>'+add.value.trim()+'</label>'
-        item.innerHTML += '<button id="edit-button" onclick="editTaskName(event)">Edit</button>'
-        item.innerHTML += '<button id="delete-button" onclick="deleteItem(event)">Delete</button>'
+        item.innerHTML += '<label><input type="checkbox" onclick="disabledButton(event)"/>'+add.value.trim()+'</label>'
+        item.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
+        item.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
+        
         taskList.append(item)
         document.getElementById('header-taskname').value = ''
     }
@@ -38,12 +39,15 @@ function deleteItem(event) {
     var a=item.childNodes[0]
     var b=a.childNodes[0]
     if(b.checked==true){
-       item.innerHTML = item.innerHTML.replace('<label><input type="checkbox">','<label><input type="checkbox" checked="true">')
+       item.innerHTML = item.innerHTML.replace('<label><input type="checkbox onclick="disabledButton(event)">','<label><input type="checkbox" checked="true">')
     }
-    item.innerHTML = item.innerHTML.replace('<button id="edit-button" onclick="editTaskName(event)">Edit</button>','')
-    item.innerHTML = item.innerHTML.replace('<button id="delete-button" onclick="deleteItem(event)">Delete</button>','')
-    item.innerHTML+='<button id="yes-button" onclick="deleteForever(event)">Yes</button>'
-    item.innerHTML+='<button id="no-button" onclick="deleteFake(event)">No</button>'
+    item.innerHTML = item.innerHTML.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
+    item.innerHTML = item.innerHTML.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
+    item.innerHTML+='<button class="no-button" onclick="deleteFake(event)">No</button>'
+    item.innerHTML+='<button class="yes-button" onclick="deleteForever(event)">Yes</button>'
+    
+        
+    
 }
 
 function deleteForever(event) {
@@ -73,13 +77,15 @@ function deleteForever(event) {
         }
     }
     item.remove()
+    var count = 0
 }
 
 function deleteFake(event) {
     var item = event.currentTarget.parentElement
     event.currentTarget.remove()
-    item.innerHTML = item.innerHTML.replace('<button id="yes-button" onclick="deleteForever(event)">Yes</button>','')
-    item.innerHTML += '<button id="delete-button" onclick="deleteItem(event)">Delete</button>'
+    item.innerHTML = item.innerHTML.replace('<button class="yes-button" onclick="deleteForever(event)">Yes</button>','')
+    item.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
+    item.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
 }
 
 //save
@@ -93,14 +99,14 @@ function saveTask() {
         var b=a.childNodes[0]
         if(b.checked==true)
         {
-            liSave.innerHTML  = '<label><input type="checkbox" checked="true">'+checkValidate.value.trim()+'</label>' 
+            liSave.innerHTML  = '<label><input type="checkbox" onclick="disabledButton(event)" checked="true">'+checkValidate.value.trim()+'</label>' 
         }
         else
         {
-            liSave.innerHTML  = '<label><input type="checkbox">'+checkValidate.value.trim()+'</label>'     
+            liSave.innerHTML  = '<label><input type="checkbox" onclick="disabledButton(event)">'+checkValidate.value.trim()+'</label>'     
         }
-        liSave.innerHTML += '<button id="edit-button" onclick="editTaskName(event)">Edit</button>'
-        liSave.innerHTML += '<button id="delete-button" onclick="deleteItem(event)">Delete</button>'
+        liSave.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
+        liSave.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
         document.getElementById('header').style.display = 'block'
         document.getElementById('save-edit').style.display = 'none'
     }
@@ -132,13 +138,13 @@ function editTaskName(event) {
     else {
     var item = event.currentTarget.parentElement
     var item1 = event.currentTarget.parentElement.innerHTML
-    item1 = item1.replace('<label><input type="checkbox" checked="true">','')
-    item1 = item1.replace('<label><input type="checkbox">','')
+    item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)" checked="true">','')
+    item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)">','')
     item1 = item1.replace('</label>','')
-    item1 = item1.replace('<button id="yes-button" onclick="deleteForever(event)">Yes</button>','')
-    item1 = item1.replace('<button id="no-button" onclick="deleteFake(event)">No</button>','')
-    item1 = item1.replace('<button id="edit-button" onclick="editTaskName(event)">Edit</button>','')
-    item1 = item1.replace('<button id="delete-button" onclick="deleteItem(event)">Delete</button>','')
+    item1 = item1.replace('<button class="yes-button" onclick="deleteForever(event)">Yes</button>','')
+    item1 = item1.replace('<button class="no-button" onclick="deleteFake(event)">No</button>','')
+    item1 = item1.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
+    item1 = item1.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
     var transit = document.getElementById('header-taskname-edit')
     transit.value = item1
     var item2 = event.currentTarget
@@ -156,5 +162,92 @@ function editTaskName(event) {
     item2.innerHTML = item2.innerHTML.replace('hello','')
     var saveIndex = document.getElementById('save')
     saveIndex.value=i
+    }
+}
+function disabledButton(event) {
+    var check = event.currentTarget.parentElement
+    var checkParent = check.parentElement
+    if (checkParent.innerHTML.includes('checked="true"')==true){
+       checkParent.innerHTML = checkParent.innerHTML.replace('checked="true"','')
+       checkParent.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
+       checkParent.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
+       checkParent.innerHTML = checkParent.innerHTML.replace('<strike>','') 
+       checkParent.innerHTML = checkParent.innerHTML.replace('</strike>','') 
+    }
+    else
+    {
+        var onsave = document.getElementById('header')
+        if(onsave.style.display!='none') {
+        checkParent.innerHTML = checkParent.innerHTML.replace('(event)"','(event)" checked="true"')
+        checkParent.innerHTML = checkParent.innerHTML.replace('<button class="yes-button" onclick="deleteForever(event)">Yes</button>','')
+        checkParent.innerHTML = checkParent.innerHTML.replace('<button class="no-button" onclick="deleteFake(event)">No</button>','')
+        checkParent.innerHTML = checkParent.innerHTML.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
+        checkParent.innerHTML = checkParent.innerHTML.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
+        var checkInner = checkParent.innerText
+        checkParent.innerHTML = checkParent.innerHTML.replace(checkInner,'<strike>'+checkInner+'</strike>')
+        }
+        else{
+            check.childNodes[0].checked = false
+        }
+    }
+}
+
+function dropDown() {
+    document.getElementById("dropDownList").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+    
+      }
+    }
+  }
+}
+function allShow() {
+    var listTask = document.getElementById('task-list')
+    for (var i = 0; i< listTask.childNodes.length; i++)
+        {
+            listTask.childNodes[i].style.visibility = 'visible'
+        }
+}
+function doneShow() {
+    var listTask = document.getElementById('task-list')
+    if(listTask.childNodes.length == 0){
+        alert('No Task')
+    }
+    else {
+        for (var i = 0; i< listTask.childNodes.length; i++)
+        {
+            if (listTask.childNodes[i].innerHTML.includes('<strike>') == false) {
+                listTask.childNodes[i].style.visibility = 'hidden'
+            }
+            else{
+                listTask.childNodes[i].style.visibility = 'visible'
+            }
+        }
+
+    }
+}
+function undoneShow() {
+    var listTask = document.getElementById('task-list')
+    if(listTask.childNodes.length == 0){
+        alert('No Task')
+    }
+    else{
+        for (var i = 0; i< listTask.childNodes.length; i++)
+        {
+            if (listTask.childNodes[i].innerHTML.includes('<strike>') == true) {
+                listTask.childNodes[i].style.visibility = 'hidden'
+            }
+            else{
+                listTask.childNodes[i].style.visibility = 'visible'
+            }
+        }
     }
 }
