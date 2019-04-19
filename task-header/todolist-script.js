@@ -1,4 +1,5 @@
-var i = 0;
+var i = 0
+let targetToEdit
 
 function createTask(text) {
     i = i + 1
@@ -89,6 +90,7 @@ function validate() {
 
 function editButtonClick () {
     var item = event.currentTarget.parentElement
+    targetToEdit = item.children[0].children[1]
     var inputTaskName = document.getElementById('input-task-name')
     inputTaskName.value = item.children[0].children[1].innerText
 
@@ -98,7 +100,16 @@ function editButtonClick () {
     var addButton = document.getElementById('add-task-button')
     addButton.style.display = 'none'
 }
+function changeName() {
+  let taskName = document.getElementById('input-task-name')
 
+  targetToEdit.innerText = taskName.value
+  let editButtonHeader = event.currentTarget
+  editButtonHeader.style.display = 'none'
+  taskName.value = ''
+  let addButton = document.getElementById('add-task-button')
+  addButton.style.display = 'inline-block'
+}
 function deleteButtonClick () {
     let item = event.currentTarget.parentElement
     var editButton = item.children[1]
