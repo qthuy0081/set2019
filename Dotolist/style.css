@@ -1,30 +1,78 @@
 * {
   font-size: 16px;
   list-style-type: none;
+  
 }
 body {
     width: 300px;
 }
 #to-do-list{
+  position: relative;
+  top:100px;
+  left: 550px;
   padding: 10px 10px 10px 10px;
+  border: 1px solid black;
 }
 
 #header{
   display: block;
   margin-bottom: 5px;
 }
-
+#add,#save{
+  float:right;
+  background-color: #3498DB;
+  border-radius: 5px;
+  color:#F1F1F1;
+}
 #body{
   display: block;
   margin-top:5px;
   margin-bottom:5px;
+  overflow:hidden;
 }
-
+label {
+  display:inline-block;
+  padding-top:4px;
+  text-overflow:clip;
+  width: 50%;
+  overflow:hidden;
+  height:90%;
+}
+input[type="checkbox"] ~ label { 
+  padding-left:1.4em;
+  display:inline-block;
+}
 #footer{
   display: block;
   margin-top:5px;
 }
-
+li {
+  padding:2px;
+}
+.edit-button{
+  float:right;
+  height:80%;
+  overflow:hidden;
+  background:#4dffa6;
+}
+.delete-button{
+  float:right;
+  height:80%;
+  overflow:hidden;
+  background: #ff8080;
+}
+.yes-button{
+  float:right;
+  height:80%;
+  overflow:hidden;
+  background:#ff8080;
+}
+.no-button{
+  float:right;
+  height:80%;
+  overflow:hidden;
+  background: #4dffa6;
+}
 #save-edit {
   display: none;
   margin-bottom: 5px;
@@ -33,17 +81,20 @@ body {
 /* li color by nth row*/
 ul{
   padding:0px;
+  width:100%;
 }
 li:nth-child(odd) {
-background: #4CAF50;
+background: #d9d9d9;
 }
 
 li:nth-child(even) {
 background: #F1F1F1;
 }
-#delete-button,#yes-button,#no-button,#edit-button {
-    margin: 0 10px 0 10px;
+.delete-button,.yes-button,.no-button,.edit-button {
+    margin:  3px 5px 3px 5px;
+    border-radius: 5px;
 }
+
 
 /* Dropdown style */
 .dropbtn {
@@ -53,9 +104,8 @@ background: #F1F1F1;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
-<<<<<<< HEAD
-
 .dropbtn:hover, .dropbtn:focus {
   background-color: #2980B9;
 }
@@ -85,8 +135,7 @@ background: #F1F1F1;
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
-=======
-/* Dropdown style */
+
 .dropbtn {
     background-color: #3498DB;
     color: white;
@@ -125,5 +174,3 @@ background: #F1F1F1;
   .dropdown a:hover {background-color: #ddd;}
   
   .show {display: block;}
->>>>>>> delete-button
-/* Dropdown Style end */
