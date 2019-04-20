@@ -1,0 +1,30 @@
+video {
+    width: 720px;
+}
+
+.video-player {
+    width: 720px;
+}
+
+.video-button {
+    border: none;
+    background-color: #80808000;
+}
+
+.video-button img {
+    width: 30px;
+    height: 30px;
+}
+
+#progress-bar {
+    width: 76%;
+    height: 10px;
+    display: inline-block;
+    background-color: #80808063;
+}
+
+#watched-bar {
+    width: 0%;
+    height:10px;
+    background-color: red;
+}

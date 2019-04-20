@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="video.css">
+    
+</head>
+<body>
+   <div class="video-player">
+        <video id="video-screen" src="paint.mp4" type="video/mp4" controls></video>
+        <div class="video-panel">
+            <button class="video-button" id="play-button" onclick="playVideo()"><img src="https://img.icons8.com/ios-glyphs/30/000000/play.png"></button>
+            <div id="progress-bar">
+                <div id="watched-bar"></div>
+            </div>
+            <span id="video-time">0:00</span>
+            <button class="video-button" id="unmute-button" ><img src="https://img.icons8.com/metro/26/000000/high-volume.png"></button>
+            <button class="video-button" id="full-screen" onclick="toggleFullScreen()"><img src="https://img.icons8.com/metro/26/000000/fit-to-width.png"></button>
+        </div>
+   </div>
+
+<script src="script.js"></script>
+</body>
+</html>
