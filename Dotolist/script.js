@@ -129,15 +129,8 @@ function editTaskName(event) {
     else {
         var item = event.currentTarget.parentElement
         var item1 = event.currentTarget.parentElement.innerHTML
-        item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)" checked="true">','')
-        item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)">','')
-        item1 = item1.replace('</label>','')
-        item1 = item1.replace('<button class="yes-button" onclick="deleteForever(event)">Yes</button>','')
-        item1 = item1.replace('<button class="no-button" onclick="deleteFake(event)">No</button>','')
-        item1 = item1.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
-        item1 = item1.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
         var transit = document.getElementById('header-taskname-edit')
-        transit.value = item1
+        transit.value = item.childNodes[0].innerText
         var item2 = event.currentTarget
         item2.innerHTML += 'hello'
         document.getElementById('header').style.display = 'none'
@@ -162,8 +155,7 @@ function disabledButton(event) {
         checkParent.innerHTML = checkParent.innerHTML.replace('checked="true"','')
         checkParent.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
         checkParent.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
-        checkParent.innerHTML = checkParent.innerHTML.replace('<strike>','') 
-        checkParent.innerHTML = checkParent.innerHTML.replace('</strike>','') 
+        checkParent.childNodes[0].style.textDecoration = 'none'
         var taskList = document.getElementById('task-list')
         var item = document.createElement('li')
         item.innerHTML = checkParent.innerHTML
@@ -179,8 +171,7 @@ function disabledButton(event) {
         checkParent.innerHTML = checkParent.innerHTML.replace('<button class="no-button" onclick="deleteFake(event)">No</button>','')
         checkParent.innerHTML = checkParent.innerHTML.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
         checkParent.innerHTML = checkParent.innerHTML.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
-        var checkInner = checkParent.innerText
-        checkParent.innerHTML = checkParent.innerHTML.replace(checkInner,'<strike>'+checkInner+'</strike>')
+        checkParent.childNodes[0].style.textDecoration = 'line-through'
         var doneList = document.getElementById('done-list')
         var item = document.createElement('li')
         item.innerHTML = checkParent.innerHTML
