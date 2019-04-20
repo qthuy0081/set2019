@@ -11,7 +11,7 @@
     <div id="content">
         <div id="task-header">
             <input id="input-task-name" placeholder="Task name" onchange="clearAllInforms()">
-            <button id="add-task-button" onclick="modifyTask()" >ADD</button>
+            <button id="add-task-button" onclick="modifyTask(),selectOption()" >ADD</button>
             <button id="edit-name-button" onclick="changeName()">EDIT</button>
             <div id="validate-task-name"></div>
         </div>
@@ -20,7 +20,7 @@
                     
             </div>       
         </div>
-        <select id = "select-box" onchange="slectOption()">
+        <select id = "select-box" onchange="selectOption()">
             <option value = "all">All</option>
             <option value="done">Done</option>
             <option value="undone">Undone</option>
