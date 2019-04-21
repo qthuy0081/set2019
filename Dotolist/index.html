@@ -17,7 +17,7 @@
         </div>
         <div id="save-edit">
             <input id='header-taskname-edit' placeholder='Task name...' onfocus='deleteAttentionEdit()'required/>
-            <button id="save" onclick="validateEdit();saveTask();">Edit</button>
+            <button id="save" onclick="validateEdit();saveTask();">Save</button>
             <div id="valid-edit" style="color:red;"></div>
         </div>
         <div id="body">
@@ -53,6 +53,14 @@
                 <a id="undone-task-percentage">Undone: </a>
             </div>
         </div>
+    <div class="buttonPanel">
+        <button class="mute/unmute" id="muteBtn"><img src=""/></button>
+        <button class="fullscreen" id="fullscreenBtn">Fullscreen</button>
+    </div>
+    <div id='statistic'>
+        <a>Statistic</a> <br>
+        <a id="done-task-percentage">Done: </a> <br>
+        <a id="undone-task-percentage">Undone: </a>
     </div>
     
 </body>
