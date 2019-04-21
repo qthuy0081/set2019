@@ -210,7 +210,7 @@ li:nth-child(even) {
 }
 @media screen and (min-width: 768px) {
     #body {
-        max-height: 50%;
+        max-height: 53%;
     }
     #to-do-list {
         width: 50%;
@@ -236,24 +236,24 @@ li:nth-child(even) {
 }
 @media screen and (max-width: 768px) {
     #body {
-        max-height: 20%;
+        max-height: 45%;
     }
     #to-do-list {
         width: 100%;
         float: left;
-        height:40%;
+        height:50%;
         padding: 0px 10px 20px 10px;
     }
     #instruction-video {
         width: 100%;
         float: left;
-        height:40%;
+        height:35%;
         padding: 10px 10px 20px 10px;
     }
     #statistic {
         width: 100%;
         float: left;
-        height:20%;
+        height:15%;
         padding: 0px 10px 10px 10px;
     }
     #footer {
