@@ -160,21 +160,22 @@ input[type=checkbox]:checked + span.strike {
  
 #select-box {
     display: block;
-    width: 100%;
+    width: 50%;
 }
 
 video {
-    width: 720px;
+    width: 70%;
 }
 
 .video-player {
-    width: 720px;
+    width: 70%;
 }
 
 #video-panel {
     background-color: #4b4b4b2c;
     padding: 10px 5px 10px 5px;
     font-size: 20px;
+    width:70%;
 }
 
 .video-button {
