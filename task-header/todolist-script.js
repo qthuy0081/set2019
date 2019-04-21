@@ -8,7 +8,7 @@ function createTask(text) {
     taskItem.setAttribute("class", "task-item")
     
     var label = document.createElement('label')
-    label.setAttribute('onclick','changeTaskState()')
+    label.setAttribute('onclick','changeTaskState(),selectOption()')
     label.innerHTML += '<input type="checkbox" class="input-task-checkbox">'
     var id = 'task' + i
     label.innerHTML += '<div class="title-task-name" id=' + id +'>' +text+'</div>'
@@ -115,10 +115,11 @@ function deleteButtonClick () {
     var editButton = item.children[1]
     editButton.style.display = 'none'
 
+
     let deleteButton = item.children[2]
     deleteButton.style.display = 'none'
 
-    item.innerHTML += '<button id = "yes-button" onclick = "selectYes()">YES</button>'
+    item.innerHTML += '<button id = "yes-button" onclick = "selectYes(),selectOption()">YES</button>'
     item.innerHTML += '<button id = "no-button" onclick = "selectNo()">NO</button>'
 
 }
@@ -135,6 +136,7 @@ function changeColor() {
           task.style.backgroundColor = '#FFFFFF'
         }
     }
+
 }
 
 function selectYes () {
@@ -159,7 +161,7 @@ function selectNo () {
     noButton.remove()
 }
 
-function slectOption() {
+function selectOption() {
   // alert ('run')
   let selector = document.getElementById('select-box')
   let selection = selector[selector.selectedIndex].value
@@ -168,11 +170,10 @@ function slectOption() {
       displayAllTasks()
   } else if(selection == 'done') {
      displayTaskDone()
-     
   } else {
       displayUndoneTasks()
   }
-  changeColor()
+  
 }
 
 function displayTaskDone() {
@@ -204,7 +205,7 @@ function displayAllTasks() {
 }
 
 function displayUndoneTasks() {
-
+  
   let toBeChecked = document.getElementsByClassName('input-task-checkbox')
   let numberOfTasks = toBeChecked.length
   for (var i = 0; i < numberOfTasks; i++) {
