@@ -1,7 +1,4 @@
-<<<<<<< refs/remotes/origin/ToDoList_Team1
-=======
-//add
->>>>>>> final
+
 
   
 var x = window.matchMedia("(max-width: 768px)")

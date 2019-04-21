@@ -9,22 +9,6 @@
     <link href="./style.css" type="text/css" rel="stylesheet" >
 </head>
 <body>
-<<<<<<< refs/remotes/origin/ToDoList_Team1
-    <!-- input video -->
-    <div id='instruction-video'>
-        <div id="controls-video" class="overlay">
-            <button id="play-pause">Pause</button>
-            <input id="time-line" type="range" min="0" max="100" value="0" step="1">
-            <button id="mute-unmute">Mute</button>
-            <button id="fullscreen">[x]</button>
-        </div>
-        <div id="video-container"></div>
-        <script src="https://www.youtube.com/iframe_api"></script>
-    </div>
-=======
-
-    
->>>>>>> final
     <div id="to-do-list">
         <div id="header">
             <input id='header-taskname' placeholder='Task name...' onfocus='deleteAttention()'required/>
@@ -53,7 +37,15 @@
         </div>
     </div>
     <div id="header-right">
-        <div id='instruction-video'></div>
+        <div id='instruction-video'>
+            <div id="controls-video" class="overlay">
+                <button id="play-pause">Pause</button>
+                <input id="time-line" type="range" min="0" max="100" value="0" step="1">
+                <button id="mute-unmute">Mute</button>
+                <button id="fullscreen">[x]</button>
+            </div>
+            <div id="video-container"><script src="https://www.youtube.com/iframe_api"></script></div>
+        </div>
         <div id='statistic'>
             <div id="statistic-informat">
                 <a id="title">Statistic</a> <br>
