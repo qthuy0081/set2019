@@ -1,7 +1,7 @@
 var i = 0
 let targetToEdit
 
-function createTask(text) {
+function createTask (text) {
     i = i + 1
 
     var taskItem = document.createElement('div')
@@ -15,22 +15,22 @@ function createTask(text) {
 
     taskItem.append(label)
 
+    var del = document.createElement('button')
+    del.setAttribute('id', 'del-task-button')
+    del.setAttribute('onclick', 'deleteButtonClick ()' )
+    del.innerText = "DELETE"
+    taskItem.append(del)
+
     var edit = document.createElement('button')
     edit.setAttribute('id', 'edit-task-button')
     edit.setAttribute('onclick', 'editButtonClick()')
     edit.innerText = "EDIT"
     taskItem.append(edit)
 
-    var del = document.createElement('button')
-    del.setAttribute('id', 'del-task-button')
-    del.setAttribute('onclick','deleteButtonClick ()' )
-    del.innerText = "DELETE"
-    taskItem.append(del)
-    
     return taskItem
 }
 
-function changeTaskState() {
+function changeTaskState () {
     let containerElement = event.currentTarget.parentElement
     let toBeLined = containerElement.children[0].children[1]
     let aCheckbox = containerElement.children[0].children[0]
@@ -51,24 +51,19 @@ function changeTaskState() {
     }
 }
 
-function modifyTask() {
+function modifyTask () {
     if (validate() == true) {
       addTask()  
       changeColor()
-    } else {
-      let annoucement = document.getElementById('validate-task-name')
-      annoucement.innerText = '*This field is mandatory'
-      annoucement.style.display = 'block'
-      annoucement.style.color = 'red'
     }
 }
 
-function clearAllInforms() {
+function clearAllInforms () {
     let validateField = document.getElementById('validate-task-name')
     validateField.innerText = ""
 }
 
-function addTask() {
+function addTask () {
     var taskInput = document.getElementById('input-task-name')
     var taskTxt = taskInput.value.trim()
     var taskList = document.getElementById('task-list')
@@ -80,9 +75,12 @@ function addTask() {
     taskInput.value = ''
 }
 
-function validate() {
+function validate () {
     let inputTaskName = document.getElementById('input-task-name')
     if (inputTaskName.value == '') {
+      let annoucement = document.getElementById('validate-task-name')
+      annoucement.innerText = '*This field is mandatory'
+      annoucement.style.color = 'red'
       return false
     }
     return true
@@ -100,10 +98,13 @@ function editButtonClick () {
     var addButton = document.getElementById('add-task-button')
     addButton.style.display = 'none'
 }
-function changeName() {
+function changeName () {
   let taskName = document.getElementById('input-task-name')
 
+  if (!validate()) return false;
+
   targetToEdit.innerText = taskName.value
+
   let editButtonHeader = event.currentTarget
   editButtonHeader.style.display = 'none'
   taskName.value = ''
@@ -118,23 +119,28 @@ function deleteButtonClick () {
     let deleteButton = item.children[2]
     deleteButton.style.display = 'none'
 
-    item.innerHTML += '<button id = "yes-button" onclick = "selectYes()">YES</button>'
     item.innerHTML += '<button id = "no-button" onclick = "selectNo()">NO</button>'
-
+    item.innerHTML += '<button id = "yes-button" onclick = "selectYes()">YES</button>'    
 }
 
-function changeColor() {
+function changeColor () {
     let tasksList = document.getElementsByClassName('task-item')
     let numberOfTasks = tasksList.length
+    let displayNone = 0;
 
     for (var i = 0 ; i < numberOfTasks;i++) {
         let task = tasksList[i]
-        if (i % 2 == 0) {
-            task.style.backgroundColor = '#CCCCCC'
+
+        if (task.style.display == 'none') {
+          displayNone = displayNone + 1
+        } else if ((i + displayNone) % 2 == 0) {
+          task.style.backgroundColor = '#CCCCCC'
         } else {
           task.style.backgroundColor = '#FFFFFF'
         }
     }
+
+    displayNone = 0
 }
 
 function selectYes () {
@@ -159,19 +165,23 @@ function selectNo () {
     noButton.remove()
 }
 
-function slectOption() {
-  // alert ('run')
+function selectOption() {
+
   let selector = document.getElementById('select-box')
   let selection = selector[selector.selectedIndex].value
 
-  if(selection == 'all') {
+  if (selection == 'all') {
       displayAllTasks()
-  } else if(selection == 'done') {
-     displayTaskDone()
-     
-  } else {
+  }
+  
+  if (selection == 'done') {
+     displayTaskDone()     
+  }
+  
+  if (selection == 'undone') {
       displayUndoneTasks()
   }
+
   changeColor()
 }
 
