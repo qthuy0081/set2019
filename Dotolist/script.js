@@ -69,6 +69,7 @@ function add() {
         item.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
         taskList.append(item)
         document.getElementById('header-taskname').value = ''
+        statisticCounter()
     }
 } 
 
