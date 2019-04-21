@@ -179,16 +179,20 @@ function selectYes () {
     let item = event.currentTarget.parentElement
     item.remove()
     changeColor()
+    changeToAddButtonHeader()
+    let taskName = document.getElementById('input-task-name')
+    targetToEdit.innerText = taskName.value
+    taskName.value = ''
 }
 
 function selectNo () {
-  let containerElement = event.currentTarget.parentElement
+    let containerElement = event.currentTarget.parentElement
 
-  let editButton = containerElement.children[1]
-  editButton.style.display = 'inline-block'
-  
-  let deleteButton = containerElement.children[2]
-  deleteButton.style.display = 'inline-block'
+    let editButton = containerElement.children[1]
+    editButton.style.display = 'inline-block'
+    
+    let deleteButton = containerElement.children[2]
+    deleteButton.style.display = 'inline-block'
 
     let yesButton = containerElement.children[3]
     yesButton.remove()
