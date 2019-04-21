@@ -1,0 +1,28 @@
+.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+    <link href="./style.css" type="text/css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <div id="video-container">
+        <div id="instruction-video">
+            <video class="videoplayer" src="./instruction.mp4" ></video>
+            <div id="control-container">
+                <button id="play-pause" onclick="playOrPause()"><i class="fas fa-play"></i></button>
+                <div class="timeline">
+                    <div class="timeline-progress"></div>
+                </div>
+                <button id="mute-unmute" onclick="muteOrUnmute()"><i class="fas fa-volume-mute"></i></button>
+                <button id="fullscreen" onclick="screenCustomize()"><i class="fas fa-expand"></i></button>   
+            </div>
+        </div>
+   </div>
+<!-- ********************************************** -->
+<script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+#video-container {
+ width: 30%;
+}
+
+#instruction-video {
+  width: 100%;
+  position: relative;
+}
+
+.videoplayer {
+  width: 100%;
+  position: absolute;
+} 
+
+#control-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: rgb(54, 52, 52,0.5);
+  display: none;
+}
+
+#instruction-video:hover #control-container {
+  display:flex;
+}
+
+#control-container button {
+  background: none;
+  border : 0;
+  outline: 0;
+  cursor: pointer;
+  color: #F1F1F1;
+  display: inline-block;
+  text-align: center;
+  font-size: 12x;
+  width: 8%;
+  -webkit-font-smoothing: antialiased;
+  padding: 5px;
+}
+
+.timeline {
+  display: inline-block;
+  margin: 10px 5px ;
+  width: 70%;
+  height: 5px;
+  background-color: rgb(2, 2, 2,0.7);
+  border-radius: 3px;
+}
+
+.timeline-progress {
+  height: 5px;
+  width: 0%;
+  background-color: rgba(255, 178, 107,0.7);
+}
