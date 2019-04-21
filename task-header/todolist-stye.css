@@ -9,30 +9,33 @@
     padding: 10px;
 }
 #task-header {
-    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #task-list-container {
-    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
+
 #input-task-name {
     display: inline-block;
-    padding: 5px;
     width: 80%;
+    padding: 5px;
     font-size: 16px;
     border-radius: 5px;
+    margin-right: 5px;
 }
 
 #add-task-button {
     font-size: 16px;
-    width: 16%;
     padding: 5px;
+    width: 16%;
     background-color: #28abe3;
     border: none;
     border-radius: 5px;
     color: #ffffff;
     font-weight: bold;
     display: inline-block;
+    margin-left: -5px;
 }
 
 #edit-name-button {
@@ -46,21 +49,12 @@
     color: #ffffff;
     font-weight: bold;
     display: none;
+    margin-left: -5px;
 }
-
-#validate-task-name {
-    /* border: 1px solid; */
-    min-height: 20px;
-    display: none;
-}
-
-input[type=checkbox]:checked + span.strike {
-    text-decoration: line-through;
-}
-
 #taskList li {
     list-style-type: none;
 }
+
 #content {
     border: 1px solid;
     width: 500px;
@@ -71,6 +65,8 @@ input[type=checkbox]:checked + span.strike {
 .task-item {
     margin-top: 2px;
     margin-bottom: 2px;
+    word-wrap: break-word;
+    position: relative;
 }
 
 .task-item:hover {
@@ -84,9 +80,9 @@ input[type=checkbox]:checked + span.strike {
     background-color: #fafafa;
 	border: 1px solid #cacece;
     padding: 9px;
-    margin: 5px;
     border-radius: 3px;
     position: relative;
+    margin: 5px;
 }
 
 
@@ -106,15 +102,14 @@ input[type=checkbox]:checked + span.strike {
 .title-task-name {
     display: inline-block;
     vertical-align: top;
-    margin-top: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 16px;
-    padding: 5px;
     width: 62%;
 }
 
 #edit-task-button {
-    display: inline-block;
-    vertical-align: top;    
+    float: right;
     margin-top: 3px;
     padding: 5px;
     width: 12%;
@@ -122,11 +117,11 @@ input[type=checkbox]:checked + span.strike {
     background-color: #28ABE3;
     border: none;
     color: #ffffff;
+    margin-right: 5px;
 }
 
 #del-task-button {
-    display: inline-block;
-    vertical-align: top;
+    float: right;
     margin-top: 3px;
     padding: 5px;
     width: 15%;
@@ -137,7 +132,7 @@ input[type=checkbox]:checked + span.strike {
 }
 
 #yes-button {
-    vertical-align: top;    
+    float: right;    
     margin-top: 3px;
     padding: 5px;
     width: 12%;
@@ -145,10 +140,11 @@ input[type=checkbox]:checked + span.strike {
     background-color: #28ABE3;
     border: none;
     color: #ffffff;
+    margin-right: 5px;
 }
 
 #no-button {
-    vertical-align: top;
+    float: right;
     margin-top: 3px;
     padding: 5px;
     width: 12%;
