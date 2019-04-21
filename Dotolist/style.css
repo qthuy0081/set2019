@@ -342,11 +342,21 @@ li:nth-child(even) {
         height: 77%;
         width: 100%;
     }
+    #title {
+        color:#ff8080;
+        padding: 30%;
+        text-shadow: 0.1em 0.1em 0.2em #ff8080
+    }
     #statistic-informat {
-        padding: 14% ;
-        padding-left: 30%;
         color: #3498DB;
-        line-height: 30px
+        line-height: 30px;
+        border-style: inset;
+        width: 50%;
+        top: 20%;
+        left: 25%;
+        padding: 30px;
+        position: absolute;
+        background: white;
     }
     #statistic-informat a {
         font-size: 30px;
