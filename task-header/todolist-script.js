@@ -182,9 +182,13 @@ function selectYes () {
 }
 
 function selectNo () {
-    let parent = event.currentTarget.parentElement
+  let containerElement = event.currentTarget.parentElement
 
-    displayButtonByParent(parent)
+  let editButton = containerElement.children[1]
+  editButton.style.display = 'inline-block'
+  
+  let deleteButton = containerElement.children[2]
+  deleteButton.style.display = 'inline-block'
 
     let yesButton = containerElement.children[3]
     yesButton.remove()
