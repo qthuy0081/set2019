@@ -1,4 +1,63 @@
 //add
+var maxHeightBodyList = document.getElementById('body').style.maxHeight
+var toDoList = document.getElementById('to-do-list')
+var instructionVideo = document.getElementById('instruction-video')
+var statistic = document.getElementById('statistic')
+var footer = document.getElementById('footer')
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+        var width = window.innerWidth - 20
+        var height = (window.innerHeight - 60)/3
+        toDoList.style.width = width.toString() + 'px'
+        toDoList.style.height = height.toString() + 'px'
+        toDoList.style.cssFloat = 'left'
+        toDoList.style.margin = '0px 0px 20px 0px'
+        instructionVideo.style.width = width.toString() + 'px'
+        instructionVideo.style.height = height.toString() + 'px'
+        instructionVideo.style.margin = '0px 0px 20px 0px'
+        instructionVideo.style.cssFloat = 'left'
+        statistic.style.width = width.toString() + 'px'
+        statistic.style.height = height.toString() + 'px'
+        statistic.style.margin = '0px'
+        statistic.style.cssFloat = 'left'
+        footer.style.bottom = '0px'
+        var maxHeight = height - 70
+        if ( maxHeight >= 15) {
+            document.getElementById('body').style.maxHeight = maxHeight.toString() + 'px'
+        }
+        else {
+            maxHeight = 15
+            document.getElementById('body').style.maxHeight = maxHeight.toString() + 'px'
+        }
+    } 
+    else {
+        var width = (window.innerWidth - 30) / 2
+        var height = (window.innerHeight - 20)
+        var heightRight = height / 2 - 10
+        toDoList.style.width = width.toString() + 'px'
+        toDoList.style.height = height.toString() + 'px'
+        toDoList.style.cssFloat = 'left'
+        toDoList.style.margin = '0px 5px 0px 0px'
+        instructionVideo.style.width = width.toString() + 'px'
+        instructionVideo.style.height = heightRight.toString() + 'px'
+        instructionVideo.style.cssFloat = 'right'
+        instructionVideo.style.margin = '0px 0px 10px 5px'
+        statistic.style.width = width.toString() + 'px'
+        statistic.style.height = heightRight.toString() + 'px'
+        statistic.style.cssFloat = 'right'
+        statistic.style.margin = '10px 0px 0px 5px'
+        footer.style.bottom = '70px'
+        var maxHeight = height - 100
+        document.getElementById('body').style.maxHeight = maxHeight.toString() + 'px'
+        
+
+    }
+  }
+  
+var x = window.matchMedia("(max-width: 768px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction)
+
 function add() {
     var check = document.getElementById('header-taskname')
     if (check.value.trim() != '') {
@@ -10,6 +69,7 @@ function add() {
         item.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
         taskList.append(item)
         document.getElementById('header-taskname').value = ''
+        statisticCounter()
     }
 } 
 
@@ -23,8 +83,8 @@ function validate() {
 
 function deleteAttention() {
     var checkBorder = document.getElementById('header-taskname')
-    if (document.getElementById('valid').style.display=='block') {
-        document.getElementById('valid').style.display='none'
+    if (document.getElementById('valid').style.display == 'block') {
+        document.getElementById('valid').style.display = 'none'
         checkBorder.style.border = "default"
     }
 }
@@ -50,10 +110,11 @@ function deleteForever(event) {
     var item = event.currentTarget.parentElement
     item.innerHTML += 'check'
     var headerDisplay = document.getElementById('header')
-    if(header.style.display == 'none') {
+    if (header.style.display == 'none') {
         checkDisplay(headerDisplay,item)
     }
     item.remove()
+    statisticCounter()
 }
 function checkDisplay(objectDisplay, item) {
     if (item.innerHTML == document.getElementById('task-list').childNodes[document.getElementById('save').value].innerHTML) {
@@ -115,7 +176,7 @@ function checkNode(node, liSave, checkValidateValue) {
 
 function validateEdit() {
     var checkValidate = document.getElementById('header-taskname-edit')
-    if(checkValidate.value.trim() == '') {
+    if (checkValidate.value.trim() == '') {
         document.getElementById('valid-edit').style.display='block'
         document.getElementById('valid-edit').innerText = '*this field is madatory'
     }
@@ -123,30 +184,22 @@ function validateEdit() {
 
 function deleteAttentionEdit() {
     var checkBorder = document.getElementById('header-taskname-edit')
-    if(document.getElementById('valid-edit').style.display == 'block') {
+    if (document.getElementById('valid-edit').style.display == 'block') {
         document.getElementById('valid-edit').style.display = 'none'
         checkBorder.style.border = "default"
     }
 }
 
 function editTaskName(event) {
-    if(document.getElementById('header').style.display == 'none') {
+    if (document.getElementById('header').style.display == 'none') {
         alert('Have to save before edit next')
     }
-
     else {
         var item = event.currentTarget.parentElement
         var item1 = event.currentTarget.parentElement.innerHTML
         var transit = document.getElementById('header-taskname-edit')
         var saveIndex = document.getElementById('save')
-        item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)" checked="true">','')
-        item1 = item1.replace('<label><input type="checkbox" onclick="disabledButton(event)">','')
-        item1 = item1.replace('</label>','')
-        item1 = item1.replace('<button class="yes-button" onclick="deleteForever(event)">Yes</button>','')
-        item1 = item1.replace('<button class="no-button" onclick="deleteFake(event)">No</button>','')
-        item1 = item1.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
-        item1 = item1.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
-        transit.value = item1
+        transit.value = item.childNodes[0].innerText
         var item2 = event.currentTarget
         item2.innerHTML += 'hello'
         document.getElementById('header').style.display = 'none'
@@ -159,7 +212,7 @@ function editTaskName(event) {
 function findIndex(item) {
     var taskList = document.getElementById('task-list') 
     var i = 0
-    while(taskList.childNodes[i].innerHTML != item.innerHTML) {
+    while (taskList.childNodes[i].innerHTML != item.innerHTML) {
         i++
     }
     return i
@@ -178,16 +231,21 @@ function disabledButton(event) {
         item.childNodes[0].style.textDecoration = 'none'
         taskList.append(item)
         checkParent.remove()
-
+        statisticCounter()
     }
     else {
-        checkSaveDisplay(checkParent)
+        checkSaveDisplay(checkParent, check)
     }
 }
 
-function checkSaveDisplay(checkParent) {
+function checkSaveDisplay(checkParent, check) {
     var onsave = document.getElementById('header')
-    if(onsave.style.display != 'none') {
+    if (onsave.style.display == 'none') {
+        document.getElementById('valid-edit').style.display='block'
+        document.getElementById('valid-edit').innerText = 'Saving before changing'
+        check.childNodes[0].checked = false
+    }
+    else {
         checkParent.innerHTML = checkParent.innerHTML.replace('(event)"','(event)" checked="true"')
         checkParent.innerHTML = checkParent.innerHTML.replace('<button class="yes-button" onclick="deleteForever(event)">Yes</button>','')
         checkParent.innerHTML = checkParent.innerHTML.replace('<button class="no-button" onclick="deleteFake(event)">No</button>','')
@@ -200,11 +258,7 @@ function checkSaveDisplay(checkParent) {
         doneList.append(item)
         checkParent.remove()
     }
-    else {
-        document.getElementById('valid-edit').style.display='block'
-        document.getElementById('valid-edit').innerText = 'Saving before changing'
-        check.childNodes[0].checked = false
-    }
+    statisticCounter()
 }
 function dropDown() {
     document.getElementById("dropdown-list").classList.toggle("show");
@@ -241,11 +295,19 @@ function allShow() {
 }
 
 function doneShow() {
+    var onsave = document.getElementById('header')
+    if (onsave.style.display == 'none') {
+        var checkValidate = document.getElementById('header-taskname-edit')
+        document.getElementById('valid-edit').style.display = 'block'
+        document.getElementById('valid-edit').innerText = 'Saving before changing'    
+    }
+    else {
     var listTask = document.getElementById('task-list')
     var doneList = document.getElementById('done-list')
     listTask.style.display = 'none'
     doneList.style.display = 'block'
     buttonText[0].innerText = 'Done'
+    }
 }
 
 function undoneShow() {
@@ -254,4 +316,12 @@ function undoneShow() {
     listTask.style.display = 'block'
     doneList.style.display = 'none'
     buttonText[0].innerText = 'Undone'
+}
+function statisticCounter() {
+    var doneCounter = document.getElementById("done-list").childElementCount
+    var undoneCounter = document.getElementById("task-list").childElementCount
+    var doneView = document.getElementById("done-task-percentage")
+    var undoneView = document.getElementById("undone-task-percentage")
+    doneView.innerHTML = "Done: " + (doneCounter/(doneCounter+undoneCounter))*100 + "%"
+    undoneView.innerHTML = "Undone: " + (undoneCounter/(doneCounter+undoneCounter))*100 + "%"
 }
