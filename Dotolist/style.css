@@ -1,81 +1,100 @@
 * {
     font-size: 16px;
     list-style-type: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html {
+    height:100%;
+    margin:0;
+    padding: 0px;
 }
 body {
-    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
 }
 #to-do-list {
+    display: block;
     position: relative;
-    top:100px;
-    left: 550px;
-    padding: 10px 10px 10px 10px;
-    border: 1px solid black;
+}
+#instruction-video{
+    display: block;
+    background-color: #4dffa6;
+}
+#statistic{
+    display:block;
+    background-color: #ff8080;
+}
+#header {
+    display: block;
+    margin-bottom: 10px;
+}
+#add,#save {
+    float: right;
+    background-color: #3498DB;
+    border-radius: 5px;
+    color: #F1F1F1;
 }
 
-#header {
+#body {
+    display: block;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+#task-list {
     display: block;
     margin-bottom: 5px;
 }
-#add,#save {
-    float:right;
-    background-color: #3498DB;
-    border-radius: 5px;
-    color:#F1F1F1;
-}
-#task-list {
-  display:block;
-}
 #done-list {
-  display:block;
-}
-#body {
     display: block;
-    margin-top:5px;
-    margin-bottom:5px;
-    overflow:hidden;
 }
 label {
-    display:inline-block;
-    padding-top:4px;
+    display: inline-block;
+    padding-top:  4px;
     text-overflow:clip;
     width: 50%;
-    overflow:hidden;
-    height:90%;
+    overflow: hidden;
+    height: 90%;
 }
 input[type="checkbox"] ~ label { 
-    padding-left:1.4em;
-    display:inline-block;
+    padding-left: 1.4em;
+    display: inline-block;
 }
 #footer {
+    bottom: 0px;
     display: block;
-    margin-top:5px;
+    position: absolute;
 }
 li {
-    padding:2px;
+    padding: 2px;
 }
 .edit-button {
-    float:right;
-    height:80%;
-    overflow:hidden;
-    background:#4dffa6;
+    margin-right: 5px;
+    float: right;
+    height: 80%;
+    overflow: hidden;
+    background: #4dffa6;
 }
 .delete-button {
-    float:right;
-    height:80%;
-    overflow:hidden;
-    background: #ff8080;
+    margin-left: 5px;
+    float: right;
+    height: 80%;
+    overflow: hidden;
+    background:  #ff8080;
 }
 .yes-button {
-    float:right;
-    height:80%;
-    overflow:hidden;
-    background:#ff8080;
+    margin-right: 5px;
+    float: right;
+    height: 80%;
+    overflow: hidden;
+    background: #ff8080;
 }
 .no-button {
-    float:right;
-    height:80%;
-    overflow:hidden;
+    margin-left: 5px;
+    float: right;
+    height: 80%;
+    overflow: hidden;
     background: #4dffa6;
 }
 #save-edit {
@@ -85,8 +104,9 @@ li {
   
 /* li color by nth row*/
 ul {
-    padding:0px;
-    width:100%;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
 }
 li:nth-child(odd) {
     background: #d9d9d9;
@@ -96,7 +116,6 @@ li:nth-child(even) {
     background: #F1F1F1;
 }
 .delete-button,.yes-button,.no-button,.edit-button {
-    margin:  3px 5px 3px 5px;
     border-radius: 5px;
 }
 
