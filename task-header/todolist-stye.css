@@ -159,18 +159,19 @@ input[type=checkbox]:checked + span.strike {
 }
 #todolist-task-introduce {
     display: block;
-    /* border: 1px solid #DB3340; */
+    border: 1px solid #DB3340;
     padding: 10px;
 }
 #statistic-task {
     display: block;
-    /* border: 1px solid #28ABE3; */
+    border: 1px solid #28ABE3;
     padding: 10px;
 }
 #content > div {
     width: 47%;
     display: inline-block;
     border: 1px solid #DB3340;
+    padding: 10px;
 }
 #content > #todolist-task-introduce {
     display: none;
