@@ -113,6 +113,7 @@ function deleteForever(event) {
         checkDisplay(headerDisplay,item)
     }
     item.remove()
+    statisticCounter()
 }
 function checkDisplay(objectDisplay, item) {
     if (item.innerHTML == document.getElementById('task-list').childNodes[document.getElementById('save').value].innerHTML) {
@@ -229,6 +230,7 @@ function disabledButton(event) {
         item.childNodes[0].style.textDecoration = 'none'
         taskList.append(item)
         checkParent.remove()
+        statisticCounter()
     }
     else {
         checkSaveDisplay(checkParent, check)
@@ -255,6 +257,7 @@ function checkSaveDisplay(checkParent, check) {
         doneList.append(item)
         checkParent.remove()
     }
+    statisticCounter()
 }
 function dropDown() {
     document.getElementById("dropdown-list").classList.toggle("show");
@@ -312,4 +315,12 @@ function undoneShow() {
     listTask.style.display = 'block'
     doneList.style.display = 'none'
     buttonText[0].innerText = 'Undone'
+}
+function statisticCounter() {
+    var doneCounter = document.getElementById("done-list").childElementCount
+    var undoneCounter = document.getElementById("task-list").childElementCount
+    var doneView = document.getElementById("done-task-percentage")
+    var undoneView = document.getElementById("undone-task-percentage")
+    doneView.innerHTML = "Done: " + (doneCounter/(doneCounter+undoneCounter))*100 + "%"
+    undoneView.innerHTML = "Undone: " + (undoneCounter/(doneCounter+undoneCounter))*100 + "%"
 }
