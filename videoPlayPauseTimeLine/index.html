@@ -14,7 +14,7 @@
             <video class="videoplayer" src="./instruction.mp4" ></video>
             <div id="control-container">
                 <button id="play-pause" onclick="playOrPause()"><i class="fas fa-play"></i></button>
-                <div class="timeline">
+                <div id="timeline" onclick="timeChooser(event)">
                     <div class="timeline-progress"></div>
                 </div>
                 <button id="mute-unmute" onclick="muteOrUnmute()"><i class="fas fa-volume-mute"></i></button>

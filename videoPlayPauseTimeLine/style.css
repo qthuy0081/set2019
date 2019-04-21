@@ -13,12 +13,13 @@
 } 
 
 #control-container {
+
   position: absolute;
   top: 0;
   width: 100%;
   flex-wrap: wrap;
   background-color: rgb(54, 52, 52,0.5);
-  display: none;
+  display: flex;
 }
 
 #instruction-video:hover #control-container {
@@ -39,17 +40,28 @@
   padding: 5px;
 }
 
-.timeline {
+#timeline {
   display: inline-block;
   margin: 10px 5px ;
   width: 70%;
   height: 5px;
   background-color: rgb(2, 2, 2,0.7);
   border-radius: 3px;
+  cursor: pointer;
+}
+
+#timeline:hover {
+  height: 6px;
+}
+
+
+#timeline:hover .timeline-progress {
+  height: 6px;
 }
 
 .timeline-progress {
   height: 5px;
   width: 0%;
   background-color: rgba(255, 178, 107,0.7);
+  border-radius: 3px;
 }
