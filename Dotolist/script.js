@@ -71,8 +71,8 @@ function validate() {
 
 function deleteAttention() {
     var checkBorder = document.getElementById('header-taskname')
-    if (document.getElementById('valid').style.display=='block') {
-        document.getElementById('valid').style.display='none'
+    if (document.getElementById('valid').style.display == 'block') {
+        document.getElementById('valid').style.display = 'none'
         checkBorder.style.border = "default"
     }
 }
@@ -98,7 +98,7 @@ function deleteForever(event) {
     var item = event.currentTarget.parentElement
     item.innerHTML += 'check'
     var headerDisplay = document.getElementById('header')
-    if(header.style.display == 'none') {
+    if (header.style.display == 'none') {
         checkDisplay(headerDisplay,item)
     }
     item.remove()
@@ -163,7 +163,7 @@ function checkNode(node, liSave, checkValidateValue) {
 
 function validateEdit() {
     var checkValidate = document.getElementById('header-taskname-edit')
-    if(checkValidate.value.trim() == '') {
+    if (checkValidate.value.trim() == '') {
         document.getElementById('valid-edit').style.display='block'
         document.getElementById('valid-edit').innerText = '*this field is madatory'
     }
@@ -171,14 +171,14 @@ function validateEdit() {
 
 function deleteAttentionEdit() {
     var checkBorder = document.getElementById('header-taskname-edit')
-    if(document.getElementById('valid-edit').style.display == 'block') {
+    if (document.getElementById('valid-edit').style.display == 'block') {
         document.getElementById('valid-edit').style.display = 'none'
         checkBorder.style.border = "default"
     }
 }
 
 function editTaskName(event) {
-    if(document.getElementById('header').style.display == 'none') {
+    if (document.getElementById('header').style.display == 'none') {
         alert('Have to save before edit next')
     }
     else {
@@ -199,7 +199,7 @@ function editTaskName(event) {
 function findIndex(item) {
     var taskList = document.getElementById('task-list') 
     var i = 0
-    while(taskList.childNodes[i].innerHTML != item.innerHTML) {
+    while (taskList.childNodes[i].innerHTML != item.innerHTML) {
         i++
     }
     return i
@@ -226,7 +226,7 @@ function disabledButton(event) {
 
 function checkSaveDisplay(checkParent, check) {
     var onsave = document.getElementById('header')
-    if(onsave.style.display == 'none') {
+    if (onsave.style.display == 'none') {
         document.getElementById('valid-edit').style.display='block'
         document.getElementById('valid-edit').innerText = 'Saving before changing'
         check.childNodes[0].checked = false
@@ -283,7 +283,7 @@ function doneShow() {
     var onsave = document.getElementById('header')
     if (onsave.style.display == 'none') {
         var checkValidate = document.getElementById('header-taskname-edit')
-        document.getElementById('valid-edit').style.display='block'
+        document.getElementById('valid-edit').style.display = 'block'
         document.getElementById('valid-edit').innerText = 'Saving before changing'    
     }
     else {
