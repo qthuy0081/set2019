@@ -90,24 +90,24 @@ function deleteAttention() {
 }
 
 function deleteItem(event) {
+    var item = event.currentTarget.parentElement
+    var nodeFirst = item.childNodes[0]
+    var nodeSecond = nodeFirst.childNodes[0]
     if (document.getElementById('valid').style.display == 'block'|| document.getElementById('valid-edit').style.display == 'block') {
         document.getElementById('valid').style.display = 'none'
         document.getElementById('valid-edit').style.display = 'none'
     }
-    var item = event.currentTarget.parentElement
-    var nodeFirst = item.childNodes[0]
-    var nodeSecond = nodeFirst.childNodes[0]
     if (nodeSecond.checked == true) {
        item.innerHTML = item.innerHTML.replace('<label><input type="checkbox onclick="disabledButton(event)">','<label><input type="checkbox" checked="true">')
     }
     item.innerHTML = item.innerHTML.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
     item.innerHTML = item.innerHTML.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
-    item.innerHTML+='<button class="no-button" onclick="deleteFake(event)">No</button>'
-    item.innerHTML+='<button class="yes-button" onclick="deleteForever(event)">Yes</button>'
+    item.innerHTML += '<button class="no-button" onclick="deleteFake(event)">No</button>'
+    item.innerHTML += '<button class="yes-button" onclick="deleteForever(event)">Yes</button>'
 }
 
 function deleteForever(event) {
-    var item=event.currentTarget.parentElement
+    var item = event.currentTarget.parentElement
     item.innerHTML += 'check'
     var headerDisplay = document.getElementById('header')
     if (header.style.display == 'none') {
@@ -115,6 +115,28 @@ function deleteForever(event) {
     }
     item.remove()
     statisticCounter()
+}
+function checkDisplay(objectDisplay, item) {
+    if (item.innerHTML == document.getElementById('task-list').childNodes[document.getElementById('save').value].innerHTML) {
+        objectDisplay.style.display = 'block'
+        document.getElementById('save-edit').style.display = 'none'
+        document.getElementById('header-taskname-edit').value=''
+    }
+    else {
+        item.innerHTML = item.innerHTML.replace('check','')
+        item.innerHTML += 'delete'
+        var taskList = document.getElementById('task-list')
+        checkSave(item,taskList)
+    }
+}
+function checkSave(item, taskList) {
+    var i = 0
+    while (item.innerHTML != taskList.childNodes[i].innerHTML) {
+        i++
+    }
+    if (i < document.getElementById('save').value) {
+        document.getElementById('save').value--
+    }
 }
 
 function deleteFake(event) {
@@ -128,23 +150,27 @@ function deleteFake(event) {
 //save
 function saveTask() {
     var checkValidate = document.getElementById('header-taskname-edit')
-    if(checkValidate.value.trim() != '') {
+    if (checkValidate.value.trim() != '') {
         var saveIndex = document.getElementById('save')
         var taskList = document.getElementById('task-list')
         var liSave = taskList.childNodes[saveIndex.value]
-        var nodeFirst = liSave.childNodes[0]
+        var nodeFirst = liSave.childNodes[0]     
         var nodeSecond = nodeFirst.childNodes[0]
-        if(nodeSecond.checked == true) {
-            liSave.innerHTML  = '<label><input type="checkbox" onclick="disabledButton(event)" checked="true">'+checkValidate.value.trim() + '</label>' 
-        }
-        else {
-            liSave.innerHTML  = '<label><input type="checkbox" onclick="disabledButton(event)">'+checkValidate.value.trim() + '</label>'     
-        }
+        checkNode(nodeSecond, liSave, checkValidate.value)
         liSave.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
         liSave.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
         document.getElementById('header').style.display = 'block'
         document.getElementById('save-edit').style.display = 'none'
         document.getElementById('valid-edit').style.display = 'none'
+    }
+}
+
+function checkNode(node, liSave, checkValidateValue) {
+    if (node.checked == true) {
+        liSave.innerHTML  = '<label><input type="checkbox" onclick="disabledButton(event)" checked="true">'+checkValidateValue.trim() + '</label>' 
+    }
+    else {
+        liSave.innerHTML  = '<label><input type="checkbox" onclick="disabledButton(event)">'+checkValidateValue.trim() + '</label>'     
     }
 }
 
@@ -178,16 +204,8 @@ function editTaskName(event) {
         item2.innerHTML += 'hello'
         document.getElementById('header').style.display = 'none'
         document.getElementById('save-edit').style.display = 'block'
-        var taskList = document.getElementById('task-list')
-        var i = 0
-        for(i; i < taskList.childNodes.length; i++) {
-            if(taskList.childNodes[i].innerHTML == item.innerHTML) {
-                break;
-            }
-        }
         item2.innerHTML = item2.innerHTML.replace('hello','')
-        var saveIndex = document.getElementById('save')
-        saveIndex.value = i
+        saveIndex.value = findIndex(item)
     }
 }
 
@@ -207,10 +225,10 @@ function disabledButton(event) {
         checkParent.innerHTML = checkParent.innerHTML.replace('checked="true"','')
         checkParent.innerHTML += '<button class="delete-button" onclick="deleteItem(event)">Delete</button>'
         checkParent.innerHTML += '<button class="edit-button" onclick="editTaskName(event)">Edit</button>'
-        checkParent.childNodes[0].style.textDecoration = 'none'
         var taskList = document.getElementById('task-list')
         var item = document.createElement('li')
         item.innerHTML = checkParent.innerHTML
+        item.childNodes[0].style.textDecoration = 'none'
         taskList.append(item)
         checkParent.remove()
         statisticCounter()
@@ -233,38 +251,38 @@ function checkSaveDisplay(checkParent, check) {
         checkParent.innerHTML = checkParent.innerHTML.replace('<button class="no-button" onclick="deleteFake(event)">No</button>','')
         checkParent.innerHTML = checkParent.innerHTML.replace('<button class="edit-button" onclick="editTaskName(event)">Edit</button>','')
         checkParent.innerHTML = checkParent.innerHTML.replace('<button class="delete-button" onclick="deleteItem(event)">Delete</button>','')
-        checkParent.childNodes[0].style.textDecoration = 'line-through'
         var doneList = document.getElementById('done-list')
         var item = document.createElement('li')
         item.innerHTML = checkParent.innerHTML
+        item.childNodes[0].style.textDecoration = 'line-through'
         doneList.append(item)
         checkParent.remove()
-        }
-        else {
-            var checkValidate = document.getElementById('header-taskname-edit')
-            document.getElementById('valid-edit').style.display='block'
-            document.getElementById('valid-edit').innerText = 'Saving before changing'
-            check.childNodes[0].checked = false
-        }
     }
     statisticCounter()
 }
-
 function dropDown() {
     document.getElementById("dropdown-list").classList.toggle("show");
 }
 
 window.onclick = function(event) {
-  if (!event.target.matches('.drop-button')) {
+    if (!event.target.matches('.drop-button')) {
+        dropdownShow()
+    }
+}
+
+function dropdownShow() {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i = 0;
     for (i; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+        var openDropdown = dropdowns[i];
+        openDropdownShow(openDropdown);
     }
-  }
+}
+
+function openDropdownShow(openDropdown) {
+    if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+    }
 }
 var buttonText = document.getElementsByClassName('drop-button')
 
@@ -306,4 +324,21 @@ function statisticCounter() {
     var undoneView = document.getElementById("undone-task-percentage")
     doneView.innerHTML = "Done: " + (doneCounter/(doneCounter+undoneCounter))*100 + "%"
     undoneView.innerHTML = "Undone: " + (undoneCounter/(doneCounter+undoneCounter))*100 + "%"
+}
+
+// video
+let player, time_update_interval;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video-container', {
+        videoId: 'KpzhO1EyA2U',
+        playerVars: {
+            autoplay: 1,
+            controls: 0,
+            mute:1
+        },
+        events: {
+            onReady: initialize
+        }
+    });
 }
