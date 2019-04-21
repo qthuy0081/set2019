@@ -300,6 +300,9 @@ function initialize() {
     }, 1000)
 }
 // mute/fullscreen
+document.getElementById('video-box').autoplay = true;
+document.getElementById('video-box').muted = true;
+document.getElementById('video-box').controls = true;
 function renderBtn (options) {
     let newBtn = document.createElement('button')
     newBtn.addEventListener('click', options.function)

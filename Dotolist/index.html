@@ -38,13 +38,21 @@
     </div>
     <div id="header-right">
         <div id='instruction-video'>
-            <div id="controls-video" class="overlay">
+<!--            <div id="controls-video" class="overlay">
                 <button id="play-pause">Pause</button>
                 <input id="time-line" type="range" min="0" max="100" value="0" step="1">
                 <button id="mute-unmute">Mute</button>
                 <button id="fullscreen">[x]</button>
             </div>
             <div id="video-container"><script src="https://www.youtube.com/iframe_api"></script></div>
+-->
+            <video id="video-box" controls autoplay muted>
+                <source src="./Asset/Video/Sample.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="buttonPanel">
+            <button class="mute/unmute" id="muteBtn" onclick="muteUnmute()"><img src="./Asset/Image/mute.png"/></button>
+            <button class="fullscreen" id="fullscreenBtn" onclick="fullscreenBtn()"><img src="./Asset/Image/fullscreen.png"></button>
         </div>
         <div id='statistic'>
             <div id="statistic-informat">
@@ -53,16 +61,8 @@
                 <a id="undone-task-percentage">Undone: </a>
             </div>
         </div>
-    <div class="buttonPanel">
-        <button class="mute/unmute" id="muteBtn" onclick="muteUnmute()"><img src="./Asset/Image/mute.png"/></button>
-        <button class="fullscreen" id="fullscreenBtn" onclick="fullscreenBtn()"><img src="./Asset/Image/fullscreen.png"></button>
-    </div>
-    <div id='statistic'>
-        <a>Statistic</a> <br>
-        <a id="done-task-percentage">Done: </a> <br>
-        <a id="undone-task-percentage">Undone: </a>
-    </div>
-    
+
+
 </body>
 <script src="./script.js"></script>
 </html>
