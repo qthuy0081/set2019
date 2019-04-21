@@ -160,5 +160,52 @@ input[type=checkbox]:checked + span.strike {
  
 #select-box {
     display: block;
-    width: 100%;
+    width: 50%;
+}
+
+video {
+    width: 70%;
+}
+
+.video-task {
+    width: 70%;
+}
+
+#video-panel {
+    background-color: #4b4b4b2c;
+    padding: 10px 5px 10px 5px;
+    font-size: 20px;
+    width:70%;
+}
+
+.video-button {
+    border: none;
+    background-color: #80808000;
+    border-radius: 20px;
+}
+
+.video-button:hover {
+    background-color: #0000008c;
+}
+
+.video-button img {
+    width: 20px;
+    height: 20px;
+}
+
+button:focus {
+    outline: 0;
+}
+
+#timeline-task {
+    width: 71%;
+    height: 10px;
+    display: inline-block;
+    background-color: #80808063;
+}
+
+#watched-bar {
+    width: 0%;
+    height:10px;
+    background-color: red;
 }
