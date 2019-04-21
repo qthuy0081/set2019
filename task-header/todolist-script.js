@@ -202,7 +202,6 @@ function displayAllTasks() {
       elementToDisplay.style.display = "block"
   }
 }
-
 function displayUndoneTasks() {
 
   let toBeChecked = document.getElementsByClassName('input-task-checkbox')
@@ -217,4 +216,7 @@ function displayUndoneTasks() {
           elementToDisplay.style.display = "block"
       }
   }
+}
+function displayinStatistic(){
+
 }
