@@ -167,7 +167,7 @@ video {
     width: 70%;
 }
 
-.video-player {
+.video-task {
     width: 70%;
 }
 
@@ -197,7 +197,7 @@ button:focus {
     outline: 0;
 }
 
-#progress-bar {
+#timeline-task {
     width: 71%;
     height: 10px;
     display: inline-block;

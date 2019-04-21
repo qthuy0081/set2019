@@ -220,8 +220,8 @@ function displayUndoneTasks() {
 }
 
 //video
-var videoPlayer = document.getElementById('video-player')
-var videoScreen = document.getElementById('video-screen')
+var videoPlayer = document.getElementById('video-task')
+var videoScreen = document.getElementById('todolist-task-introduce')
 var videoPanel = document.getElementById('video-panel')
 var videoTime = document.getElementById('video-time')
 var watched = 0
@@ -245,7 +245,7 @@ function playVideo () {
     class: 'video-button',
     id: 'pause-button',
     icon: '<img src="https://img.icons8.com/ios/50/000000/pause-filled.png">',
-    replace: 'play-button'
+    replace: 'play-task-button'
   })
   videoTime.innerText = convertToMinute(videoScreen.duration)  
 }
@@ -256,7 +256,7 @@ function pauseVideo () {
   renderButton({
     function: playVideo,
     class: 'video-button',
-    id: 'play-button',
+    id: 'play-task-button',
     icon: '<img src="https://img.icons8.com/metro/26/000000/play.png">',
     replace: 'pause-button'
   })
@@ -282,7 +282,7 @@ function startProgressBar () {
       renderButton({
         function: playVideo,
         class: 'video-button',
-        id: 'play-button',
+        id: 'play-task-button',
         icon: '<img src="https://img.icons8.com/metro/26/000000/play.png">',
         replace: 'pause-button'
       })
