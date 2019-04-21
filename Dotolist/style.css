@@ -226,12 +226,7 @@ li:nth-child(even) {
     opacity: 1;
   }
   
-  #my-video {
-    width: 550px;
-    height: 320px;
-  }
-  
-  #play-pause-button {
+  #play-pause {
     display: inline-block;
     width: 8%;
     padding: 5px;
@@ -243,23 +238,13 @@ li:nth-child(even) {
     padding: 5px;
   }
   
-  #current-time-text {
-    display: inline-block;
-    padding: 5px;
-  }
-  
-  #durate-time-text {
-    display: inline-block;
-    padding: 5px;
-  }
-  
-  #mute-button {
+  #mute-unmute {
     display: inline-block;
     width: 8%;
     padding: 5px;
   }
   
-  #full-screen-button {
+  #fullscreen {
     display: inline-block;
     width: 8%;
     padding: 5px;
