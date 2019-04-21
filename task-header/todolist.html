@@ -7,7 +7,7 @@
     <link href="./todolist-stye.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
+<body onload="getStatistic()">
     <div id="content">
         <div id="task-header">
             <input id="input-task-name" placeholder="Task name" onchange="clearAllInforms()">
@@ -28,12 +28,11 @@
     </div>  
     <div id="statistic">
             <div id="statistic-content">
-                <div id="displayPercentage">
+                <!-- <div id="displayPercentage">
                     
-                </div>                
+                </div>                 -->
             </div>
-        </div>
-        <script src="test.js"></script>
+    </div>
     <script src="./todolist-script.js"></script>
 </body>
 </html>
