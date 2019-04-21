@@ -8,7 +8,7 @@ function createTask (taskName) {
     taskItem.setAttribute("class", "task-item")
     
     var label = document.createElement('label')
-    label.setAttribute('onclick','changeTaskState()')
+    label.setAttribute('onclick','changeTaskState(),selectOption()')
     label.innerHTML += '<input type="checkbox" class="input-task-checkbox">'
     var id = 'task' + i
     label.innerHTML += '<div class="title-task-name" id=' + id + '>' + taskName +'</div>'
@@ -142,10 +142,18 @@ function changeName () {
 
 function deleteButtonClick () {
     let item = event.currentTarget.parentElement
+
     removeButtonByParent(item)
 
-    item.innerHTML += '<button id="no-button" onclick="selectNo()">NO</button>'
-    item.innerHTML += '<button id="yes-button" onclick="selectYes()">YES</button>'    
+    var editButton = item.children[1]
+    editButton.style.display = 'none'
+
+
+    let deleteButton = item.children[2]
+    deleteButton.style.display = 'none'
+
+    item.innerHTML += '<button id = "yes-button" onclick = "selectYes(),selectOption()">YES</button>'
+    item.innerHTML += '<button id = "no-button" onclick = "selectNo()">NO</button>'
 }
 
 function changeColor () {
@@ -164,7 +172,6 @@ function changeColor () {
           task.style.backgroundColor = '#FFFFFF'
         }
     }
-
     displayNone = 0
 }
 
@@ -187,7 +194,6 @@ function selectNo () {
 }
 
 function selectOption() {
-
   let selector = document.getElementById('select-box')
   let selection = selector[selector.selectedIndex].value
 
@@ -235,7 +241,7 @@ function displayAllTasks() {
 }
 
 function displayUndoneTasks() {
-
+  
   let toBeChecked = document.getElementsByClassName('input-task-checkbox')
   let numberOfTasks = toBeChecked.length
   for (var i = 0; i < numberOfTasks; i++) {
@@ -248,4 +254,118 @@ function displayUndoneTasks() {
           elementToDisplay.style.display = "block"
       }
   }
+}
+
+//video
+var videoPlayer = document.getElementById('video-task')
+var videoScreen = document.getElementById('todolist-task-introduce')
+var videoPanel = document.getElementById('video-panel')
+var videoTime = document.getElementById('video-time')
+var watched = 0
+var timer
+
+videoScreen.muted = true // for auto-play
+
+function convertToMinute (length) {
+  let minute = Math.floor(length / 60)
+  let second = Math.floor(length % 60)
+  if(second < 10)
+    second = '0' + second
+  return minute + ":" + second
+}
+
+function playVideo () {
+  videoScreen.play()
+  startProgressBar()
+  renderButton({
+    function: pauseVideo,
+    class: 'video-button',
+    id: 'pause-button',
+    icon: '<img src="https://img.icons8.com/ios/50/000000/pause-filled.png">',
+    replace: 'play-task-button'
+  })
+  videoTime.innerText = convertToMinute(videoScreen.duration)  
+}
+
+function pauseVideo () {
+  videoScreen.pause()
+  stopProgressBar()
+  renderButton({
+    function: playVideo,
+    class: 'video-button',
+    id: 'play-task-button',
+    icon: '<img src="https://img.icons8.com/metro/26/000000/play.png">',
+    replace: 'pause-button'
+  })
+}
+
+function renderButton (options) {
+  let newButton = document.createElement('button')
+  newButton.addEventListener('click', options.function)
+  newButton.className = options.class
+  newButton.id = options.id
+  newButton.innerHTML = options.icon
+  videoPanel.replaceChild(newButton, document.getElementById(options.replace))
+}
+
+function startProgressBar () {
+  let watchedBar = document.getElementById('watched-bar')
+  let length = videoScreen.duration
+  let timeWatched = document.getElementById('time-watched')
+  
+  timer = setInterval(frame, 100)
+  function frame () {
+    if (watched >= length) {
+      renderButton({
+        function: playVideo,
+        class: 'video-button',
+        id: 'play-task-button',
+        icon: '<img src="https://img.icons8.com/metro/26/000000/play.png">',
+        replace: 'pause-button'
+      })
+      watched = 0
+      stopProgressBar()
+    } 
+    else {
+      watched = watched + 0.1;
+      timeWatched.innerText = convertToMinute(watched)
+      watchedBar.style.width = watched / length * 100 + '%';
+    }
+  }
+}
+
+function stopProgressBar () {
+  clearInterval(timer)
+}
+
+function changeVolume () {
+  if(!videoScreen.muted) {
+    videoScreen.muted = true
+    renderButton({
+      function: changeVolume,
+      class: 'video-button',
+      id: 'mute-button',
+      icon: '<img src="https://img.icons8.com/metro/26/000000/no-audio.png">',
+      replace: 'unmute-button'
+    })
+  }
+  else {
+    videoScreen.muted = false
+    renderButton({
+      function: changeVolume,
+      class: 'video-button',
+      id: 'unmute-button',
+      icon: '<img src="https://img.icons8.com/metro/26/000000/high-volume.png">',
+      replace: 'mute-button'
+    })
+  }
+}
+
+function toggleFullScreen () {
+  if (videoScreen.mozRequestFullScreen) {
+    videoScreen.mozRequestFullScreen()
+  } 
+  else if (videoScreen.webkitRequestFullScreen) {
+    videoScreen.webkitRequestFullScreen()
+  }  
 }
