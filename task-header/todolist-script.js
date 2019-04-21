@@ -1,7 +1,7 @@
 var i = 0
-let targetToEdit
+var targetToEdit
 
-function createTask (text) {
+function createTask (taskName) {
     i = i + 1
 
     var taskItem = document.createElement('div')
@@ -11,7 +11,7 @@ function createTask (text) {
     label.setAttribute('onclick','changeTaskState()')
     label.innerHTML += '<input type="checkbox" class="input-task-checkbox">'
     var id = 'task' + i
-    label.innerHTML += '<div class="title-task-name" id=' + id +'>' +text+'</div>'
+    label.innerHTML += '<div class="title-task-name" id=' + id + '>' + taskName +'</div>'
 
     taskItem.append(label)
 
@@ -30,29 +30,64 @@ function createTask (text) {
     return taskItem
 }
 
-function changeTaskState () {
-    let containerElement = event.currentTarget.parentElement
-    let toBeLined = containerElement.children[0].children[1]
-    let aCheckbox = containerElement.children[0].children[0]
-    // let toBeLined = toBeLined.children[1]
+function changeToEditButtonHeader () {
+    var editButton = document.getElementById('edit-name-button')
+    editButton.style.display = 'inline'
 
-    if (aCheckbox.checked) {
+    var addButton = document.getElementById('add-task-button')
+    addButton.style.display = 'none'
+}
+
+function changeToAddButtonHeader () {
+    var editButton = document.getElementById('edit-name-button')
+    editButton.style.display = 'none'
+
+    var addButton = document.getElementById('add-task-button')
+    addButton.style.display = 'inline'
+}
+
+function removeButtonByParent (item) {
+    var editButton = item.children[2]
+    editButton.style.display = 'none'
+
+    var delButton = item.children[1]
+    delButton.style.display = 'none'
+}
+
+function displayButtonByParent (item) {
+    var editButton = item.children[2]
+    editButton.style.display = 'inline'
+
+    var delButton = item.children[1]
+    delButton.style.display = 'inline'
+}
+
+function isEditingTask (doneTask) {
+    if (doneTask === targetToEdit) {
+      let inputTaskName = document.getElementById('input-task-name')
+      inputTaskName.value = ''
+      changeToAddButtonHeader()
+    }
+}
+
+function changeTaskState () {
+    let parent = event.currentTarget.parentElement
+    let toBeLined = parent.children[0].children[1]
+    let checkbox = parent.children[0].children[0]
+
+    if (checkbox.checked) {
       toBeLined.style.textDecoration = 'line-through'
-      let editButton = event.currentTarget.parentElement.children[1]
-      editButton.style.display = 'none'
-      let delButton = event.currentTarget.parentElement.children[2]
-      delButton.style.display = 'none'
+      isEditingTask(toBeLined)
+      removeButtonByParent(parent)
+
     } else {
       toBeLined.style.textDecoration = 'none'
-      let editButton = event.currentTarget.parentElement.children[1]
-      editButton.style.display = 'inline-block'
-      let delButton = event.currentTarget.parentElement.children[2]
-      delButton.style.display = 'inline-block'
+      displayButtonByParent(parent)
     }
 }
 
 function modifyTask () {
-    if (validate() == true) {
+    if (validate()) {
       addTask()  
       changeColor()
     }
@@ -65,24 +100,23 @@ function clearAllInforms () {
 
 function addTask () {
     var taskInput = document.getElementById('input-task-name')
-    var taskTxt = taskInput.value.trim()
+    var taskName = taskInput.value.trim()
     var taskList = document.getElementById('task-list')
-  
-    if (taskTxt === '') { 
-      return 
-    }
-    taskList.appendChild(createTask(taskTxt))
+
+    taskList.appendChild(createTask(taskName))
     taskInput.value = ''
 }
 
 function validate () {
     let inputTaskName = document.getElementById('input-task-name')
+
     if (inputTaskName.value == '') {
       let annoucement = document.getElementById('validate-task-name')
       annoucement.innerText = '*This field is mandatory'
       annoucement.style.color = 'red'
       return false
     }
+
     return true
 }
 
@@ -92,35 +126,25 @@ function editButtonClick () {
     var inputTaskName = document.getElementById('input-task-name')
     inputTaskName.value = item.children[0].children[1].innerText
 
-    var editButton = document.getElementById('edit-name-button')
-    editButton.style.display = 'inline-block'
-
-    var addButton = document.getElementById('add-task-button')
-    addButton.style.display = 'none'
+    changeToEditButtonHeader()
 }
+
 function changeName () {
-  let taskName = document.getElementById('input-task-name')
+    if (!validate()) return false
+    
+    let taskName = document.getElementById('input-task-name')
+    targetToEdit.innerText = taskName.value
+    taskName.value = ''
 
-  if (!validate()) return false;
-
-  targetToEdit.innerText = taskName.value
-
-  let editButtonHeader = event.currentTarget
-  editButtonHeader.style.display = 'none'
-  taskName.value = ''
-  let addButton = document.getElementById('add-task-button')
-  addButton.style.display = 'inline-block'
+    changeToAddButtonHeader()
 }
+
 function deleteButtonClick () {
     let item = event.currentTarget.parentElement
-    var editButton = item.children[1]
-    editButton.style.display = 'none'
+    removeButtonByParent(item)
 
-    let deleteButton = item.children[2]
-    deleteButton.style.display = 'none'
-
-    item.innerHTML += '<button id = "no-button" onclick = "selectNo()">NO</button>'
-    item.innerHTML += '<button id = "yes-button" onclick = "selectYes()">YES</button>'    
+    item.innerHTML += '<button id="no-button" onclick="selectNo()">NO</button>'
+    item.innerHTML += '<button id="yes-button" onclick="selectYes()">YES</button>'    
 }
 
 function changeColor () {
@@ -153,10 +177,10 @@ function selectNo () {
     let containerElement = event.currentTarget.parentElement
 
     let editButton = containerElement.children[1]
-    editButton.style.display = 'inline-block'
+    editButton.style.display = 'inline'
     
     let deleteButton = containerElement.children[2]
-    deleteButton.style.display = 'inline-block'
+    deleteButton.style.display = 'inline'
 
     let yesButton = containerElement.children[3]
     yesButton.remove()
