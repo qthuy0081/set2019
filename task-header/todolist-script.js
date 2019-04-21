@@ -109,8 +109,8 @@ function addTask () {
 
 function validate () {
     let inputTaskName = document.getElementById('input-task-name')
-
-    if (inputTaskName.value == '') {
+    let toBeChecked = inputTaskName.value.trim()
+    if (toBeChecked == '') {
       let annoucement = document.getElementById('validate-task-name')
       annoucement.innerText = '*This field is mandatory'
       annoucement.style.color = 'red'
@@ -130,8 +130,9 @@ function editButtonClick () {
 }
 
 function changeName () {
-    if (!validate()) return false
-    
+    if (!validate()) {
+      return false
+    }
     let taskName = document.getElementById('input-task-name')
     targetToEdit.innerText = taskName.value
     taskName.value = ''
