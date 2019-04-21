@@ -207,3 +207,50 @@ li:nth-child(even) {
 .show {
     display: block;
 }
+
+/* video */ 
+#controls-video {
+    width: 550px;
+    display: inline-block;
+    background-color: #333333;
+    color: #CFCECF;
+  }
+  
+  .overlay {
+    position: absolute;
+    opacity: 0;
+    transition: .5s ease;
+  }
+  
+  #add-video:hover .overlay {
+    opacity: 1;
+  }
+  
+  #play-pause {
+    display: inline-block;
+    width: 8%;
+    margin: 5px;
+  }
+  
+  #time-line {
+    display: inline-block;
+    width: 68%;
+    margin: 5px 5px 5px 0px;
+  }
+  
+  #mute-unmute {
+    display: inline-block;
+    width: 8%;
+    margin: 5px 5px 5px 0px;
+  }
+  
+  #fullscreen {
+    display: inline-block;
+    width: 8%;
+    margin: 5px 5px 5px 0px;
+  }
+
+  #video-container {
+    width: 100%;
+    height: 100%;
+  }   
