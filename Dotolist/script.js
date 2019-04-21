@@ -3,6 +3,7 @@ var maxHeightBodyList = document.getElementById('body').style.maxHeight
 var toDoList = document.getElementById('to-do-list')
 var instructionVideo = document.getElementById('instruction-video')
 var statistic = document.getElementById('statistic')
+var footer = document.getElementById('footer')
 function myFunction(x) {
     if (x.matches) { // If media query matches
         var width = window.innerWidth - 20
@@ -19,8 +20,15 @@ function myFunction(x) {
         statistic.style.height = height.toString() + 'px'
         statistic.style.margin = '0px'
         statistic.style.cssFloat = 'left'
-        var maxHeight = height - 110
-        maxHeightBodyList = maxHeight.toString() + 'px'
+        footer.style.bottom = '0px'
+        var maxHeight = height - 70
+        if ( maxHeight >= 15) {
+            document.getElementById('body').style.maxHeight = maxHeight.toString() + 'px'
+        }
+        else {
+            maxHeight = 15
+            document.getElementById('body').style.maxHeight = maxHeight.toString() + 'px'
+        }
     } 
     else {
         var width = (window.innerWidth - 30) / 2
@@ -38,8 +46,11 @@ function myFunction(x) {
         statistic.style.height = heightRight.toString() + 'px'
         statistic.style.cssFloat = 'right'
         statistic.style.margin = '10px 0px 0px 5px'
-        var maxHeight = height - 80
-        maxHeightBodyList = maxHeight.toString() + 'px'
+        footer.style.bottom = '70px'
+        var maxHeight = height - 100
+        document.getElementById('body').style.maxHeight = maxHeight.toString() + 'px'
+        
+
     }
   }
   
