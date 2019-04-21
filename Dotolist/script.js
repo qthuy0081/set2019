@@ -271,3 +271,30 @@ function statisticCounter() {
     doneView.innerHTML = "Done: " + (doneCounter/(doneCounter+undoneCounter))*100 + "%"
     undoneView.innerHTML = "Undone: " + (undoneCounter/(doneCounter+undoneCounter))*100 + "%"
 }
+
+// video
+let player, time_update_interval;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video-container', {
+        videoId: 'KpzhO1EyA2U',
+        playerVars: {
+            autoplay: 1,
+            controls: 0,
+            mute:1
+        },
+        events: {
+            onReady: initialize
+        }
+    });
+}
+
+function initialize() {
+    updateTimerDisplay();
+    updateProgressBar();
+    clearInterval(time_update_interval);
+    time_update_interval = setInterval(function () {
+        updateTimerDisplay();
+        updateProgressBar();
+    }, 1000)
+}
