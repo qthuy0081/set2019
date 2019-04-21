@@ -214,11 +214,19 @@ function allShow() {
 }
 
 function doneShow() {
+    var onsave = document.getElementById('header')
+    if (onsave.style.display == 'none') {
+        var checkValidate = document.getElementById('header-taskname-edit')
+        document.getElementById('valid-edit').style.display='block'
+        document.getElementById('valid-edit').innerText = 'Saving before changing'    
+    }
+    else {
     var listTask = document.getElementById('task-list')
     var doneList = document.getElementById('done-list')
     listTask.style.display = 'none'
     doneList.style.display = 'block'
     buttonText[0].innerText = 'Done'
+    }
 }
 
 function undoneShow() {
