@@ -211,8 +211,6 @@ li:nth-child(even) {
     #to-do-list {
         display: block;
         float: left;
-        margin-bottom: 10px;
-        margin-top: 10px;
         position: relative;
         height: 100%;
         width: 50%;
@@ -220,7 +218,6 @@ li:nth-child(even) {
     #header-right {
         display: block;
         float: right ;
-        margin: 10px;
         position: relative;
         height: 100%;
         width: 45%;
@@ -228,12 +225,12 @@ li:nth-child(even) {
     }
     #instruction-video {
         height: 50%;
-        background: gray;
+        background: #d9d9d9;
         position: relative;
     }
     #statistic {
         height: 45%;
-        background: gray;
+        background:  #d9d9d9;
         margin-top: 20px;
         position: relative;
     }
