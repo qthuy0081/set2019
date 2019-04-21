@@ -141,6 +141,7 @@ function selectYes () {
     let item = event.currentTarget.parentElement
     item.remove()
     changeColor()
+    getStatistic()
 }
 
 function selectNo () {
@@ -232,7 +233,6 @@ function getStatistic() {
           undoneRate = undoneRate + 1
       }
   }
-  alert('run')
   if (numberOfTasks != 0) {
   doneRate = doneRate/numberOfTasks
   undoneRate = undoneRate/numberOfTasks
