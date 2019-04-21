@@ -229,23 +229,23 @@ li:nth-child(even) {
   #play-pause {
     display: inline-block;
     width: 8%;
-    padding: 5px;
+    margin: 5px;
   }
   
   #time-line {
     display: inline-block;
-    width: 70%;
-    padding: 5px;
+    width: 68%;
+    margin: 5px 5px 5px 0px;
   }
   
   #mute-unmute {
     display: inline-block;
     width: 8%;
-    padding: 5px;
+    margin: 5px 5px 5px 0px;
   }
   
   #fullscreen {
     display: inline-block;
     width: 8%;
-    padding: 5px;
+    margin: 5px 5px 5px 0px;
   }
