@@ -299,3 +299,45 @@ function initialize() {
         updateProgressBar();
     }, 1000)
 }
+// mute/fullscreen
+function renderBtn (options) {
+    let newBtn = document.createElement('button')
+    newBtn.addEventListener('click', options.function)
+    newBtn.className = options.class
+    newBtn.id = options.id
+    newBtn.innerHTML = options.icon
+    videoPanel.replaceChild(newBtn, document.getElementById(options.replace))
+}
+
+function muteUnmute () {
+    if(!videoScreen.muted) {
+        videoScreen.muted = true
+        renderBtn({
+            function: changeVolume,
+            class: 'mute/unmute',
+            id: 'muteBtn',
+            icon: '<img src="./Asset/Image/mute.png">',
+            replace: 'unmuteBtn'
+        })
+    }
+    else {
+        videoScreen.muted = false
+        renderButton({
+            function: changeVolume,
+            class: 'mute/unmute',
+            id: 'unmuteBtn',
+            icon: '<img src="./Asset/Image/volume.png">',
+            replace: 'muteBtn'
+        })
+    }
+}
+  
+function fullscreenBtn () {
+    if (videoScreen.mozRequestFullScreen) {
+        videoScreen.mozRequestFullScreen()
+    } 
+    else if (videoScreen.webkitRequestFullScreen) {
+        videoScreen.webkitRequestFullScreen()
+    }  
+  }
+  

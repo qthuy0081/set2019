@@ -357,3 +357,14 @@ li:nth-child(even) {
     }
 }
 
+
+  #video-container {
+    width: 100%;
+    height: 100%;
+  }   
+/* mute/fullscreen */
+.buttonPanel {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
