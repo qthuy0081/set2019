@@ -9,22 +9,35 @@
 </head>
 <body>
     <div id="content">
-        <div id="task-header">
-            <input id="input-task-name" placeholder="Task name" onchange="clearAllInforms()">
-            <button id="add-task-button" onclick="modifyTask()" >ADD</button>
-            <button id="edit-name-button" onclick="changeName()">EDIT</button>
-            <div id="validate-task-name"></div>
+        <div id="todolist-task-introduce">
+            div video
         </div>
-        <div id = 'task-list-container' >
-            <div id="task-list">
-                    
-            </div>       
+        <div>
+            <div id="task-header">
+                <input id="input-task-name" placeholder="Task name" onchange="clearAllInforms()">
+                <button id="add-task-button" onclick="modifyTask()" >ADD</button>
+                <button id="edit-name-button" onclick="changeName()">EDIT</button>
+                <div id="validate-task-name"></div>
+            </div>
+            <div id = 'task-list-container' >
+                <div id="task-list">
+                        
+                </div>       
+            </div>
+            <select id = "select-box" onchange="slectOption()">
+                <option value = "all">All</option>
+                <option value="done">Done</option>
+                <option value="undone">Undone</option>
+            </select>
         </div>
-        <select id = "select-box" onchange="slectOption()">
-            <option value = "all">All</option>
-            <option value="done">Done</option>
-            <option value="undone">Undone</option>
-        </select>
+        <div> 
+            <div id="todolist-task-introduce">
+
+            </div>
+            <div id="statistic-task">
+
+            </div>
+        </div>
     </div>  
     <script src="./todolist-script.js"></script>
 </body>
