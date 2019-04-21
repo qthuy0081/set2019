@@ -342,3 +342,13 @@ function onYouTubeIframeAPIReady() {
         }
     });
 }
+
+function initialize() {
+    updateTimerDisplay();
+    updateProgressBar();
+    clearInterval(time_update_interval);
+    time_update_interval = setInterval(function () {
+        updateTimerDisplay();
+        updateProgressBar();
+    }, 1000)
+}
